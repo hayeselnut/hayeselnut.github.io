@@ -61,8 +61,17 @@ header .cover .title {
     margin: 0;
     color: white;
     background-color: rgba(0,0,0,0.6);
-    padding-top: 400px;
-    padding-bottom: 100px;
+    padding-top: 300px;
+    padding-bottom: 300px;
+    font-size: 64px;
+}
+
+section h1, section h2 {
+    text-align: center;
+}
+
+section h2 {
+    font-size: 18px;
 }
 
 /* EXPERIENCE */
@@ -71,10 +80,6 @@ header .cover .title {
     background-color: skyblue;
     display: flex;
     flex-direction: column;
-}
-
-section h1 {
-    text-align: center;
 }
 
 .experience div {
@@ -111,6 +116,7 @@ section h1 {
     margin: 5%;
     width: 300px;
     transition: 0.5s ease;
+    
     /* border-radius: 50%;
     box-shadow: 1px 1px 10px black; */
 }
@@ -124,10 +130,13 @@ section h1 {
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
+    
 }
 
 .projects div .card:hover img {
     opacity: 0.5;
+    transform: scale(1.1);
+    
 }
 
 .projects div .card:hover .middle {
@@ -139,6 +148,28 @@ section h1 {
     color: white;
     font-size: 32px;
     padding: 16px 32px;
+}
+
+/* FOOTER */
+
+footer {
+    background: black;
+    padding-right: 100px;
+    color: white;
+    margin: 0;
+    height: 200px;
+}
+
+footer ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0;
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 20px;
 }
 
 /* 
