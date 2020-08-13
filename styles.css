@@ -1,9 +1,147 @@
+/* BACKGROUND */
+
 body {
     background: white;
-    font-family: Helvetica, Helvetica, sans-serif;
+    font-family: 'Roboto Mono', Arial, sans-serif;
     padding: 0;
     margin: 0;
 }
+
+header {
+    background: red;
+}
+
+/* NAVBAR */
+
+header .navbar {
+    background: black;
+    padding-right: 100px;
+    color: white;
+    margin: 0;
+}
+
+header .navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0;
+}
+
+header .navbar ul li {
+    display: inline-block;
+    margin: 20px;
+}
+
+/* HYPERLINKS */
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* TITLE */
+
+header .cover {
+    background-color: black;
+    background-image: url("images/leadership_camp.JPG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    margin: 0;
+    text-align: center;
+    font-size: 64px;
+}
+
+header .cover .title {
+    margin: 0;
+    color: white;
+    background-color: rgba(0,0,0,0.6);
+    padding-top: 400px;
+    padding-bottom: 100px;
+}
+
+/* EXPERIENCE */
+
+.experience {
+    background-color: skyblue;
+    display: flex;
+    flex-direction: column;
+}
+
+section h1 {
+    text-align: center;
+}
+
+.experience div {
+    background-color: lightpink;
+    display: flex;
+    flex-direction: row;
+}
+
+.experience div img {
+    width: 100px;
+    height: 100px;
+    margin: 20px 20px 20px 35%;
+}
+
+.experience div p {
+    margin-right: 20%
+}
+
+/* PROJECTS */
+
+.projects div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.projects div .card {
+    position: relative;
+    /* border-radius: 50%; */
+}
+
+.projects div .card img {
+    margin: 5%;
+    width: 300px;
+    transition: 0.5s ease;
+    /* border-radius: 50%;
+    box-shadow: 1px 1px 10px black; */
+}
+
+.projects div .card .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.projects div .card:hover img {
+    opacity: 0.5;
+}
+
+.projects div .card:hover .middle {
+    opacity: 1;
+}
+
+.projects div .card p {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 32px;
+    padding: 16px 32px;
+}
+
+/* 
 header {
     color: white;
     background: black;
@@ -12,7 +150,7 @@ header {
 }
 ul {
     margin: 0;
-    padding: 0;
+    padding: 0;s
     list-style-type: none;
 }
 li {
@@ -57,4 +195,4 @@ footer {
     color: white;
     background: black;
     padding: 10px 20px;
-}
+} */
