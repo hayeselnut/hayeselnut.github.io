@@ -100,28 +100,80 @@ section h2 {
 
 /* PROJECTS */
 
-.projects div {
+.projects .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    overflow: hidden;
+}
+
+.projects .card-container .card {
+    margin: 0;
+    /* background-color: red; */
+    flex-direction: row;
+    width: 700px;
+    height: 500px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: 0.5s ease;
+}
+
+.projects .card-container .card.dewoh {
+    background-image: url("images/dewoh.png");
+}
+
+.projects .card-container .card.intranet {
+    background-image: url("images/intranet.png");
+}
+
+.projects .card-container .card p {
+    margin: 0;
+    text-align: center;
+    opacity: 0;
+    padding-top: 250px;
+    padding-bottom: 250px;
+    font-size: 32px;
+    font-weight: 600;
+    transition: 0.5s ease;
+}
+
+.projects .card-container .card:hover p {
+    opacity: 1;
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+.projects .card-container .card:hover {
+    /* background-size: cover; */
+    /* background-position-x: -100px; */
+    transform: scale(1.1);
+}
+
+/* CHAMPS */
+
+.champs div {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
 }
 
-.projects div .card {
+.champs div .card {
     position: relative;
     /* border-radius: 50%; */
 }
 
-.projects div .card img {
+.champs div .card img {
     margin: 5%;
-    width: 1000px;
+    width: 200px;
     transition: 0.5s ease;
-    
     /* border-radius: 50%;
     box-shadow: 1px 1px 10px black; */
 }
 
-.projects div .card .middle {
+.champs div .card .middle {
     transition: .5s ease;
     opacity: 0;
     position: absolute;
@@ -130,20 +182,18 @@ section h2 {
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
-    
 }
 
-.projects div .card:hover img {
+.champs div .card:hover img {
     opacity: 0.5;
     transform: scale(1.1);
-    
 }
 
-.projects div .card:hover .middle {
+.champs div .card:hover .middle {
     opacity: 1;
 }
 
-.projects div .card p {
+.champs div .card p {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     font-size: 32px;
