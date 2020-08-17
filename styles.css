@@ -238,6 +238,10 @@ section h2 {
     font-family: gotham-bold, sans-serif;
 }
 
+h1.gotham, h2.gotham {
+    text-align: left;
+}
+
 header .deduplicatify-cover {
     background-color:rgb(18, 18, 18);
     height: 300px;
@@ -284,26 +288,25 @@ header .deduplicatify-cover img {
 .results .playlist-metadata {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     align-content: center;
     justify-content: center;
 }
 
 .results .playlist-metadata .playlist-info {
     max-width: 50%;
-    font-size: 32px;
     padding-right: 50px;
 }
 
 .results .playlist-metadata .playlist-artwork {
     /* max-height: 100%;
     width: auto; */
-    background-color: violet;
+    /* background-color: violet; */
     margin: 0;
 }
 
-.results .playlist-metadata .playlist-artwork img {
-    width: 150%;
+#playlist-img {
+    width: 300px;
 }
 
 /* FOOTER */
