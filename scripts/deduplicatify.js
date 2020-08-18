@@ -31,15 +31,18 @@ function extract_playlist_id(playlist_link) {
 }
 
 function update_playlist_metadata(name, owner, desc, img) {
-    $("#playlist-name").html(name);
-    $("#playlist-owner").html(owner);
-    $("#playlist-desc").html(desc);
+    var duration = 500;
 
-    console.log(img != null);
+    $("#playlist-metadata").fadeOut(duration, function() {
+        $("#playlist-name").html(name);
+        $("#playlist-owner").html(owner);
+        $("#playlist-desc").html(desc);
 
-    if (img != null) {
-        $("#playlist-img").attr("src", img[0].url);
-    }
+        if (img != null) {
+            $("#playlist-img").attr("src", img[0].url);
+        }
+    }).fadeIn(duration);
+
 }
 
 // Consider using change or keydown event
