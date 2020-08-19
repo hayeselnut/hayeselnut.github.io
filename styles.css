@@ -375,7 +375,7 @@ header .deduplicatify-cover img {
 }
 
 .playlist-metadata .playlist-info {
-    max-width: 50%;
+    max-width: 100%;
     padding-right: 50px;
 }
 
@@ -385,12 +385,34 @@ header .deduplicatify-cover img {
 
 #playlist-img {
     width: 300px;
-    box-shadow: 00px 00px 5px rgb(0,0,0);
+    box-shadow: 00px 00px 5px grey;
 }
 
 #sim-songs {
     padding-bottom: 50px;
     display: none;
+}
+
+.similar-songs h2 {
+    padding-top: 20px;
+    text-align: left;
+    font-family: gotham-light, sans-serif;
+    font-size: 16px;
+}
+
+.similar-songs h2 strong {
+    padding-top: 20px;
+    text-align: left;
+    font-family: gotham-bold, sans-serif;
+}
+.similar-songs .set-of-dupes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.similar-songs .set-of-dupes iframe {
+    margin: 5px;
 }
 
 /* FOOTER */

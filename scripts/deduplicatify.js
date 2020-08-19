@@ -58,27 +58,32 @@ $("#dedup-txtbox").on("click", function() {
     $(this).val("");
 });
 
-function getSongDetails(s) {
+function getSongDetails(song) {
     const artists = [];
-    s.track.artists.forEach(function(a) {
-        artists.push(a.id);
+    const artist_names = [];
+    console.log(song);
+    // console.log(song.track.name, song.track.artists);
+    song.track.artists.forEach(function(artist) {
+        artists.push(artist.id);
+        artist_names.push(artist.name);
     });
 
     return {
-        "id": s.track.id,
-        "name": s.track.name,
+        "id": song.track.id,
+        "name": song.track.name,
         "artists": artists,
-        "album": s.track.album.id,
-        "album_name": s.track.album.name,
-        "duration_ms": s.track.duration_ms,
+        "artist_names": artist_names,
+        "duration_ms": song.track.duration_ms,
     };
 }
 
-function getSongs(p) {
+function getSongs(playlist) {
     const songs = [];
 
-    p.items.forEach(function(s) {
-        songs.push(getSongDetails(s));
+    playlist.items.forEach(function(song) {
+        if (song.track) {
+            songs.push(getSongDetails(song));
+        }
     })
 
     return songs;
@@ -92,24 +97,24 @@ function getTracks(url) {
     });
 }
 
-function isSimilarSong(s1, s2) {
-    const buzzwords = ["remix", "acoustic", "live"];
-    s1.name = s1.name.toLowerCase();
-    s2.name = s2.name.toLowerCase();
+function isSimilarSong(song1, song2) {
+    const buzzwords = ["mix", "acoustic", "live"];
+    var s1 = song1.name.toLowerCase();
+    var s2 = song2.name.toLowerCase();
 
     // Check song name is similar
-    if (!s1.name.includes(s2.name) && !s2.name.includes(s1.name)) {
+    if (!s1.includes(s2) && !s2.includes(s1)) {
         return false;
     }
 
     // Check artist ids
-    const intersection = s1.artists.filter(a => s2.artists.includes(a));
+    const intersection = song1.artists.filter(a => song2.artists.includes(a));
     if (!intersection.length) {
         return false;
     }
 
-    // Check if songs are within 10 secs of each other
-    if (Math.abs(s1.duration_ms - s2.duration_ms) > 10000) {
+    // Check if songs are within 3 secs of each other
+    if (Math.abs(song1.duration_ms - song2.duration_ms) > 3000) {
         return false;
     }
 
@@ -117,7 +122,7 @@ function isSimilarSong(s1, s2) {
     for (var i = 0; i < buzzwords.length; i++) {
         var bw = buzzwords[i];
 
-        if ( (s1.name.includes(bw) && !s2.name.includes(bw)) || (s2.name.includes(bw) && !s1.name.includes(bw)) ) {
+        if ( (s1.includes(bw) && !s2.includes(bw)) || (s2.includes(bw) && !s1.includes(bw)) ) {
             return false;
         }
     }
@@ -126,46 +131,16 @@ function isSimilarSong(s1, s2) {
     return true;
 }
 
-function printSong(s) {
+function printSong(song) {
     // DEFAULT FOR COMPACT IS 300x80
-    var width = 400;
+    var width = 300;
     var height = 80;
-    return '<iframe src="https://open.spotify.com/embed/track/' + s.id + '" width="' + width + '" height="' + height + '" frameborder="0" allowtransparency="true" allow="encrypted-media"><i/frame>'
+    return `<iframe src="https://open.spotify.com/embed/track/${song.id}" width=${width} height=${height} frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`;
 }
 
-
-$("#dedup-btn").on("click", async function() {
-    $("#dedup-results").css("visibility", "visible");
-    $("#sim-songs").css("display", "none");
-
-    var playlistLink = $("#dedup-txtbox").val();
-    var playlistId = getPlaylistId(playlistLink);
-
-    // Get playlist metadata and update screen
-    $.ajax({
-        type: "GET",
-        url: "https://api.spotify.com/v1/playlists/" + playlistId,
-        headers: {"Authorization": "Bearer " + ACCESS_TOKEN},
-        success: updatePlaylistMetadata,
-        error: function() {
-            console.log("Invalid Spotify playlist link");
-        }
-    });
-
-    console.log("playlist id:", playlistId);
-
-    $("#sim-songs").empty();
-
-    var p = await getTracks("https://api.spotify.com/v1/playlists/" + playlistId + "/tracks");
-    var songs = getSongs(p);
-
-    while (p.next) {
-        p = await getTracks(p.next);
-        songs = songs.concat(getSongs(p));
-    }
-    console.log("all songs", songs);
-    // Detect common songs
-    seen = {};
+function getDuplicates(songs) {
+    const duplicates = [];
+    const seen = {};
 
     for (var i = 0; i < songs.length; i++) {
         if (i in seen) {
@@ -182,20 +157,99 @@ $("#dedup-btn").on("click", async function() {
 
         // If found similars then print them
         if (similars.length) {
-            seen[i] = true;
+            similars.push(i);
+            duplicates.push(similars);
 
-            $("#sim-songs").append(printSong(songs[i]));
             similars.forEach(function(idx) {
                 seen[idx] = true;
-                $("#sim-songs").append(printSong(songs[idx]));
             });
         }
     }
 
-    if (!Object.keys(seen).length) {
-        // No duplicates found
-        $("#sim-songs").append("No duplicates found!");
+    return duplicates;
+}
+
+function showPlaylist(playlistId) {
+    $.ajax({
+        type: "GET",
+        url: "https://api.spotify.com/v1/playlists/" + playlistId,
+        headers: {"Authorization": "Bearer " + ACCESS_TOKEN},
+        success: updatePlaylistMetadata,
+        error: function() {
+            console.log("Invalid Spotify playlist link");
+        }
+    });
+}
+
+function showDuplicates(songs, duplicates) {
+    duplicates.forEach(function(setOfDuplicates) {
+        var songDetails = songs[setOfDuplicates[0]];
+        var name = songDetails.name;
+        var artists = songDetails.artist_names;
+
+        for (var i = 1; i < setOfDuplicates.length; i++) {
+            songDetails = songs[setOfDuplicates[i]];
+
+            if (name.includes(songDetails.name) && !songDetails.name.includes(name)) {
+                // New name is shorter than current name, and we want the shortest name
+                name = songDetails.name;
+            }
+
+            artists = artists.filter(a => songDetails.artist_names.includes(a));
+        }
+        $("#sim-songs").append(`<h2><strong>${name}</strong> by ${artists.join(", ")}</h2>`);
+
+        var appendSetOfDupes = '<div class="set-of-dupes">';
+        setOfDuplicates.forEach(function(dupeId) {
+            appendSetOfDupes += printSong(songs[dupeId]);
+        });
+        appendSetOfDupes += "</div>";
+        $("#sim-songs").append(appendSetOfDupes);
+
+        // THIS DOESNT WORK? IT DOES <DIV></DIV><IFRAME></IFRAME>
+        // $("#sim-songs").append('<div class="set-of-dupes">');
+        // setOfDuplicates.forEach(function(dupeId) {
+        //     $("#sim-songs").append(printSong(songs[dupeId]));
+        // });
+        // $("#sim-songs").append("</div>");
+
+    });
+}
+
+$("#dedup-btn").on("click", async function() {
+    $("#dedup-results").css("visibility", "visible");
+    $("#sim-songs").css("display", "none");
+    $("#sim-songs").html("Loading...");
+
+    var playlistLink = $("#dedup-txtbox").val();
+    var playlistId = getPlaylistId(playlistLink);
+    console.log("playlist id:", playlistId);
+
+    showPlaylist(playlistId);
+
+    // Get songs from playlist
+    var p = await getTracks("https://api.spotify.com/v1/playlists/" + playlistId + "/tracks");
+    var songs = getSongs(p);
+
+    while (p.next) {
+        p = await getTracks(p.next);
+        songs = songs.concat(getSongs(p));
     }
+
+    console.log("all songs", songs);
+
+    // Detect common songs
+    duplicates = getDuplicates(songs);
+
+    if (!Object.keys(duplicates).length) {
+        // No duplicates found
+        $("#sim-songs").html("No duplicates found!");
+    } else {
+        $("#sim-songs").empty();
+    }
+
+    // Show duplicates
+    showDuplicates(songs, duplicates);
 
     // Scroll into view
     $("#dedup-results").scrollIntoView();

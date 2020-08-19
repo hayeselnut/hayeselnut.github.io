@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>.deduplicatify_</title>
-        <link rel="icon" href="assets/deduplicatify/deduplicatify.svg">
+        <link rel="icon" href="assets/deduplicatify/logo_black.svg">
         <link rel="stylesheet" href="styles.css">
     </head>
 
@@ -25,19 +25,16 @@
 
         <section class="description">
             <p>
-                Deduplicatify detects any duplicate songs in a Spotify playlist.
+                Deduplicatify detects any duplicate songs in a Spotify playlist even if they are from different albums.
                 The detection algorithm will label two songs as duplicates if their:
                 <ul>
                     <li>song names are similar</li>
                     <li>artists are the same</li>
-                    <li>song length is within 10 seconds of each other.</li>
+                    <li>song length is within 3 seconds of each other.</li>
                 </ul>
             </p>
             <p>
-                Using this method, a song added from two different albums will be detected, which is something Spotify currently doesn't detect.
-            </p>
-            <p>
-                The algorithm also recognises remixed, live, and acoustic versions of a song as a different song to their original counterparts, and thus will not mark them as duplicates.
+                The algorithm also does not label remixed, live and acoustic versions as a duplicate of their original counterpart.
             </p>
             <p>
                 You can copy a Spotify playlist link as shown below. Enter yours below to detect any duplicate songs in your playlist.
@@ -84,7 +81,6 @@
             </ul>
         </footer>
 
-        <!-- <script src="//cdn.jsdelivr.net/npm/bluebird@3.7.2/js/browser/bluebird.min.js"></script> -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="scripts/deduplicatify.js"></script>
     </body>
