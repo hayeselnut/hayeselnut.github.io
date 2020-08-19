@@ -51,6 +51,10 @@ function updatePlaylistMetadata(p) {
     }).fadeIn(duration);
 }
 
+$("#dedup-txtbox").on("click", function() {
+    $(this).val("");
+});
+
 // Consider using change or keydown event
 $("#dedup-txtbox").on("change", function() {
     $("#dedup-examples").fadeOut(500).css("display", "none");
@@ -142,18 +146,19 @@ function isSimilarSong(s1, s2) {
 }
 
 function printSong(s) {
-
-    return '<iframe src = "https://open.spotify.com/embed/track/' + s.id + '" width="600" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"><i/frame>'
+    // DEFAULT FOR COMPACT IS 300x80
+    var width = 400;
+    var height = 80;
+    return '<iframe src="https://open.spotify.com/embed/track/' + s.id + '" width="' + width + '" height="' + height + '" frameborder="0" allowtransparency="true" allow="encrypted-media"><i/frame>'
 }
 
 $("#dedup-btn").on("click", function() {
-    var duration = 2000;
     var playlistLink = $("#dedup-txtbox").val();
     var playlistId = getPlaylistId(playlistLink);
 
     console.log("playlist id:", playlistId);
 
-    $("#sim-songs").fadeOut(100).empty();
+    $("#sim-songs").empty();
 
     Promise.coroutine(function*() {
         var p = yield getTracks("https://api.spotify.com/v1/playlists/" + playlistId + "/tracks");
@@ -193,20 +198,17 @@ $("#dedup-btn").on("click", function() {
             if (similars.length) {
                 seen[i] = true;
 
-                $("#sim-songs").append("<br/><br/>Duplicates:<br/>")
-                $("#sim-songs").append(printSong(songs[i])).fadeIn(duration);
-
+                $("#sim-songs").append(printSong(songs[i]));
                 similars.forEach(function(idx) {
-                    if (idx in seen) {
-                        $("#sim-songs").append("ERRORRRRRRRRRR LOGIC ERROR");
-                    }
-
                     seen[idx] = true;
                     $("#sim-songs").append(printSong(songs[idx]));
-                })
+                });
             }
         }
 
     })();
+
+    // Scroll into view
+    $("#dedup-results").scrollIntoView();
 
 });

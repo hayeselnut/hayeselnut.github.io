@@ -18,30 +18,18 @@
 
             <section class="deduplicatify-cover">
                 <h1 class="title">.deduplicatify_</h1>
-                <img src="images/deduplicatify.svg"/>
+                <img src="assets/deduplicatify/deduplicatify.svg"/>
             </section>
         </header>
-
-        <!-- <header>
-            <nav>
-                <ul>
-                    <li class="logo"><a href="index.html">HAYES LOGO</a></li>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <h1>This is my website</h1>
-        </header> -->
 
         <section class="description">
             <p>Product description</p>
         </section>
 
         <section class="input">
-            <p>Enter Spotify playlist link:</p>
-            <input id="dedup-txtbox" type="text">
-            <p><button id="dedup-btn">Deduplicatify</button></p>
+            <input id="dedup-txtbox" type="text" value="Enter your Spotify playlist link">
+            <text>hi</text>
+            <button id="dedup-btn" onClick="document.getElementById('dedup-results').scrollIntoView();">Detect duplicates</button>
         </section>
 
         <section id="dedup-examples">
@@ -61,10 +49,17 @@
                     <p id="playlist-desc">playlist_desc</p>
                 </div>
                 <div class="playlist-artwork">
-                    <img id="playlist-img" src="images/blank-playlist.jpg"/>
+                    <img id="playlist-img" src="assets//deduplicatify/blank-playlist.jpg"/>
                 </div>
             </div>
             <div class="similar-songs" id="sim-songs">
+                <div class="dupe-container">
+                    <iframe src="https://open.spotify.com/embed/track/75lo8VozcCLRG9WGG674iD" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <iframe src="https://open.spotify.com/embed/track/75lo8VozcCLRG9WGG674iD" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <iframe src="https://open.spotify.com/embed/track/75lo8VozcCLRG9WGG674iD" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <iframe src="https://open.spotify.com/embed/track/75lo8VozcCLRG9WGG674iD" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <iframe src="https://open.spotify.com/embed/track/75lo8VozcCLRG9WGG674iD" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                </div>
             </div>
         </section>
 

@@ -301,7 +301,28 @@ header .deduplicatify-cover img {
     width: 70%;
     padding: 10px;
     text-align: center;
+    font-size: 16px;
+    color: grey;
+    font-family: monospace;
     /* how to change font? */
+}
+
+
+#dedup-btn {
+    background-color: rgb(30, 184, 84);
+    padding: 10px 30px;
+    border: none;
+    font-family: gotham-bold, sans-serif;
+    border-radius: 100px;
+    color: white;
+    transition-duration: 0.5s;
+    box-shadow: 0px 0px 5px grey;
+    outline: none;
+    cursor: pointer;
+}
+
+#dedup-btn:hover {
+    background-color: rgb(30, 215, 96);
 }
 
 #dedup-examples {
@@ -309,8 +330,10 @@ header .deduplicatify-cover img {
 }
 
 #dedup-results {
-    display: none;
+    padding-top: 10px;
+    display: block;
     margin-top: 50px;
+    padding-bottom: 50px;
 }
 
 .playlist-metadata {
@@ -334,8 +357,12 @@ header .deduplicatify-cover img {
     box-shadow: 00px 00px 5px rgb(0,0,0);
 }
 
-.similar-songs {
-    text-align: center;
+.similar-songs .dupe-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 }
 
 /* FOOTER */
