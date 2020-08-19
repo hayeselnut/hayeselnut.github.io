@@ -118,8 +118,8 @@ function isSimilarSong(song1, song2) {
         return false;
     }
 
-    // Check if songs are within 3 secs of each other
-    if (Math.abs(song1.duration_ms - song2.duration_ms) > 3000) {
+    // Check if songs are within 2.5 secs of each other
+    if (Math.abs(song1.duration_ms - song2.duration_ms) > 2500) {
         return false;
     }
 
