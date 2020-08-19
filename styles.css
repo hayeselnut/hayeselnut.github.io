@@ -265,7 +265,7 @@ header .deduplicatify-cover {
 header .deduplicatify-cover div {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-content: center;
     align-items: center;
     height: 200px;
@@ -275,7 +275,8 @@ header .deduplicatify-cover div {
 header .deduplicatify-cover .title {
     color: white;
     margin: 0;
-    font-size: 72px;
+    font-size: 84px;
+    margin-right: 5%;
     /* background-color: red; */
 }
 
