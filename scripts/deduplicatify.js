@@ -4,17 +4,20 @@ const GRANT_TYPE = "client_credentials";
 
 var ACCESS_TOKEN;
 
-$.ajax({
-    type: "POST",
-    url: "https://accounts.spotify.com/api/token",
-    data: {"grant_type": GRANT_TYPE},
-    headers: {"Authorization": "Basic " + btoa(SPOTIFY_CLIENT_ID + ':' + SPOTIFY_CLIENT_SECRET)},
-    success: function(response) {
-        ACCESS_TOKEN = response.access_token;
-    },
-    error: function() {
-        alert("Could not connect to Spotify API");
-    }
+$(document).ready(function() {
+    $.ajax({
+        type: "POST",
+        url: "https://accounts.spotify.com/api/token",
+        data: {"grant_type": GRANT_TYPE},
+        headers: {"Authorization": "Basic " + btoa(SPOTIFY_CLIENT_ID + ':' + SPOTIFY_CLIENT_SECRET)},
+        success: function(response) {
+            ACCESS_TOKEN = response.access_token;
+            console.log("Access Token successfully retrieved:", ACCESS_TOKEN);
+        },
+        error: function() {
+            alert("Could not connect to Spotify API");
+        }
+    });
 });
 
 function getPlaylistId(playlistLink) {
@@ -30,115 +33,52 @@ function getPlaylistId(playlistLink) {
     }
 }
 
-function updatePlaylistMetadata(name, owner, desc, img) {
+function updatePlaylistMetadata(p) {
+    // p = playlist_object
+
     var duration = 500;
 
     $("#playlist-metadata").fadeOut(duration, function() {
-        $("#playlist-name").html(name);
-        $("#playlist-owner").html(owner);
-        $("#playlist-desc").html(desc);
+        $("#playlist-name").html(p.name);
+        $("#playlist-owner").html(p.owner.display_name);
+        $("#playlist-desc").html(p.description);
 
-        if (img.length != 0) {
-            $("#playlist-img").attr("src", img[0].url);
+        if (p.images.length != 0) {
+            $("#playlist-img").attr("src", p.images[0].url);
         } else {
             $("#playlist-img").attr("src", "images/blank-playlist.jpg");
         }
     }).fadeIn(duration);
-
 }
 
 // Consider using change or keydown event
-// $("#dedup-txtbox").on("blur", function() {
-//     var playlistLink = $(this).val();
+$("#dedup-txtbox").on("blur", function() {
+    var playlistLink = $(this).val();
 
-//     var playlistId = getPlaylistId(playlistLink);
+    var playlistId = getPlaylistId(playlistLink);
 
-//     $.ajax({
-//         type: "GET",
-//         url: "https://api.spotify.com/v1/playlists/" + playlistId,
-//         headers: {"Authorization": "Bearer " + ACCESS_TOKEN},
-//         success: function(p) {
-//             updatePlaylistMetadata(p.name, p.owner.display_name, p.description, p.images);
-//         },
-//         error: function() {
-//             console.log("Invalid Spotify playlist link");
-//         }
-//     });
+    // Get playlist metadata and update screen
+    $.ajax({
+        type: "GET",
+        url: "https://api.spotify.com/v1/playlists/" + playlistId,
+        headers: {"Authorization": "Bearer " + ACCESS_TOKEN},
+        success: updatePlaylistMetadata,
+        error: function() {j
+            console.log("Invalid Spotify playlist link");
+        }
+    });
 
-//     // Check if playlist is correct $.ajax... etc.
-// });
-
-// function getSongs(p) {
-//     const songs = [];
-
-//     console.log("p.items");
-//     console.log(p.items);
-
-//     p.items.forEach(function (s) {
-//         const artists = [];
-//         s.track.artists.forEach(function (a) {
-//             artists.push(a.id);
-//         })
-
-//         songs.push({
-//             "id": s.track.id,
-//             "name": s.track.name,
-//             "artists": artists,
-//             "album": s.track.album.id,
-//             "album_name": s.track.album.name,
-//             "duration_ms": s.track.duration_ms,
-//         });
-//     })
-
-//     if (!p.next) {
-//         return songs;
-//     }
-
-//     $.ajax({
-//         type: "GET",
-//         url: p.next,
-//         async: false,
-//         headers: {"Authorization": "Bearer " + ACCESS_TOKEN},
-//         success: function(playlistObject) {
-//             return songs.concat(getSongs(playlistObject));
-//         },
-//         error: function() {
-//             console.log("couldn't load" + p.next);
-//             return songs;
-//         }
-//     });
-
-// }
-
-// $("#dedup-btn").on("click", function() {
-//     var playlistLink = $("#dedup-txtbox").val();
-//     var playlistId = getPlaylistId(playlistLink);
-
-//     console.log(playlistId);
-//     $.ajax({
-//         type: "GET",
-//         url: "https://api.spotify.com/v1/playlists/" + playlistId + "/tracks",
-//         async: false,
-//         headers: {"Authorization": "Bearer " + ACCESS_TOKEN},
-//         success: function(playlistObject) {
-//             console.log(getSongs(playlistObject));
-//         },
-//         error: function() {
-//             console.log("button failed");
-//         }
-//     });
+    // Check if playlist is correct $.ajax... etc.
+});
 
 function getSongs(p) {
     const songs = [];
-
-    console.log("p.items");
-    console.log(p.items);
 
     p.items.forEach(function (s) {
         const artists = [];
         s.track.artists.forEach(function (a) {
             artists.push(a.id);
-        });
+        })
 
         songs.push({
             "id": s.track.id,
@@ -148,75 +88,41 @@ function getSongs(p) {
             "album_name": s.track.album.name,
             "duration_ms": s.track.duration_ms,
         });
-    });
+    })
 
-    if (p.next) {
-        $.when(getTracks(p.next)).then(function successHandler(playlistObject){
-            songs.concat(getSongs(playlistObject));
-            return songs;
-        }, function errorHandler() {
-            console.log("error");
-        });
-    } else {
-        return songs;
-    }
-
+    return songs;
 }
-
-function getTracks(url) {
-    return $.ajax({
-        type: "GET",
-        url: url,
-        headers: {"Authorization": "Bearer " + ACCESS_TOKEN},
-    });
-}
-
 $("#dedup-btn").on("click", function() {
     var playlistLink = $("#dedup-txtbox").val();
     var playlistId = getPlaylistId(playlistLink);
-    var url = "https://api.spotify.com/v1/playlists/" + playlistId + "/tracks";
 
-    console.log(playlistId);
+    console.log("playlist id:", playlistId);
 
-    $.when(getTracks(url)).then(function successHandler(playlistObject){
-        console.log("ALL SONGS", getSongs(playlistObject));
-    }, function errorHandler() {
-        console.log("error");
-    });
+    var songs;
+
+    Promise.coroutine(function*() {
+        var p = yield $.ajax({
+            type: "GET",
+            url: "https://api.spotify.com/v1/playlists/" + playlistId + "/tracks",
+            headers: {"Authorization": "Bearer " + ACCESS_TOKEN},
+        });
+
+        songs = getSongs(p);
+
+        while (p.next) {
+            p = yield $.ajax({
+                type: "GET",
+                url: p.next,
+                headers: {"Authorization": "Bearer " + ACCESS_TOKEN},
+            });
+
+            songs = songs.concat(getSongs(p));
+        }
+
+        console.log("all songs", songs);
+
+        // if next page exists, yield until next page does not exist
+    })();
+    console.log("all songs outside of promise.corouitne", songs);
+
 });
-
-/*
-
-function testAjax(handleData) {
-  $.ajax({
-    url:"getvalue.php",
-    success:function(data) {
-      handleData(data);
-    }
-  });
-}
-Call it like this:
-
-testAjax(function(output){
-  // here you use the output
-});
-// Note: the call won't wait for the result,
-// so it will continue with the code here while waiting.
-
-*/
-
-
-// $(function () {
-
-//     // Upon loading, get authentication token!
-//     alert("hi");
-
-//     // $("#dedup-btn").on("click", function() {
-//     //     var playlistLink = $("#dedup-txtbox").val();
-
-//     //     // alert(playlistLink);
-
-//     //     // Check if playlist is correct $.ajax... etc.
-//     // });
-
-// });

@@ -242,6 +242,7 @@ h1.gotham, h2.gotham {
     text-align: left;
 }
 
+
 header .deduplicatify-cover {
     background-color:rgb(18, 18, 18);
     height: 300px;
@@ -264,6 +265,18 @@ header .deduplicatify-cover .title {
 header .deduplicatify-cover img {
     width: 300px;
     /* background-color: red; */
+}
+
+@media screen and (max-width: 1300px) {
+    header .deduplicatify-cover {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        flex-direction: column-reverse;
+    }
+
+    header .deduplicatify-cover img {
+        width: 200px;
+    }
 }
 
 .description {
