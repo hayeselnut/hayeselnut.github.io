@@ -243,6 +243,10 @@ section h2 {
     font-family: gotham-bold, sans-serif;
 }
 
+.gotham p {
+    font-family: gotham-light, sans-serif;
+}
+
 h1.gotham, h2.gotham {
     text-align: left;
 }
@@ -300,36 +304,37 @@ header .deduplicatify-cover img {
     /* how to change font? */
 }
 
-.results {
+#dedup-examples {
+    display: block;
+}
+
+#dedup-results {
+    display: none;
     margin-top: 50px;
 }
 
-.results .playlist-metadata {
+.playlist-metadata {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
 }
 
-
-.results .playlist-metadata .playlist-info {
+.playlist-metadata .playlist-info {
     max-width: 50%;
     padding-right: 50px;
 }
 
-.results .playlist-metadata .playlist-info * {
+.playlist-metadata .playlist-info * {
     text-align: left;
-}
-
-#playlist-desc {
-    font-family: gotham-light, sans-serif;
 }
 
 #playlist-img {
     width: 300px;
+    box-shadow: 00px 00px 5px rgb(0,0,0);
 }
 
-.results .similar-songs {
+.similar-songs {
     text-align: center;
 }
 

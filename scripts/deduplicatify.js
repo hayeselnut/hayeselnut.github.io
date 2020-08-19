@@ -53,8 +53,10 @@ function updatePlaylistMetadata(p) {
 
 // Consider using change or keydown event
 $("#dedup-txtbox").on("change", function() {
-    var playlistLink = $(this).val();
+    $("#dedup-examples").fadeOut(500).css("display", "none");
+    $("#dedup-results").fadeOut(500).css("display", "block").fadeIn(500);
 
+    var playlistLink = $(this).val();
     var playlistId = getPlaylistId(playlistLink);
 
     // Get playlist metadata and update screen
@@ -117,7 +119,7 @@ function isSimilarSong(s1, s2) {
 
     // Check artist ids
     const intersection = s1.artists.filter(a => s2.artists.includes(a));
-    if (intersection.length == 0) {
+    if (!intersection.length) {
         return false;
     }
 
@@ -191,7 +193,7 @@ $("#dedup-btn").on("click", function() {
             if (similars.length) {
                 seen[i] = true;
 
-                $("#sim-songs").append("<br/><br/>Similar Duplicates:<br/>")
+                $("#sim-songs").append("<br/><br/>Duplicates:<br/>")
                 $("#sim-songs").append(printSong(songs[i])).fadeIn(duration);
 
                 similars.forEach(function(idx) {
