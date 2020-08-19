@@ -61,8 +61,6 @@ $("#dedup-txtbox").on("click", function() {
 function getSongDetails(song) {
     const artists = [];
     const artist_names = [];
-    console.log(song);
-    // console.log(song.track.name, song.track.artists);
     song.track.artists.forEach(function(artist) {
         artists.push(artist.id);
         artist_names.push(artist.name);
@@ -103,8 +101,15 @@ function isSimilarSong(song1, song2) {
     var s2 = song2.name.toLowerCase();
 
     // Check song name is similar
-    if (!s1.includes(s2) && !s2.includes(s1)) {
-        return false;
+    if (s1.length <= 2 || s2.length <= 2) {
+        // Special case for small song names
+        if (s1 != s2) {
+            return false;
+        }
+    } else {
+        if (!s1.includes(s2) && !s2.includes(s1)) {
+            return false;
+        }
     }
 
     // Check artist ids
@@ -128,6 +133,7 @@ function isSimilarSong(song1, song2) {
     }
 
     // They are similar!
+    console.log(Math.abs(song1.duration_ms - song2.duration_ms));
     return true;
 }
 
