@@ -280,7 +280,7 @@ header .deduplicatify-cover img {
 }
 
 .description {
-    text-align: center;
+    text-align: left;
 }
 
 .input {
@@ -311,15 +311,12 @@ header .deduplicatify-cover img {
     padding-right: 50px;
 }
 
-.results .playlist-metadata .playlist-artwork {
-    /* max-height: 100%;
-    width: auto; */
-    /* background-color: violet; */
-    margin: 0;
-}
-
 #playlist-img {
     width: 300px;
+}
+
+.results .similar-songs {
+    text-align: center;
 }
 
 /* FOOTER */

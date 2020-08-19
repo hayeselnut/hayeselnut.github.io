@@ -43,7 +43,7 @@ function updatePlaylistMetadata(p) {
         $("#playlist-owner").html(p.owner.display_name);
         $("#playlist-desc").html(p.description);
 
-        if (p.images.length != 0) {
+        if (p.images.length) {
             $("#playlist-img").attr("src", p.images[0].url);
         } else {
             $("#playlist-img").attr("src", "images/blank-playlist.jpg");
@@ -71,58 +71,139 @@ $("#dedup-txtbox").on("blur", function() {
     // Check if playlist is correct $.ajax... etc.
 });
 
+function getSongDetails(s) {
+    const artists = [];
+    s.track.artists.forEach(function(a) {
+        artists.push(a.id);
+    });
+
+    return {
+        "id": s.track.id,
+        "name": s.track.name,
+        "artists": artists,
+        "album": s.track.album.id,
+        "album_name": s.track.album.name,
+        "duration_ms": s.track.duration_ms,
+    };
+}
+
 function getSongs(p) {
     const songs = [];
 
-    p.items.forEach(function (s) {
-        const artists = [];
-        s.track.artists.forEach(function (a) {
-            artists.push(a.id);
-        })
-
-        songs.push({
-            "id": s.track.id,
-            "name": s.track.name,
-            "artists": artists,
-            "album": s.track.album.id,
-            "album_name": s.track.album.name,
-            "duration_ms": s.track.duration_ms,
-        });
+    p.items.forEach(function(s) {
+        songs.push(getSongDetails(s));
     })
 
     return songs;
 }
+
+function getTracks(url) {
+    return $.ajax({
+        type: "GET",
+        url: url,
+        headers: {"Authorization": "Bearer " + ACCESS_TOKEN},
+    });
+}
+
+function isSimilarSong(s1, s2) {
+    const buzzwords = ["remix", "acoustic", "live"];
+    s1.name = s1.name.toLowerCase();
+    s2.name = s2.name.toLowerCase();
+
+    // Check song name is similar
+    if (!s1.name.includes(s2.name) && !s2.name.includes(s1.name)) {
+        return false;
+    }
+
+    // Check artist ids
+    const intersection = s1.artists.filter(a => s2.artists.includes(a));
+    if (intersection.length == 0) {
+        return false;
+    }
+
+    // Check if songs are within 10 secs of each other
+    if (Math.abs(s1.duration_ms - s2.duration_ms) > 10000) {
+        return false;
+    }
+
+    // Check not a transformed version of original song
+    for (var i = 0; i < buzzwords.length; i++) {
+        var bw = buzzwords[i];
+
+        if ( (s1.name.includes(bw) && !s2.name.includes(bw)) || (s2.name.includes(bw) && !s1.name.includes(bw)) ) {
+            return false;
+        }
+    }
+
+    // They are similar!
+    return true;
+}
+
+function printSong(s, idx) {
+
+    return '<iframe src = "https://open.spotify.com/embed/track/' + s.id + '" width="600" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"><i/frame>'
+}
+
 $("#dedup-btn").on("click", function() {
     var playlistLink = $("#dedup-txtbox").val();
     var playlistId = getPlaylistId(playlistLink);
 
     console.log("playlist id:", playlistId);
 
-    var songs;
+    $("#sim-songs").empty();
 
     Promise.coroutine(function*() {
-        var p = yield $.ajax({
-            type: "GET",
-            url: "https://api.spotify.com/v1/playlists/" + playlistId + "/tracks",
-            headers: {"Authorization": "Bearer " + ACCESS_TOKEN},
-        });
-
-        songs = getSongs(p);
+        var p = yield getTracks("https://api.spotify.com/v1/playlists/" + playlistId + "/tracks");
+        var songs = getSongs(p);
 
         while (p.next) {
-            p = yield $.ajax({
-                type: "GET",
-                url: p.next,
-                headers: {"Authorization": "Bearer " + ACCESS_TOKEN},
-            });
-
+            p = yield getTracks(p.next);
             songs = songs.concat(getSongs(p));
         }
 
         console.log("all songs", songs);
 
-        // if next page exists, yield until next page does not exist
+        // var songsOutput = "";
+        // songs.forEach(function(s, idx) {
+        //     songsOutput += printSong(s, idx);
+        // });
+
+        // $("#sim-songs").html(songsOutput);
+
+        // Detect common songs
+        seen = {};
+
+        for (var i = 0; i < songs.length; i++) {
+            if (i in seen) {
+                continue;
+            }
+
+            const similars = [];
+
+            for (var j = i + 1; j < songs.length; j++) {
+                if (isSimilarSong(songs[i], songs[j])) {
+                    similars.push(j);
+                }
+            }
+
+            // If found similars then print them
+            if (similars.length) {
+                seen[i] = true;
+
+                $("#sim-songs").append("<br/><br/>Similar Duplicates:<br/>")
+                $("#sim-songs").append(printSong(songs[i], i));
+
+                similars.forEach(function(idx) {
+                    if (idx in seen) {
+                        $("#sim-songs").append("ERRORRRRRRRRRR LOGIC ERROR");
+                    }
+
+                    seen[idx] = true;
+                    $("#sim-songs").append(printSong(songs[idx], idx));
+                })
+            }
+        }
+
     })();
-    console.log("all songs outside of promise.corouitne", songs);
 
 });
