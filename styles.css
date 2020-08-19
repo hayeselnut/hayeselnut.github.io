@@ -256,14 +256,20 @@ h1.gotham, h2.gotham {
 
 header .deduplicatify-cover {
     background-color:rgb(18, 18, 18);
-    height: 300px;
-    display: flex;
+    height: auto;
+    padding: 0 5%;
+    padding-top: 100px;
     text-align: center;
+}
+
+header .deduplicatify-cover div {
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: center;
     align-items: center;
-    padding: 0 15%;
+    height: 300px;
+    overflow: visible;
 }
 
 header .deduplicatify-cover .title {
@@ -273,12 +279,19 @@ header .deduplicatify-cover .title {
     /* background-color: red; */
 }
 
-header .deduplicatify-cover img {
-    width: 300px;
+header .deduplicatify-cover .input {
+    padding-top: 150px;
+    padding-bottom: 50px;
+    text-align: center;
     /* background-color: red; */
 }
 
-@media screen and (max-width: 1300px) {
+header .deduplicatify-cover img {
+    width: 400px;
+    /* background-color: red; */
+}
+
+/* @media screen and (max-width: 1300px) {
     header .deduplicatify-cover {
         padding-top: 50px;
         padding-bottom: 50px;
@@ -288,7 +301,7 @@ header .deduplicatify-cover img {
     header .deduplicatify-cover img {
         width: 200px;
     }
-}
+} */
 
 .description {
     padding-top: 50px;
@@ -305,27 +318,17 @@ header .deduplicatify-cover img {
     width: 80%;
 }
 
-.input {
-    text-align: center;
-    padding-top: 30px;
-}
-
-.input label {
-    font-family: gotham-light, sans-serif;
-    text-align: left;
-}
-
 .input input {
-    width: 70%;
+    width: 50%;
     padding: 10px;
     text-align: center;
     font-size: 16px;
-    color: grey;
+    color: white;
     font-family: monospace;
     outline: none;
     border: none;
-    border-bottom: 1px solid grey;
-    transition: 0.5s;
+    background-color: transparent;
+    border-bottom: 1px solid white;
 }
 
 .button {
@@ -346,7 +349,8 @@ header .deduplicatify-cover img {
 }
 
 #dedup-btn:hover {
-    background-color: rgb(30, 215, 96);
+    background-color: white;
+    color: black;
 }
 
 #remove-dupes-btn {

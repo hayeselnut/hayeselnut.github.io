@@ -18,9 +18,28 @@
             </nav>
 
             <section class="deduplicatify-cover">
-                <h1 class="title">.deduplicatify_</h1>
-                <img src="assets/deduplicatify/logo_green.svg"/>
+                <div>
+                    <h1 class="title">.deduplicatify_</h1>
+                    <img src="assets/deduplicatify/logo_green.svg"/>
+                </div>
+
+
+                <section class="input">
+                    <!-- <p>Ignore:</p>
+                    <input id="ignore-remix" type="checkbox" value="remix">
+                    <label for="ignore-remix">remixes</label><br>
+                    <input id="ignore-live" type="checkbox" value="live">
+                    <label for="ignore-live">live performances</label><br>
+                    <input id="ignore-acoustic" type="checkbox" value="acoustic">
+                    <label for="ignore-acoustic">acoustic covers</label><br> -->
+
+                    <input id="dedup-txtbox" type="text" value="Enter your Spotify playlist link">
+                    <br/>
+                    <button class="button" id="dedup-btn">Detect duplicates</button>
+                </section>
             </section>
+
+
         </header>
 
         <section class="description">
@@ -45,18 +64,7 @@
             <img src="assets/deduplicatify/copy_playlist_link.png" alt="how to copy Spotify playlist link"/>
         </section>
 
-        <section class="input">
-            <!-- <p>Ignore:</p>
-            <input id="ignore-remix" type="checkbox" value="remix">
-            <label for="ignore-remix">remixes</label><br>
-            <input id="ignore-live" type="checkbox" value="live">
-            <label for="ignore-live">live performances</label><br>
-            <input id="ignore-acoustic" type="checkbox" value="acoustic">
-            <label for="ignore-acoustic">acoustic covers</label><br> -->
-
-            <input id="dedup-txtbox" type="text" value="Enter your Spotify playlist link">
-            <button class="button" id="dedup-btn">Detect duplicates</button>
-        </section>
+        
 
         <section id="dedup-results">
             <div class="playlist-metadata" id="playlist-metadata">

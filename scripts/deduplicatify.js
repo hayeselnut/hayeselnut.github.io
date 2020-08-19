@@ -1,5 +1,4 @@
-const SPOTIFY_CLIENT_ID = "aa601ee4dc62466397f8599de4944648";
-const SPOTIFY_CLIENT_SECRET = "75264fdf37ac43bdbbf2de943b7e3667";
+const SPOTIFY_SECRET = "YWE2MDFlZTRkYzYyNDY2Mzk3Zjg1OTlkZTQ5NDQ2NDg6NzUyNjRmZGYzN2FjNDNiZGJiZjJkZTk0M2I3ZTM2Njc="
 const GRANT_TYPE = "client_credentials";
 
 var ACCESS_TOKEN;
@@ -9,7 +8,7 @@ $(document).ready(function() {
         type: "POST",
         url: "https://accounts.spotify.com/api/token",
         data: {"grant_type": GRANT_TYPE},
-        headers: {"Authorization": "Basic " + btoa(SPOTIFY_CLIENT_ID + ':' + SPOTIFY_CLIENT_SECRET)},
+        headers: {"Authorization": "Basic " + SPOTIFY_SECRET},
         success: function(response) {
             ACCESS_TOKEN = response.access_token;
             console.log("Access Token successfully retrieved:", ACCESS_TOKEN);
@@ -227,6 +226,9 @@ $("#dedup-btn").on("click", async function() {
     $("#sim-songs").css("display", "none");
     $("#sim-songs").html("Loading...");
 
+    // Scroll into view
+    $("#dedup-results")[0].scrollIntoView();
+
     var playlistLink = $("#dedup-txtbox").val();
     var playlistId = getPlaylistId(playlistLink);
     console.log("playlist id:", playlistId);
@@ -256,8 +258,5 @@ $("#dedup-btn").on("click", async function() {
 
     // Show duplicates
     showDuplicates(songs, duplicates);
-
-    // Scroll into view
-    $("#dedup-results").scrollIntoView();
 
 });
