@@ -42,39 +42,20 @@ function updatePlaylistMetadata(p) {
         $("#playlist-name").html(p.name);
         $("#playlist-owner").html(p.owner.display_name);
         $("#playlist-desc").html(p.description);
+        $("#playlist-length").html(p.tracks.total + " songs");
 
         if (p.images.length) {
             $("#playlist-img").attr("src", p.images[0].url);
         } else {
-            $("#playlist-img").attr("src", "images/blank-playlist.jpg");
+            $("#playlist-img").attr("src", "assets//deduplicatify/blank-playlist.jpg");
         }
-    }).fadeIn(duration);
+    }).fadeIn(duration, function() {
+        $("#sim-songs").fadeIn(duration);
+    });
 }
 
 $("#dedup-txtbox").on("click", function() {
     $(this).val("");
-});
-
-// Consider using change or keydown event
-$("#dedup-txtbox").on("change", function() {
-    $("#dedup-examples").fadeOut(500).css("display", "none");
-    $("#dedup-results").fadeOut(500).css("display", "block").fadeIn(500);
-
-    var playlistLink = $(this).val();
-    var playlistId = getPlaylistId(playlistLink);
-
-    // Get playlist metadata and update screen
-    $.ajax({
-        type: "GET",
-        url: "https://api.spotify.com/v1/playlists/" + playlistId,
-        headers: {"Authorization": "Bearer " + ACCESS_TOKEN},
-        success: updatePlaylistMetadata,
-        error: function() {j
-            console.log("Invalid Spotify playlist link");
-        }
-    });
-
-    // Check if playlist is correct $.ajax... etc.
 });
 
 function getSongDetails(s) {
@@ -152,61 +133,69 @@ function printSong(s) {
     return '<iframe src="https://open.spotify.com/embed/track/' + s.id + '" width="' + width + '" height="' + height + '" frameborder="0" allowtransparency="true" allow="encrypted-media"><i/frame>'
 }
 
-$("#dedup-btn").on("click", function() {
+
+$("#dedup-btn").on("click", async function() {
+    $("#dedup-results").css("visibility", "visible");
+    $("#sim-songs").css("display", "none");
+
     var playlistLink = $("#dedup-txtbox").val();
     var playlistId = getPlaylistId(playlistLink);
+
+    // Get playlist metadata and update screen
+    $.ajax({
+        type: "GET",
+        url: "https://api.spotify.com/v1/playlists/" + playlistId,
+        headers: {"Authorization": "Bearer " + ACCESS_TOKEN},
+        success: updatePlaylistMetadata,
+        error: function() {
+            console.log("Invalid Spotify playlist link");
+        }
+    });
 
     console.log("playlist id:", playlistId);
 
     $("#sim-songs").empty();
 
-    Promise.coroutine(function*() {
-        var p = yield getTracks("https://api.spotify.com/v1/playlists/" + playlistId + "/tracks");
-        var songs = getSongs(p);
+    var p = await getTracks("https://api.spotify.com/v1/playlists/" + playlistId + "/tracks");
+    var songs = getSongs(p);
 
-        while (p.next) {
-            p = yield getTracks(p.next);
-            songs = songs.concat(getSongs(p));
+    while (p.next) {
+        p = await getTracks(p.next);
+        songs = songs.concat(getSongs(p));
+    }
+    console.log("all songs", songs);
+    // Detect common songs
+    seen = {};
+
+    for (var i = 0; i < songs.length; i++) {
+        if (i in seen) {
+            continue;
         }
 
-        console.log("all songs", songs);
+        const similars = [];
 
-        // var songsOutput = "";
-        // songs.forEach(function(s, idx) {
-        //     songsOutput += printSong(s, idx);
-        // });
-
-        // $("#sim-songs").html(songsOutput);
-
-        // Detect common songs
-        seen = {};
-
-        for (var i = 0; i < songs.length; i++) {
-            if (i in seen) {
-                continue;
-            }
-
-            const similars = [];
-
-            for (var j = i + 1; j < songs.length; j++) {
-                if (isSimilarSong(songs[i], songs[j])) {
-                    similars.push(j);
-                }
-            }
-
-            // If found similars then print them
-            if (similars.length) {
-                seen[i] = true;
-
-                $("#sim-songs").append(printSong(songs[i]));
-                similars.forEach(function(idx) {
-                    seen[idx] = true;
-                    $("#sim-songs").append(printSong(songs[idx]));
-                });
+        for (var j = i + 1; j < songs.length; j++) {
+            if (isSimilarSong(songs[i], songs[j])) {
+                similars.push(j);
             }
         }
 
-    })();
+        // If found similars then print them
+        if (similars.length) {
+            seen[i] = true;
+
+            $("#sim-songs").append(printSong(songs[i]));
+            similars.forEach(function(idx) {
+                seen[idx] = true;
+                $("#sim-songs").append(printSong(songs[idx]));
+            });
+        }
+    }
+
+    if (!Object.keys(seen).length) {
+        // No duplicates found
+        $("#sim-songs").append("No duplicates found!");
+    }
 
     // Scroll into view
     $("#dedup-results").scrollIntoView();

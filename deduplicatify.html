@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>.deduplicatify_</title>
+        <link rel="icon" href="assets/deduplicatify/deduplicatify.svg">
         <link rel="stylesheet" href="styles.css">
     </head>
 
@@ -18,49 +19,62 @@
 
             <section class="deduplicatify-cover">
                 <h1 class="title">.deduplicatify_</h1>
-                <img src="assets/deduplicatify/deduplicatify.svg"/>
+                <img src="assets/deduplicatify/logo_green.svg"/>
             </section>
         </header>
 
         <section class="description">
-            <p>Product description</p>
+            <p>
+                Deduplicatify detects any duplicate songs in a Spotify playlist.
+                The detection algorithm will label two songs as duplicates if their:
+                <ul>
+                    <li>song names are similar</li>
+                    <li>artists are the same</li>
+                    <li>song length is within 10 seconds of each other.</li>
+                </ul>
+            </p>
+            <p>
+                Using this method, a song added from two different albums will be detected, which is something Spotify currently doesn't detect.
+            </p>
+            <p>
+                The algorithm also recognises remixed, live, and acoustic versions of a song as a different song to their original counterparts, and thus will not mark them as duplicates.
+            </p>
+            <p>
+                You can copy a Spotify playlist link as shown below. Enter yours below to detect any duplicate songs in your playlist.
+            </p>
+            <p>
+                <em>FUTURE FUNCTIONALITY: button to delete duplicates (requires login details)</em>
+            </p>
+            <img src="assets/deduplicatify/copy_playlist_link.png" alt="how to copy Spotify playlist link"/>
         </section>
 
         <section class="input">
-            <input id="dedup-txtbox" type="text" value="Enter your Spotify playlist link">
-            <text>hi</text>
-            <button id="dedup-btn" onClick="document.getElementById('dedup-results').scrollIntoView();">Detect duplicates</button>
-        </section>
+            <!-- <p>Ignore:</p>
+            <input id="ignore-remix" type="checkbox" value="remix">
+            <label for="ignore-remix">remixes</label><br>
+            <input id="ignore-live" type="checkbox" value="live">
+            <label for="ignore-live">live performances</label><br>
+            <input id="ignore-acoustic" type="checkbox" value="acoustic">
+            <label for="ignore-acoustic">acoustic covers</label><br> -->
 
-        <section id="dedup-examples">
-            <p>For example, try using the following links:</p>
-            <p>spotify:playlist:4cEKgVkLjuM0Fo5CYyhoIp<br/>winter is here</p>
-            <p>spotify:playlist:26OU3XtIUE9gn3BuhkeAG2<br/>2am tunes</p>
-            <p>spotify:playlist:5JQEOasfYzHejqwuNTQinA<br/>faded & outdated</p>
-            <p>spotify:playlist:1laBVRwIsV64Tdwel1J8oS<br/>whtie rave</p>
-            <p>spotify:playlist:1sWZlNyRtjSISAOskxDXUX<br/>.hmm_</p>
+            <input id="dedup-txtbox" type="text" value="Enter your Spotify playlist link">
+            <button class="button" id="dedup-btn">Detect duplicates</button>
         </section>
 
         <section id="dedup-results">
             <div class="playlist-metadata" id="playlist-metadata">
                 <div class="playlist-info">
-                    <h1 id="playlist-name">REALLY LONG LONG LONG PLAYLIST TITLE</h1>
-                    <h2 id="playlist-owner">playlist_authors</h2>
-                    <p id="playlist-desc">playlist_desc</p>
+                    <h1 id="playlist-name"></h1>
+                    <h2 id="playlist-owner"></h2>
+                    <p id="playlist-length"></p>
+                    <p id="playlist-desc"></p>
                 </div>
                 <div class="playlist-artwork">
-                    <img id="playlist-img" src="assets//deduplicatify/blank-playlist.jpg"/>
+                    <img id="playlist-img" src=""/>
                 </div>
             </div>
-            <div class="similar-songs" id="sim-songs">
-                <div class="dupe-container">
-                    <iframe src="https://open.spotify.com/embed/track/75lo8VozcCLRG9WGG674iD" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                    <iframe src="https://open.spotify.com/embed/track/75lo8VozcCLRG9WGG674iD" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                    <iframe src="https://open.spotify.com/embed/track/75lo8VozcCLRG9WGG674iD" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                    <iframe src="https://open.spotify.com/embed/track/75lo8VozcCLRG9WGG674iD" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                    <iframe src="https://open.spotify.com/embed/track/75lo8VozcCLRG9WGG674iD" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                </div>
-            </div>
+            <div class="similar-songs" id="sim-songs"></div>
+            <button class="button" id="remove-dupes-btn">Remove duplicates (doesn't do anything lol)</button>
         </section>
 
         <footer>
@@ -70,7 +84,7 @@
             </ul>
         </footer>
 
-        <script src="//cdn.jsdelivr.net/npm/bluebird@3.7.2/js/browser/bluebird.min.js"></script>
+        <!-- <script src="//cdn.jsdelivr.net/npm/bluebird@3.7.2/js/browser/bluebird.min.js"></script> -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="scripts/deduplicatify.js"></script>
     </body>

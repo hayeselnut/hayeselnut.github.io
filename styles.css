@@ -241,10 +241,12 @@ section h2 {
 
 .gotham {
     font-family: gotham-bold, sans-serif;
+    /* color: white; */
 }
 
 .gotham p {
     font-family: gotham-light, sans-serif;
+    /* color: white; */
 }
 
 h1.gotham, h2.gotham {
@@ -289,12 +291,28 @@ header .deduplicatify-cover img {
 }
 
 .description {
-    text-align: left;
+    padding-top: 50px;
+    text-align: center;
     font-family: gotham-light, sans-serif;
+}
+
+.description p, .description li {
+    text-align: left;
+}
+
+.description img {
+    min-width: 700px;
+    width: 80%;
 }
 
 .input {
     text-align: center;
+    padding-top: 30px;
+}
+
+.input label {
+    font-family: gotham-light, sans-serif;
+    text-align: left;
 }
 
 .input input {
@@ -304,36 +322,48 @@ header .deduplicatify-cover img {
     font-size: 16px;
     color: grey;
     font-family: monospace;
-    /* how to change font? */
+    outline: none;
+    border: none;
+    border-bottom: 1px solid grey;
+    transition: 0.5s;
 }
 
-
-#dedup-btn {
-    background-color: rgb(30, 184, 84);
+.button {
     padding: 10px 30px;
     border: none;
     font-family: gotham-bold, sans-serif;
     border-radius: 100px;
     color: white;
     transition-duration: 0.5s;
-    box-shadow: 0px 0px 5px grey;
+    /* box-shadow: 0px 0px 5px grey; */
     outline: none;
     cursor: pointer;
+}
+
+#dedup-btn {
+    margin-top: 10px;
+    background-color: rgb(30, 184, 84);
 }
 
 #dedup-btn:hover {
     background-color: rgb(30, 215, 96);
 }
 
-#dedup-examples {
-    display: block;
+#remove-dupes-btn {
+    background-color: rgb(205, 26, 43);
+    display: none;
+}
+
+#remove-dupes-btn:hover {
+    background-color: rgb(225, 26, 43);
 }
 
 #dedup-results {
-    padding-top: 10px;
-    display: block;
-    margin-top: 50px;
+    min-height: 400px;
+    visibility: hidden;
+    padding-top: 50px;
     padding-bottom: 50px;
+    text-align: center;
 }
 
 .playlist-metadata {
@@ -341,6 +371,7 @@ header .deduplicatify-cover img {
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
+    padding-bottom: 50px;
 }
 
 .playlist-metadata .playlist-info {
@@ -357,12 +388,9 @@ header .deduplicatify-cover img {
     box-shadow: 00px 00px 5px rgb(0,0,0);
 }
 
-.similar-songs .dupe-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
+#sim-songs {
+    padding-bottom: 50px;
+    display: none;
 }
 
 /* FOOTER */
