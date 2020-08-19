@@ -295,7 +295,7 @@ header .deduplicatify-cover .input input {
     border: none;
     background-color: transparent;
     border-bottom: 1px solid white;
-    min-width: 400px;
+    min-width: 300px;
 }
 
 header .deduplicatify-cover img {
