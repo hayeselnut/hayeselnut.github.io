@@ -4,6 +4,11 @@
 }
 
 @font-face {
+    src: url(fonts/gotham-light.otf);
+    font-family: gotham-light;
+}
+
+@font-face {
     src: url(fonts/roboto-mono.ttf);
     font-family: roboto-mono;
 }
@@ -281,6 +286,7 @@ header .deduplicatify-cover img {
 
 .description {
     text-align: left;
+    font-family: gotham-light, sans-serif;
 }
 
 .input {
@@ -302,13 +308,21 @@ header .deduplicatify-cover img {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    align-content: center;
     justify-content: center;
 }
+
 
 .results .playlist-metadata .playlist-info {
     max-width: 50%;
     padding-right: 50px;
+}
+
+.results .playlist-metadata .playlist-info * {
+    text-align: left;
+}
+
+#playlist-desc {
+    font-family: gotham-light, sans-serif;
 }
 
 #playlist-img {

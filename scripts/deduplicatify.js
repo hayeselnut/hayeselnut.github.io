@@ -52,7 +52,7 @@ function updatePlaylistMetadata(p) {
 }
 
 // Consider using change or keydown event
-$("#dedup-txtbox").on("blur", function() {
+$("#dedup-txtbox").on("change", function() {
     var playlistLink = $(this).val();
 
     var playlistId = getPlaylistId(playlistLink);
@@ -139,18 +139,19 @@ function isSimilarSong(s1, s2) {
     return true;
 }
 
-function printSong(s, idx) {
+function printSong(s) {
 
     return '<iframe src = "https://open.spotify.com/embed/track/' + s.id + '" width="600" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"><i/frame>'
 }
 
 $("#dedup-btn").on("click", function() {
+    var duration = 2000;
     var playlistLink = $("#dedup-txtbox").val();
     var playlistId = getPlaylistId(playlistLink);
 
     console.log("playlist id:", playlistId);
 
-    $("#sim-songs").empty();
+    $("#sim-songs").fadeOut(100).empty();
 
     Promise.coroutine(function*() {
         var p = yield getTracks("https://api.spotify.com/v1/playlists/" + playlistId + "/tracks");
@@ -191,7 +192,7 @@ $("#dedup-btn").on("click", function() {
                 seen[i] = true;
 
                 $("#sim-songs").append("<br/><br/>Similar Duplicates:<br/>")
-                $("#sim-songs").append(printSong(songs[i], i));
+                $("#sim-songs").append(printSong(songs[i])).fadeIn(duration);
 
                 similars.forEach(function(idx) {
                     if (idx in seen) {
@@ -199,7 +200,7 @@ $("#dedup-btn").on("click", function() {
                     }
 
                     seen[idx] = true;
-                    $("#sim-songs").append(printSong(songs[idx], idx));
+                    $("#sim-songs").append(printSong(songs[idx]));
                 })
             }
         }
