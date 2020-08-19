@@ -222,7 +222,7 @@ function showDuplicates(songs, duplicates) {
 }
 
 $("#dedup-btn").on("click", async function() {
-    $("#dedup-results").css("visibility", "visible");
+    $("#dedup-results").css("display", "block");
     $("#dedup-desc").slideUp(1000);
     $("#sim-songs").css("display", "none");
     $("#sim-songs").html("Loading...");
