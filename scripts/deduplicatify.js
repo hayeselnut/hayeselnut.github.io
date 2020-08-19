@@ -53,9 +53,9 @@ function updatePlaylistMetadata(p) {
     });
 }
 
-$("#dedup-txtbox").on("click", function() {
-    $(this).val("");
-});
+// $("#dedup-txtbox").on("click", function() {
+//     $(this).val("");
+// });
 
 function getSongDetails(song) {
     const artists = [];
