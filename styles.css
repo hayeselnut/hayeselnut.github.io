@@ -71,7 +71,7 @@ a:hover {
 
 header .cover {
     background-color: black;
-    background-image: url("images/leadership_camp.JPG");
+    background-image: url("assets/leadership_camp.JPG");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -154,11 +154,11 @@ section h2 {
 }
 
 .projects .card-container .card.dewoh {
-    background-image: url("images/dewoh.png");
+    background-image: url("assets/dewoh.png");
 }
 
 .projects .card-container .card.intranet {
-    background-image: url("images/intranet.png");
+    background-image: url("assets/intranet.png");
 }
 
 .projects .card-container .card p {
