@@ -175,8 +175,7 @@ function getDuplicates(songs) {
 }
 
 function showInvalidPlaylistLink() {
-    alert("invalid");
-    $("#sim-songs").fadeIn(500).html("Invalid Spotify playtlist link");
+    $("#sim-songs").html("Invalid Spotify playtlist link").fadeIn(500);
 }
 
 function showPlaylist(playlistId) {
