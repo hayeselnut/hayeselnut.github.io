@@ -19,6 +19,9 @@ html {
 
 body > section {
     padding: 0px 15%;
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /* BACKGROUND */
