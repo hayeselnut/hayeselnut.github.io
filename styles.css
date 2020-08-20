@@ -2,11 +2,11 @@
 
                                 Table of Contents
 
-                            1. Fonts
-                            2. Global
-                            3. Typography
-                            4. Layout
-                            5. Components
+                            1. Global
+                            2. Typography
+                            3. Layout
+                            4. Components
+                            5. Responsive Design
 
 *******************************************************************************/
 
@@ -38,13 +38,16 @@ h6 { font-size: 18px; }
 p  { font-size: 18px; }
 li { font-size: 18px; }
 
-.roboto-mono { font-family: roboto-mono, monospace; }
+a { color: white; text-decoration: none; font-family: roboto-mono, monospace; }
+a:hover,
+a:focus { text-decoration: underline; }
 
 .gotham { font-family: gotham-bold, sans-serif; }
 .gotham p,
 .gotham li { font-family: gotham-light, sans-serif; font-weight: normal;}
+.gotham strong { font-family: gotham-bold, sans-serif; }
 
-strong { font-family: gotham-bold, sans-serif; }
+
 
 /*******************************************************************************
 
@@ -84,14 +87,6 @@ nav ul {
 nav li {
     display: inline-block;
     margin: 20px;
-}
-nav a {
-    color: white;
-    text-decoration: none;
-}
-nav a:hover,
-nav a:focus {
-    text-decoration: underline;
 }
 
 header {
@@ -178,13 +173,14 @@ input {
 }
 
 .spotify-button {
-    padding: 10px 30px;
+    padding: 15px 30px;
     border: none;
     font-family: gotham-bold, sans-serif;
     border-radius: 100px;
     color: white;
     transition-duration: 0.5s;
     cursor: pointer;
+    text-transform: uppercase;
 }
 #dedup-btn {
     background-color: rgb(30, 184, 84);
@@ -360,65 +356,49 @@ iframe {
     padding: 16px 32px;
 }
 
-/* RESPONSIVE DESIGN */
+
+/*******************************************************************************
+
+                                RESPONSIVE DESIGN
+
+*******************************************************************************/
 
 @media screen and (max-width: 1300px) {
+    h1 { font-size: 64px; }
+
     header .cover div {
-        padding: 0px;
         flex-direction: column-reverse;
     }
 
-    header .cover div img {
+    header img {
         width: 200px;
     }
 
-    header .cover .title {
-        padding-top: 30px;
-        font-size: 64px;
-    }
-
-    .description img {
-        min-width: 0px;
-    }
-
     #dedup-results {
-        padding: 0 5%;
+        padding: 50px 5%;
     }
 }
 
 @media screen and (max-width: 800px) {
-    .similar-songs .set-of-dupes {
+    .set-of-dupes {
         justify-content: center;
     }
 }
 
 @media screen and (max-width: 600px) {
-    header .cover {
-        padding: 0 0;
-        padding-top: 0px;
-    }
+    h1 { font-size: 36px; }
 
-    header .cover div {
-        padding: 0px;
-        flex-direction: column-reverse;
-    }
-
-    header .cover div img {
-        width: 100px;
-        padding: 0px;
+    header img {
+        width: 150px;
+        padding: 0;
         margin: 0;
     }
 
-    header .cover .title {
-        padding-top: 30px;
-        font-size: 32px;
-    }
-
-    header .cover .input {
+    header .input {
         padding-top: 0;
     }
 
-    header .cover .input input {
+    input {
         font-size: 14px;
     }
 }
