@@ -18,7 +18,7 @@ html {
 }
 
 body > section {
-    padding: 0px 20%;
+    padding: 0px 15%;
 }
 
 /* BACKGROUND */
@@ -448,6 +448,16 @@ footer ul li {
     .description img {
         min-width: 0px;
     }
+
+    #dedup-results {
+        padding: 0 5%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .similar-songs .set-of-dupes {
+        justify-content: center;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -474,5 +484,9 @@ footer ul li {
 
     header .deduplicatify-cover .input {
         padding-top: 0;
+    }
+
+    header .deduplicatify-cover .input input {
+        font-size: 14px;
     }
 }

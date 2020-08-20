@@ -174,15 +174,18 @@ function getDuplicates(songs) {
     return duplicates;
 }
 
+function showInvalidPlaylistLink() {
+    alert("invalid");
+    $("#sim-songs").fadeIn(500).html("Invalid Spotify playtlist link");
+}
+
 function showPlaylist(playlistId) {
     $.ajax({
         type: "GET",
         url: "https://api.spotify.com/v1/playlists/" + playlistId,
         headers: {"Authorization": "Bearer " + ACCESS_TOKEN},
         success: updatePlaylistMetadata,
-        error: function() {
-            console.log("Invalid Spotify playlist link");
-        }
+        error: showInvalidPlaylistLink
     });
 }
 
@@ -224,8 +227,7 @@ function showDuplicates(songs, duplicates) {
 $("#dedup-btn").on("click", async function() {
     $("#dedup-results").css("display", "block");
     $("#dedup-desc").slideUp(1000);
-    $("#sim-songs").css("display", "none");
-    $("#sim-songs").html("Loading...");
+    $("#sim-songs").css("display", "none").html("Loading...");
 
     // Scroll into view
     $("#dedup-results")[0].scrollIntoView();
@@ -255,9 +257,8 @@ $("#dedup-btn").on("click", async function() {
         $("#sim-songs").html("No duplicates found!");
     } else {
         $("#sim-songs").empty();
+
+        // Show duplicates
+        showDuplicates(songs, duplicates);
     }
-
-    // Show duplicates
-    showDuplicates(songs, duplicates);
-
 });
