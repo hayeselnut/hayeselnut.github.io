@@ -47,7 +47,12 @@ a:focus { text-decoration: underline; }
 .gotham li { font-family: gotham-light, sans-serif; font-weight: normal;}
 .gotham strong { font-family: gotham-bold, sans-serif; }
 
-
+.roboto-mono { font-family: roboto-mono, monospace; }
+.roboto-mono h2,
+.roboto-mono h3,
+.roboto-mono h4,
+.roboto-mono h5,
+.roboto-mono h6 { text-align: center; }
 
 /*******************************************************************************
 
@@ -110,12 +115,20 @@ header .input {
     text-align: center;
 }
 
-/* #landing-page {
+#landing-page-cover {
     background-image: url("assets/leadership_camp.JPG");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}*/
+
+    margin: 0;
+    height: 500px;
+}
+#landing-page-title {
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+}
 
 footer {
     background: black;
