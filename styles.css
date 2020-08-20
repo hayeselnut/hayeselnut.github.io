@@ -1,22 +1,69 @@
-@font-face {
-    src: url(fonts/gotham-bold.otf);
-    font-family: gotham-bold;
+/*******************************************************************************
+
+                                Table of Contents
+
+                            1. Fonts
+                            2. Global
+                            3. Typography
+                            4. Layout
+                            5. Components
+
+*******************************************************************************/
+
+/*******************************************************************************
+
+                                    GLOBAL
+
+*******************************************************************************/
+@font-face { src: url(fonts/gotham-bold.otf);  font-family: gotham-bold;  }
+@font-face { src: url(fonts/gotham-light.otf); font-family: gotham-light; }
+@font-face { src: url(fonts/roboto-mono.ttf);  font-family: roboto-mono;  }
+
+html { scroll-behavior: smooth; }
+
+:focus { outline: none; }
+
+/*******************************************************************************
+
+                                    TYPOGRAPHY
+
+*******************************************************************************/
+h1 { font-size: 84px; }
+h2 { font-size: 36px; }
+h3 { font-size: 24px; }
+h4 { font-size: 18px; }
+h5 { font-size: 18px; }
+h6 { font-size: 18px; }
+
+p  { font-size: 18px; }
+li { font-size: 18px; }
+
+.roboto-mono { font-family: roboto-mono, monospace; }
+
+.gotham { font-family: gotham-bold, sans-serif; }
+.gotham p,
+.gotham li { font-family: gotham-light, sans-serif; font-weight: normal;}
+
+strong { font-family: gotham-bold, sans-serif; }
+
+/*******************************************************************************
+
+                                    LAYOUT
+
+*******************************************************************************/
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
-@font-face {
-    src: url(fonts/gotham-light.otf);
-    font-family: gotham-light;
+body {
+    padding: 0;
+    margin: 0;
+    background: white;
 }
-
-@font-face {
-    src: url(fonts/roboto-mono.ttf);
-    font-family: roboto-mono;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 body > section {
     padding: 0px 15%;
     max-width: 1000px;
@@ -24,82 +71,173 @@ body > section {
     margin-left: auto;
 }
 
-/* BACKGROUND */
-
-body {
-    background: white;
-    font-family: roboto-mono, monospace;
-    /* font-family: gotham-black, sans-serif; */
-    padding: 0;
-    margin: 0;
-}
-
-header {
-    background: red;
-}
-
-/* NAVBAR */
-
-header .navbar {
+nav {
     background: black;
     padding-right: 100px;
-    color: white;
-    margin: 0;
 }
-
-header .navbar ul {
+nav ul {
     list-style-type: none;
     display: flex;
     flex-direction: row-reverse;
     margin: 0;
 }
-
-header .navbar ul li {
+nav li {
     display: inline-block;
     margin: 20px;
 }
-
-/* HYPERLINKS */
-
-header a {
+nav a {
     color: white;
     text-decoration: none;
 }
-
-header a:hover {
+nav a:hover,
+nav a:focus {
     text-decoration: underline;
 }
 
-/* TITLE */
-
+header {
+    background-color:rgb(18, 18, 18);
+    color: white;
+    margin: 0;
+}
 header .cover {
-    background-color: black;
+    margin-top: 50px;
+    height: auto;
+}
+header .title {
+    margin: 5%;
+}
+header img {
+    width: 400px;
+}
+header .input {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+/* #landing-page {
     background-image: url("assets/leadership_camp.JPG");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}*/
 
-    margin: 0;
-    text-align: center;
-    font-size: 64px;
-}
-
-header .cover .title {
-    margin: 0;
+footer {
+    background: black;
     color: white;
-    background-color: rgba(0,0,0,0.6);
-    padding-top: 300px;
-    padding-bottom: 300px;
-    font-size: 64px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer a {
+    margin: 50px 50px;
+}
+footer .svg {
+    height: 50px;
+    transition: 1s;
+}
+footer .svg:hover,
+footer .svg:focus {
+    filter: brightness(500%);
 }
 
-section h1, section h2 {
+/*******************************************************************************
+
+                                    COMPONENTS
+
+*******************************************************************************/
+input {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    font-family: monospace;
+}
+#dedup-txtbox {
+    width: 50%;
+    min-width: 300px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.description {
+    padding-top: 30px;
+    text-align: center;
+}
+.description p,
+.description li {
+    text-align: left;
+}
+.description img {
+    max-width: 700px;
+    width: 80%;
+}
+
+.spotify-button {
+    padding: 10px 30px;
+    border: none;
+    font-family: gotham-bold, sans-serif;
+    border-radius: 100px;
+    color: white;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+#dedup-btn {
+    background-color: rgb(30, 184, 84);
+}
+#dedup-btn:hover,
+#dedup-btn:focus {
+    background-color: white;
+    color: black;
+}
+#remove-dupes-btn {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    display: none;
+}
+#remove-dupes-btn:hover,
+#remove-dupes-btn:focus {
+    background-color: rgb(225, 26, 43);
+    border-color: rgb(225, 26, 43);
+    color: white;
+}
+
+.results {
+    display: none;
+    padding: 50px 0px;
+    text-align: left;
+}
+#playlist-img {
+    width: 300px;
+    margin: 50px;
+    box-shadow: 00px 00px 5px grey;
+}
+
+.display-msg {
     text-align: center;
 }
 
-section h2 {
-    font-size: 18px;
+#sim-songs {
+    padding-bottom: 50px;
+    display: none;
 }
+#sim-songs p {
+    padding-top: 20px;
+}
+.set-of-dupes {
+    justify-content: flex-start;
+}
+iframe {
+    margin: 0px 5px 5px 5px;
+    box-shadow: 00px 00px 5px grey;
+}
+
+
 
 /* EXPERIENCE */
 
@@ -108,7 +246,6 @@ section h2 {
     display: flex;
     flex-direction: column;
 }
-
 .experience div {
     background-color: lightpink;
     display: flex;
@@ -117,13 +254,11 @@ section h2 {
     align-items: flex-start;
     flex-wrap: wrap;
 }
-
 .experience div img {
     width: 100px;
     height: 100px;
     margin-left: 10%;
 }
-
 .experience div p {
     width: 60%;
     margin-left: 10px;
@@ -134,14 +269,12 @@ section h2 {
 .projects {
     padding: 0 10%;
 }
-
 .projects .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: flex-start;
 }
-
 .projects .card-container .card {
     margin: 0;
     /* background-color: red; */
@@ -155,15 +288,12 @@ section h2 {
     overflow: hidden;
     transition: 0.5s ease;
 }
-
 .projects .card-container .card.dewoh {
     background-image: url("assets/dewoh.png");
 }
-
 .projects .card-container .card.intranet {
     background-image: url("assets/intranet.png");
 }
-
 .projects .card-container .card p {
     margin: 0;
     text-align: center;
@@ -174,12 +304,10 @@ section h2 {
     font-weight: 600;
     transition: 0.5s ease;
 }
-
 .projects .card-container .card:hover p {
     opacity: 1;
     background-color: rgb(255, 255, 255, 0.5);
 }
-
 .projects .card-container .card:hover {
     /* background-size: cover; */
     /* background-position-x: -100px; */
@@ -187,11 +315,9 @@ section h2 {
 }
 
 /* CHAMPS */
-
 .champs {
     background-color: lightgreen;
 }
-
 .champs div {
     display: flex;
     flex-wrap: wrap;
@@ -199,12 +325,10 @@ section h2 {
     align-content: flex-start;
     background-color: lightcoral;
 }
-
 .champs div .card {
     position: relative;
     /* border-radius: 50%; */
 }
-
 .champs div .card img {
     margin: 5%;
     width: 200px;
@@ -212,7 +336,6 @@ section h2 {
     /* border-radius: 50%;
     box-shadow: 1px 1px 10px black; */
 }
-
 .champs div .card .middle {
     transition: .5s ease;
     opacity: 0;
@@ -223,16 +346,13 @@ section h2 {
     -ms-transform: translate(-50%, -50%);
     text-align: center;
 }
-
 .champs div .card:hover img {
     opacity: 0.5;
     transform: scale(1.1);
 }
-
 .champs div .card:hover .middle {
     opacity: 1;
 }
-
 .champs div .card p {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
@@ -240,222 +360,19 @@ section h2 {
     padding: 16px 32px;
 }
 
-/* DEDUPLICATIFY */
-
-.gotham {
-    font-family: gotham-bold, sans-serif;
-    /* color: white; */
-}
-
-.gotham p {
-    font-family: gotham-light, sans-serif;
-    /* color: white; */
-}
-
-h1.gotham, h2.gotham {
-    text-align: left;
-}
-
-
-header .deduplicatify-cover {
-    background-color:rgb(18, 18, 18);
-    height: auto;
-    padding: 0 5%;
-    padding-top: 100px;
-}
-
-header .deduplicatify-cover  div {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    height: 200px;
-}
-
-header .deduplicatify-cover .title {
-    color: white;
-    margin: 0;
-    font-size: 84px;
-    margin-right: 5%;
-    /* background-color: red; */
-}
-
-header .deduplicatify-cover .input {
-    padding-top: 150px;
-    padding-bottom: 50px;
-    text-align: center;
-    /* background-color: red; */
-}
-
-header .deduplicatify-cover .input input {
-    width: 50%;
-    padding: 10px;
-    text-align: center;
-    font-size: 16px;
-    color: white;
-    font-family: monospace;
-    outline: none;
-    border: none;
-    background-color: transparent;
-    border-bottom: 1px solid white;
-    min-width: 300px;
-}
-
-header .deduplicatify-cover img {
-    width: 400px;
-    /* background-color: red; */
-}
-
-.description {
-    padding-top: 50px;
-    text-align: center;
-    font-family: gotham-light, sans-serif;
-}
-
-.description p, .description li {
-    text-align: left;
-}
-
-.description img {
-    min-width: 700px;
-    width: 80%;
-}
-
-.button {
-    padding: 10px 30px;
-    border: none;
-    font-family: gotham-bold, sans-serif;
-    border-radius: 100px;
-    color: white;
-    transition-duration: 0.5s;
-    /* box-shadow: 0px 0px 5px grey; */
-    outline: none;
-    cursor: pointer;
-}
-
-#dedup-btn {
-    margin-top: 10px;
-    background-color: rgb(30, 184, 84);
-}
-
-#dedup-btn:hover {
-    background-color: white;
-    color: black;
-}
-
-#remove-dupes-btn {
-    background-color: rgb(205, 26, 43);
-    display: none;
-}
-
-#remove-dupes-btn:hover {
-    background-color: rgb(225, 26, 43);
-}
-
-#dedup-results {
-    min-height: 400px;
-    display: none;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-}
-
-.playlist-metadata {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.playlist-metadata .playlist-info {
-    max-width: 100%;
-    padding-right: 50px;
-}
-
-.playlist-metadata .playlist-info * {
-    text-align: left;
-}
-
-#playlist-img {
-    width: 300px;
-    box-shadow: 00px 00px 5px grey;
-}
-
-#sim-songs {
-    padding-bottom: 50px;
-    display: none;
-}
-
-.similar-songs h1 {
-    text-align: left;
-}
-
-.similar-songs h2 {
-    padding-top: 20px;
-    text-align: left;
-    font-family: gotham-light, sans-serif;
-    font-size: 16px;
-}
-
-.similar-songs h2 strong {
-    padding-top: 20px;
-    text-align: left;
-    font-family: gotham-bold, sans-serif;
-}
-.similar-songs .set-of-dupes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-
-.similar-songs .set-of-dupes iframe {
-    margin: 5px;
-}
-
-/* FOOTER */
-
-footer {
-    background: black;
-    color: white;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-footer a {
-    margin: 50px 50px;
-}
-
-footer .svg {
-    height: 50px;
-    transition: 1s;
-}
-
-footer .svg:hover {
-    filter: brightness(7);
-}
-
-/* footer a img:hover {
-    fill: white;
-    height:  50px;
-} */
-
 /* RESPONSIVE DESIGN */
 
 @media screen and (max-width: 1300px) {
-    header .deduplicatify-cover div {
+    header .cover div {
         padding: 0px;
         flex-direction: column-reverse;
     }
 
-    header .deduplicatify-cover div img {
+    header .cover div img {
         width: 200px;
     }
 
-    header .deduplicatify-cover .title {
+    header .cover .title {
         padding-top: 30px;
         font-size: 64px;
     }
@@ -476,32 +393,32 @@ footer .svg:hover {
 }
 
 @media screen and (max-width: 600px) {
-    header .deduplicatify-cover {
+    header .cover {
         padding: 0 0;
         padding-top: 0px;
     }
 
-    header .deduplicatify-cover div {
+    header .cover div {
         padding: 0px;
         flex-direction: column-reverse;
     }
 
-    header .deduplicatify-cover div img {
+    header .cover div img {
         width: 100px;
         padding: 0px;
         margin: 0;
     }
 
-    header .deduplicatify-cover .title {
+    header .cover .title {
         padding-top: 30px;
         font-size: 32px;
     }
 
-    header .deduplicatify-cover .input {
+    header .cover .input {
         padding-top: 0;
     }
 
-    header .deduplicatify-cover .input input {
+    header .cover .input input {
         font-size: 14px;
     }
 }
