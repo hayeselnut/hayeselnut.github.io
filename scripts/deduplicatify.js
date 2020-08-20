@@ -22,7 +22,7 @@ $(document).ready(function() {
 function getPlaylistId(playlistLink) {
     // 2 cases
 
-    if (playlistLink.includes("open.spotify.com/playlist/")) {
+    if (playlistLink.includes("open.spotify.com/")) {
         // Playlist Link
         var split = playlistLink.split("/")
         return split[split.length - 1].split("?")[0];
@@ -49,7 +49,7 @@ function updatePlaylistMetadata(p) {
             $("#playlist-img").attr("src", "assets//deduplicatify/blank-playlist.jpg");
         }
     }).fadeIn(duration, function() {
-        $("#sim-songs").fadeIn(duration);
+        $("#sim-songs").css("padding-top", "0").fadeIn(duration);
     });
 }
 
@@ -175,7 +175,9 @@ function getDuplicates(songs) {
 }
 
 function showInvalidPlaylistLink() {
-    $("#sim-songs").html("Invalid Spotify playtlist link").fadeIn(500);
+    $("#playlist-metadata").fadeOut(500, function() {
+        $("#sim-songs").css("padding-top", "100px").html("Invalid Spotify playlist link").fadeIn(500);
+    });
 }
 
 function showPlaylist(playlistId) {
@@ -251,11 +253,16 @@ $("#dedup-btn").on("click", async function() {
     // Detect common songs
     duplicates = getDuplicates(songs);
 
-    if (!Object.keys(duplicates).length) {
+    if (!duplicates.length) {
         // No duplicates found
-        $("#sim-songs").html("No duplicates found!");
+        $("#sim-songs").css("padding-top", "1000px").html("No duplicates found!");
     } else {
-        $("#sim-songs").empty();
+        if (duplicates.length == 1) {
+            $("#sim-songs").html(`<h1>${duplicates.length} set of duplicates were found:</h1>`);
+        } else {
+            $("#sim-songs").html(`<h1>${duplicates.length} sets of duplicates were found:</h1>`);
+
+        }
 
         // Show duplicates
         showDuplicates(songs, duplicates);

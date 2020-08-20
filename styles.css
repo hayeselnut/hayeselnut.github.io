@@ -362,6 +362,7 @@ header .deduplicatify-cover img {
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
+    padding-top: 50px;
     padding-bottom: 50px;
 }
 
@@ -382,6 +383,10 @@ header .deduplicatify-cover img {
 #sim-songs {
     padding-bottom: 50px;
     display: none;
+}
+
+.similar-songs h1 {
+    text-align: left;
 }
 
 .similar-songs h2 {
