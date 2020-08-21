@@ -20,8 +20,8 @@
 
 @font-face { src: url(fonts/roboto-mono.ttf); font-family: roboto-mono; }
 
-@font-face { src: url(fonts/fri-quadrata-regular.ttf); font-family: friz-quadrata-regular; }
-@font-face { src: url(fonts/fri-quadrata-bold.ttf);    font-family: friz-quadrata-bold;    }
+@font-face { src: url(fonts/friz-quadrata-regular.ttf); font-family: friz-quadrata-regular; }
+@font-face { src: url(fonts/friz-quadrata-bold.otf);    font-family: friz-quadrata-bold;    }
 
 html { scroll-behavior: smooth; }
 
@@ -58,7 +58,8 @@ a:focus { text-decoration: underline; }
 .roboto-mono h5,
 .roboto-mono h6 { text-align: center; }
 
-.friz-quadrata { font-family: friz-quadrata; }
+.friz-quadrata { font-family: friz-quadrata-bold, serif; }
+h1.friz-quadrata { font-weight: normal; text-transform: uppercase; color: rgb(200, 156, 56); }
 
 .open-sans { font-family: "Open Sans", sans-serif; }
 
