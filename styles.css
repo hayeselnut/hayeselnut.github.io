@@ -17,7 +17,11 @@
 *******************************************************************************/
 @font-face { src: url(fonts/gotham-bold.otf);  font-family: gotham-bold;  }
 @font-face { src: url(fonts/gotham-light.otf); font-family: gotham-light; }
-@font-face { src: url(fonts/roboto-mono.ttf);  font-family: roboto-mono;  }
+
+@font-face { src: url(fonts/roboto-mono.ttf); font-family: roboto-mono; }
+
+@font-face { src: url(fonts/fri-quadrata-regular.ttf); font-family: friz-quadrata-regular; }
+@font-face { src: url(fonts/fri-quadrata-bold.ttf);    font-family: friz-quadrata-bold;    }
 
 html { scroll-behavior: smooth; }
 
@@ -53,6 +57,10 @@ a:focus { text-decoration: underline; }
 .roboto-mono h4,
 .roboto-mono h5,
 .roboto-mono h6 { text-align: center; }
+
+.friz-quadrata { font-family: friz-quadrata; }
+
+.open-sans { font-family: "Open Sans", sans-serif; }
 
 /*******************************************************************************
 
