@@ -60,6 +60,7 @@ a:focus { text-decoration: underline; }
 
 .friz-quadrata { font-family: friz-quadrata-bold, serif; }
 h1.friz-quadrata { font-weight: normal; text-transform: uppercase; color: rgb(200, 156, 56); }
+/* h2.friz-quadrata { font-family: friz-quadrata-regular; font-weight: bolder; } */
 
 .open-sans { font-family: "Open Sans", sans-serif; }
 
@@ -174,10 +175,18 @@ input {
     color: white;
     font-family: monospace;
 }
+.invalid-input::-webkit-input-placeholder {
+    color: red;
+}
 #dedup-txtbox {
     width: 50%;
     min-width: 300px;
     padding: 10px;
+    margin: 10px;
+}
+#sum1-txtbox,
+#sum2-txtbox {
+    width: 25%;
     margin: 10px;
 }
 
@@ -255,6 +264,42 @@ iframe {
     box-shadow: 00px 00px 5px grey;
 }
 
+/* DEWOH */
+
+#match-history .match {
+    margin: 5px;
+    padding: 5px;
+
+    background-color: lightgrey;
+    width: 100%;
+    height: 50px;
+}
+#match-history .win {
+    background-color: lightblue;
+}
+#match-history .loss {
+    background-color: lightcoral;
+}
+
+#summoner-metadata {
+    justify-content: space-around;
+}
+#summoner-metadata h2 {
+    margin: 0;
+}
+#summoner-metadata p {
+    margin: 0;
+}
+
+#summoner-metadata img {
+    width: 100px;
+    margin: 20px;
+    box-shadow: 0px 0px 5px black;
+}
+
+#overall {
+    margin-bottom: 50px;
+}
 
 
 /* EXPERIENCE */
@@ -385,14 +430,14 @@ iframe {
 
 *******************************************************************************/
 
-@media screen and (max-width: 1300px) {
-    h1 { font-size: 64px; }
+@media screen and (max-width: 1200px) {
+    .gotham h1 { font-size: 64px; }
 
-    header .cover div {
+    .gotham header .cover div {
         flex-direction: column-reverse;
     }
 
-    header img {
+    .gotham header img {
         width: 200px;
     }
 
