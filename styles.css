@@ -316,9 +316,6 @@ iframe {
     overflow: hidden;
     transition: 0.5s ease;
 }
-.projects .card-container .card.dewoh {
-    background-image: url("assets/dewoh.png");
-}
 .projects .card-container .card.intranet {
     background-image: url("assets/intranet.png");
 }
