@@ -1,28 +1,25 @@
 import React, { useState, createContext } from 'react';
-import { Container, Grid, Header } from 'semantic-ui-react';
+import { Container, Grid } from 'semantic-ui-react';
+
+import './App.css';
+
+import { ProjectSlug } from './types/project-slugs';
 
 import Projects from './components/projects';
 import ProjectShowcase from './components/project-showcase';
 
-import './App.css';
-
-
 export const ShowcaseContext = createContext({
-  showcase: 'hayes',
-  setShowcase: (showcase: string) => {},
-  details: '',
-  setDetails: (details: string) => {},
+  projectSlug: 'hayes',
+  setProjectSlug: (slug: ProjectSlug) => {},
 });
 
 const App = () => {
-  const [showcase, setShowcase] = useState('hayes');
-  const [details, setDetails] = useState('');
+  const [projectSlug, setProjectSlug] = useState<ProjectSlug>('hayes');
 
   return (
-    <ShowcaseContext.Provider value={{ showcase, setShowcase, details, setDetails }}>
-      <header style={{ height: '10vh' }} />
+    <ShowcaseContext.Provider value={{ projectSlug, setProjectSlug }}>
       <main>
-        <Container>
+        <Container className='main'>
           <Grid stackable columns={2} verticalAlign='middle' className='main-container'>
             <Grid.Column className='left'>
               <ProjectShowcase />
@@ -33,7 +30,6 @@ const App = () => {
           </Grid>
         </Container>
       </main>
-      <footer style={{ height: '10vh' }} />
     </ShowcaseContext.Provider>
   );
 };

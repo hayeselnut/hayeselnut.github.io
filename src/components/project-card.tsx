@@ -1,24 +1,25 @@
 import React, { useContext, useState } from 'react';
-import { Grid, Image, SemanticSIZES } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import { ShowcaseContext } from '../App';
+import { ProjectSlug } from '../types/project-slugs';
 
 type Props = {
+  slug: ProjectSlug
   title: string,
   subtitle: string,
-  slug: string,
   img: string,
   link: string,
 }
 
-const ProjectCard = ({ title, subtitle, slug, img, link }: Props) => {
-  const { showcase, setShowcase } = useContext(ShowcaseContext);
+const ProjectCard = ({ slug, title, subtitle, img, link }: Props) => {
+  const { setProjectSlug } = useContext(ShowcaseContext);
 
   const handleMouseEnter = () => {
-    setShowcase(title);
+    setProjectSlug(slug);
   };
 
   const handleMouseLeave = () => {
-    setShowcase('hayes');
+    setProjectSlug('hayes');
   };
 
   return (
@@ -29,11 +30,7 @@ const ProjectCard = ({ title, subtitle, slug, img, link }: Props) => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <img
-            src={img}
-            // centered
-            className='project-logo'
-          />
+          <img src={img} className='project-logo' />
           <p><b>{title}</b></p>
           <p>{subtitle}</p>
         </div>

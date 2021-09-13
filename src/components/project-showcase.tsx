@@ -1,28 +1,31 @@
 import React, { useContext } from 'react';
-import { Header } from 'semantic-ui-react';
-
 import { ShowcaseContext } from '../App';
 
-type Props = {
-  title: string,
-  slug: string,
-  img: string,
-}
+import HayesShowcase from './showcases/hayes-showcase';
+import DeduplicatifyShowcase from './showcases/deduplicatify-showcase';
+import DewohShowcase from './showcases/dewoh-showcase';
+import NYTSWShowcase from './showcases/nytsw-showcase';
+import CirclesShowcase from './showcases/circles-showcase';
+import GTSDBShowcase from './showcases/gtsdb-showcase';
 
+// To add a project create a Swhocase component and insert into grid as ProjectCard
 const ProjectShowcase = () => {
-  const { showcase, setShowcase } = useContext(ShowcaseContext);
+  const { projectSlug } = useContext(ShowcaseContext);
 
-  return (
-    <>
-      <Header as='h1' content='Hayeselnut' />
-      <Header as='h2' content='Software Engineer' />
-      <Header as='h2' content={showcase} />
-    </>
-  );
+  switch (projectSlug) {
+  case 'deduplicatify':
+    return <DeduplicatifyShowcase />;
+  case 'dewoh':
+    return <DewohShowcase />;
+  case 'nytsw':
+    return <NYTSWShowcase />;
+  case 'circles':
+    return <CirclesShowcase />;
+  case 'gtsdb':
+    return <GTSDBShowcase />;
+  default:
+    return <HayesShowcase />;
+  }
 };
-
-// ProjectCard.propTypes = {
-//   title: PropTypes.string.isRequired,
-// };
 
 export default ProjectShowcase;
