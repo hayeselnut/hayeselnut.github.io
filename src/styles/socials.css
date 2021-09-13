@@ -1,0 +1,31 @@
+:root {
+    --github: 23, 21, 21;
+    --linkedin: 10, 102, 194;
+}
+
+.socials-icon {
+    transition: 0.2s;
+}
+
+.socials-icon.linkedin {
+    color: rgb(var(--linkedin));
+}
+
+.socials-icon.linkedin:hover {
+    background-color: rgba(var(--linkedin), 0.1);
+}
+
+.socials-icon.github {
+    color: rgb(var(--github));
+}
+
+.socials-icon.github:hover {
+    background-color: rgba(var(--github), 0.1);
+}
+
+.socials-icon.email {
+    color: rgb(var(--email));
+}
+.socials-icon.email:hover {
+    background-color: rgba(var(--email), 0.1);
+}

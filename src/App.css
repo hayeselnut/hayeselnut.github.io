@@ -2,11 +2,6 @@
     border: 1px solid black;
 } */
 
-:root {
-    --github: 23, 21, 21;
-    --linkedin: 10, 102, 194;
-}
-
 main {
     margin: 2rem 0;
 }
@@ -17,77 +12,14 @@ h1 {
 }
 
 .main-container {
+    position: relative;
     min-height: 80vh;
 }
 
-.project-card {
-    cursor: pointer;
-    border: 1px solid lightgray;
-    background-color: #FAFAFA;
-
-    border-radius: 0.5rem;
-
-    height: 100%;
-
-    text-align: center;
-    padding: 2rem;
-    padding-top: 8rem;
-
-    position: relative;
-}
-
-.project-logo {
-    transition: 0.2s;
-    transition-timing-function: ease-in-out;
-
-    /* width: 4.5rem; */
-    height: 4.5rem;
-    margin-top: 2rem;
-
-    filter: drop-shadow( 1px 1px 1px #888888);
-    -webkit-filter: drop-shadow( 1px 1px 1px #888888);
-
+.projects-container {
     position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-.project-card:hover .project-logo {
-    top: -0.5rem;
-    transform: translate(-50%, 0) rotate(-3deg);
-    height: 5rem;
-}
-
-.project-card-link {
-    max-width: 20rem;
-    color: black;
-}
-
-.socials-icon {
-    transition: 0.2s;
-    /* cursor: pointer; */
-}
-.socials-icon.linkedin {
-    color: rgb(var(--linkedin));
-}
-
-.socials-icon.linkedin:hover {
-    background-color: rgba(var(--linkedin), 0.1);
-}
-
-.socials-icon.github {
-    color: rgb(var(--github));
-}
-.socials-icon.github:hover {
-    background-color: rgba(var(--github), 0.1);
-}
-
-.socials-icon.email {
-    color: rgb(var(--email));
-}
-.socials-icon.email:hover {
-    background-color: rgba(var(--email), 0.1);
+    top: 1rem;
+    right: 1rem;
 }
 
 .podcast {

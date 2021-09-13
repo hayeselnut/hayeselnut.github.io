@@ -1,5 +1,5 @@
 import React, { useState, createContext } from 'react';
-import { Container, Grid } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 
 import './App.css';
 
@@ -19,15 +19,9 @@ const App = () => {
   return (
     <ShowcaseContext.Provider value={{ projectSlug, setProjectSlug }}>
       <main>
-        <Container className='main'>
-          <Grid stackable columns={2} verticalAlign='middle' className='main-container'>
-            <Grid.Column className='left'>
-              <ProjectShowcase />
-            </Grid.Column>
-            <Grid.Column>
-              <Projects />
-            </Grid.Column>
-          </Grid>
+        <Container className='main-container'>
+          <Projects />
+          <ProjectShowcase />
         </Container>
       </main>
     </ShowcaseContext.Provider>

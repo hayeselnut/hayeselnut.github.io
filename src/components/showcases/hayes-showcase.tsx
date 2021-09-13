@@ -4,6 +4,8 @@ import { Header, Icon } from 'semantic-ui-react';
 
 import { bodyStyle } from '../../helpers/body-style';
 
+import '../../styles/socials.css';
+
 const HayesShowcase = () => {
   return (
     <>
