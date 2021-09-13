@@ -2,6 +2,15 @@
     border: 1px solid black;
 } */
 
+:root {
+    --github: 23, 21, 21;
+    --linkedin: 10, 102, 194;
+}
+
+main {
+    margin: 2rem 0;
+}
+
 .main-container {
     min-height: 80vh;
     /* background-color: lightpink; */
@@ -18,7 +27,7 @@
     height: 15rem; */
     height: 100%;
 
-    /* text-align: center; */
+    text-align: center;
     padding: 2rem;
     padding-top: 8rem;
 
@@ -50,4 +59,30 @@
 .project-card-link {
     max-width: 20rem;
     color: black;
+}
+
+.socials-icon {
+    transition: 0.2s;
+    /* cursor: pointer; */
+}
+.socials-icon.linkedin {
+    color: rgb(var(--linkedin));
+}
+
+.socials-icon.linkedin:hover {
+    background-color: rgba(var(--linkedin), 0.1);
+}
+
+.socials-icon.github {
+    color: rgb(var(--github));
+}
+.socials-icon.github:hover {
+    background-color: rgba(var(--github), 0.1);
+}
+
+.socials-icon.email {
+    color: rgb(var(--email));
+}
+.socials-icon.email:hover {
+    background-color: rgba(var(--email), 0.1);
 }
