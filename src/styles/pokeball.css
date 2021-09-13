@@ -50,6 +50,7 @@
     background-color: var(--red);
     border-radius: 20px 20px 0 0;
     border: 2px solid var(--black);
+    border-bottom: 1px solid var(--black);
 }
 
 /* Pokeball button */
@@ -61,7 +62,7 @@
     display: block;
     width: 12px;
     height: 12px;
-    transform: translate(-50%, 50%);
+    transform: translate(-50%, calc(50% + 1px));
     background-color: var(--white);
     border-radius: 50%;
     border: 2px solid var(--black);
@@ -71,12 +72,16 @@
 .pokeball:hover .pokeball-lid {
     top: -30%;
     left: 0;
+    border: 2px solid var(--black);
+
 }
 
 .pokeball-open .pokeball-base,
 .pokeball:hover .pokeball-base {
     top: 80%;
     left: 0;
+    border: 2px solid var(--black);
+
 }
 
 .pokeball-base {
@@ -89,4 +94,5 @@
     background-color: var(--white);
     border-radius: 0 0 20px 20px;
     border: 2px solid var(--black);
+    border-top: 1px solid var(--black);
 }
