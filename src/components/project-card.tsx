@@ -13,26 +13,21 @@ type Props = {
 const ProjectCard = ({ slug, title, img, link }: Props) => {
   const { setProjectSlug } = useContext(ShowcaseContext);
 
-  const handleMouseEnter = () => {
+  const handleClick = () => {
     setProjectSlug(slug);
-  };
-
-  const handleMouseLeave = () => {
-    setProjectSlug('hayes');
   };
 
   return (
     <Grid.Column>
-      <a href={link} target='_blank' rel="noreferrer" className='project-card-link'>
-        <div
-          className='project-card'
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img src={img} className='project-logo' />
-          <b>{title}</b>
-        </div>
-      </a>
+      {/* <a href={link} target='_blank' rel="noreferrer" className='project-card-link'> */}
+      <div
+        className='project-card'
+        onClick={handleClick}
+      >
+        <img src={img} className='project-logo' />
+        <b>{title}</b>
+      </div>
+      {/* </a> */}
     </Grid.Column>
   );
 };

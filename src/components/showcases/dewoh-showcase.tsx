@@ -11,8 +11,9 @@ const DewohShowcase = () => {
         <style type="text/css">{bodyStyle('#C89C38')}</style>
       </Helmet>
 
-      <Header as='h1' content='Dewoh' />
-      <Header as='h2' content='A statistical analysis for duo partners in League of Legends' />
+      <h1>Dewoh</h1>
+      <h2>A statistical analysis for duo partners in League of Legends</h2>
+
       <p>
         An analysis tool to measure the synergy between two players in League of Legends
       </p>

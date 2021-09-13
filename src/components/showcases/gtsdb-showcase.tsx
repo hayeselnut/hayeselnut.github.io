@@ -11,8 +11,8 @@ const GTSDBShowcase = () => {
         <style type="text/css">{bodyStyle('#FC4E56')}</style>
       </Helmet>
 
-      <Header as='h1' content='Guess the Song' />
-      <Header as='h2' content='A Discord bot that hosts a song guessing competition' />
+      <h1>Guess the song</h1>
+      <h2>A Discord bot that hosts a song guessing competition</h2>
     </>
   );
 };

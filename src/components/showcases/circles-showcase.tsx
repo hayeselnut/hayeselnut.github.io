@@ -16,8 +16,8 @@ const CirclesShowcase = () => {
         <style type="text/css">{bodyStyle('#39B54A')}</style>
       </Helmet>
 
-      <Header as='h1' content='Circles' />
-      <Header as='h2' content='A visual UNSW Degree Planner' />
+      <h1>Circles</h1>
+      <h2>A visual UNSW degree planner</h2>
       <Label content='JavaScript' />
       <Label content='React' />
 

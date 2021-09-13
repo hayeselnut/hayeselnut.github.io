@@ -11,8 +11,9 @@ const HayesShowcase = () => {
         <style type="text/css">{bodyStyle('white')}</style>
       </Helmet>
 
-      <Header as='h1' content='Hayeselnut' />
-      <Header as='h2' content='Software Engineer' />
+      <h1>Hayeselnut</h1>
+      <h2>Software Engineer</h2>
+
       <p>
         UNSW Co-op Scholar (HD WAM)
       </p>

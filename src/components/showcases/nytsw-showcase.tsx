@@ -11,8 +11,9 @@ const NYTSWShowcase = () => {
         <style type="text/css">{bodyStyle('#4083FB')}</style>
       </Helmet>
 
-      <Header as='h1' content='NYT Stats Watcher' />
-      <Header as='h2' content="A stats tracker for the New York Time's Mini Crossword for my friends and I" />
+      <h1>NYT Stats Watcher</h1>
+      <h2>A stats tracker for the New York Time{'\''}s Mini Crossword for my friends and I</h2>
+
       <p>
         The Mini Crossword by the New York Times is a fun daily puzzle my friends play everyday. There{'\''}s an
         inbuilt statistics page but it is only for yourself and a premium feature. I wanted to track
