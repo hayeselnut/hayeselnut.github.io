@@ -18,9 +18,13 @@ const App = () => {
 
   return (
     <ShowcaseContext.Provider value={{ projectSlug, setProjectSlug }}>
+      <header>
+        <Container>
+          <Projects />
+        </Container>
+      </header>
       <main>
         <Container className='main-container'>
-          <Projects />
           <ProjectShowcase />
         </Container>
       </main>

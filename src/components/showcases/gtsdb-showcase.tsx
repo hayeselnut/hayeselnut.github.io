@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Header } from 'semantic-ui-react';
 
 import { bodyStyle } from '../../helpers/body-style';
 

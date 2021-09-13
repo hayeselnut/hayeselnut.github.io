@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Dimmer, Embed, Header, Label, Loader, Segment } from 'semantic-ui-react';
+import { Label } from 'semantic-ui-react';
 
 import { bodyStyle } from '../../helpers/body-style';
 

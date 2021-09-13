@@ -1,5 +1,4 @@
 import React from 'react';
-import { Grid } from 'semantic-ui-react';
 
 import ProjectCard from './project-card';
 import DewohLogo from '../assets/dewoh.svg';
@@ -11,8 +10,7 @@ import CirclesLogo from '../assets/circles.svg';
 // To add a project create a Swhocase component and insert into grid as ProjectCard
 const Projects = () => {
   return (
-    // <Grid stackable columns={2}>
-    <div className='projects-container'>
+    <div className='pokeball-container'>
       <ProjectCard
         slug='gtsdb'
         img={GuessTheSongDiscordBotLogo}
@@ -27,22 +25,18 @@ const Projects = () => {
         slug='nytsw'
         img={MiniLogo}
         link='https://hayeselnut.github.io/nytimes-stats-watcher/'
-
       />
       <ProjectCard
         slug='dewoh'
         img={DewohLogo}
         link='https://hayeselnut.github.io/dewoh/'
-
       />
       <ProjectCard
         slug='deduplicatify'
         img={DeduplicatifyLogo}
         link='https://hayeselnut.github.io/deduplicatify/'
-
       />
     </div>
-    // </Grid>
   );
 };
 

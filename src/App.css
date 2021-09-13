@@ -3,7 +3,7 @@
 } */
 
 main {
-    margin: 2rem 0;
+    /* border: 1px solid black; */
 }
 
 h1 {
@@ -16,10 +16,11 @@ h1 {
     min-height: 80vh;
 }
 
-.projects-container {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+header {
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    /* border: 2px solid black; */
 }
 
 .podcast {
