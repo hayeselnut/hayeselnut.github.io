@@ -13,6 +13,9 @@ const DewohShowcase = () => {
 
       <Header as='h1' content='Dewoh' />
       <Header as='h2' content='A statistical analysis for duo partners in League of Legends' />
+      <p>
+        An analysis tool to measure the synergy between two players in League of Legends
+      </p>
     </>
   );
 };

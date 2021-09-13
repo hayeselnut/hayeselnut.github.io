@@ -13,6 +13,10 @@ const GTSDBShowcase = () => {
 
       <Header as='h1' content='Deduplicatify' />
       <Header as='h2' content='Detect duplicate and similar songs in your Spotify playlists' />
+      <p>
+        A tool to detect duplicate or similar songs in a Spotify playlist. Similar songs include same song name
+        and artist but different albums, as well as remix, live and cover versions.
+      </p>
     </>
   );
 };
