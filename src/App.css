@@ -11,9 +11,12 @@ main {
     margin: 2rem 0;
 }
 
+h1 {
+    font-size: 10rem;
+}
+
 .main-container {
     min-height: 80vh;
-    /* background-color: lightpink; */
 }
 
 .project-card {
@@ -23,8 +26,6 @@ main {
 
     border-radius: 0.5rem;
 
-    /* width: 20rem;
-    height: 15rem; */
     height: 100%;
 
     text-align: center;
@@ -38,7 +39,8 @@ main {
     transition: 0.2s;
     transition-timing-function: ease-in-out;
 
-    width: 4.5rem;
+    /* width: 4.5rem; */
+    height: 4.5rem;
     margin-top: 2rem;
 
     filter: drop-shadow( 1px 1px 1px #888888);
@@ -53,7 +55,7 @@ main {
 .project-card:hover .project-logo {
     top: -0.5rem;
     transform: translate(-50%, 0) rotate(-3deg);
-    width: 5rem;
+    height: 5rem;
 }
 
 .project-card-link {
