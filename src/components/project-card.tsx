@@ -6,12 +6,11 @@ import { ProjectSlug } from '../types/project-slugs';
 type Props = {
   slug: ProjectSlug
   title: string,
-  subtitle: string,
   img: string,
   link: string,
 }
 
-const ProjectCard = ({ slug, title, subtitle, img, link }: Props) => {
+const ProjectCard = ({ slug, title, img, link }: Props) => {
   const { setProjectSlug } = useContext(ShowcaseContext);
 
   const handleMouseEnter = () => {
@@ -31,8 +30,7 @@ const ProjectCard = ({ slug, title, subtitle, img, link }: Props) => {
           onMouseLeave={handleMouseLeave}
         >
           <img src={img} className='project-logo' />
-          <p><b>{title}</b></p>
-          <p>{subtitle}</p>
+          <b>{title}</b>
         </div>
       </a>
     </Grid.Column>
