@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Header } from 'semantic-ui-react';
+import { Dimmer, Embed, Header, Label, Loader, Segment } from 'semantic-ui-react';
 
 import { bodyStyle } from '../../helpers/body-style';
 
 const CirclesShowcase = () => {
+  const [podcastLoading, setPodcastLoading] = useState(true);
+  const handleLoad = () => {
+    setPodcastLoading(false);
+  };
+
   return (
     <>
       <Helmet>
@@ -13,10 +18,9 @@ const CirclesShowcase = () => {
 
       <Header as='h1' content='Circles' />
       <Header as='h2' content='A visual UNSW Degree Planner' />
+      <Label content='JavaScript' />
+      <Label content='React' />
 
-      <p>
-        React JS
-      </p>
       <p>
         My group{'\''}s entry for the CSESoc Personal Project Competition 2020
       </p>
@@ -26,6 +30,21 @@ const CirclesShowcase = () => {
       <p>
         Was taken in as an official CSESoc Project in 2021
       </p>
+      <p>
+        Featured as a CSESoc Podcast
+      </p>
+
+      <iframe
+        src="https://open.spotify.com/embed/episode/1Rc5zmmAJYl8LyxC80q11U"
+        width="100%"
+        height="232"
+        frameBorder="0"
+        allow="encrypted-media"
+        className='podcast'
+        onLoad={handleLoad}
+        style={{ opacity: podcastLoading ? 0 : 1 }}
+      />
+
     </>
   );
 };

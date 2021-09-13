@@ -88,3 +88,7 @@ h1 {
 .socials-icon.email:hover {
     background-color: rgba(var(--email), 0.1);
 }
+
+.podcast {
+    transition: 0.3s;
+}
