@@ -18,6 +18,7 @@ const HayesShowcase = () => {
       <h2>Software Engineer</h2>
 
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <LanguageType language="water" />
         <LanguageType language="bug" />
         <LanguageType language="electric" />
         <LanguageType language="normal" />
@@ -30,15 +31,15 @@ const HayesShowcase = () => {
         <LanguageType language="kotlin" />
         <LanguageType language="html" />
         <LanguageType language="css" />
-        <LanguageType language="javascript" />
-        <LanguageType language="typescript" />
+        <LanguageType language="js" />
+        <LanguageType language="ts" />
         <LanguageType language="react" />
         <LanguageType language="vue" />
       </div>
 
 
       <p>
-        UNSW Co-op Scholar (HD WAM)
+        {/* UNSW Co-op Scholar */}
       </p>
       <p>
         Interned at Atlassian as Data Platform Engineer

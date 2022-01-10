@@ -1,4 +1,5 @@
 export type Language = 'python'
+                        | 'water'
                         | 'bug'
                         | 'normal'
                         | 'grass'
@@ -10,5 +11,7 @@ export type Language = 'python'
                         | 'javascript'
                         | 'typescript'
                         | 'react'
-                        | 'vue';
+                        | 'vue'
+                        | 'js'
+                        | 'ts';
 
