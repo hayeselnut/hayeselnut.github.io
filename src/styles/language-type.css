@@ -1,0 +1,116 @@
+@font-face {
+    font-family: Square;
+    src: url("../assets/fonts/Square.ttf");
+}
+
+@font-face {
+    font-family: "Square Outline";
+    src: url("../assets/fonts/Squareo.ttf");
+}
+
+.language-pill {
+    border-radius: 100px;
+    border: 2px solid white;
+    outline: 2px solid black;
+    width: 9rem;
+    height: 3rem;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.language-text {
+    font-family: "Square", sans-serif;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 0.15rem;
+    text-indent: 0.15rem;
+    text-shadow:
+    -1.5px -1.5px 0 black,
+     0   -1.5px 0 black,
+     1.5px -1.5px 0 black,
+     1.5px  0   0 black,
+     1.5px  1.5px 0 black,
+     0    1.5px 0 black,
+    -1.5px  1.5px 0 black,
+    -1.5px  0   0 black;
+}
+
+.python {
+    background-image: linear-gradient(#4B8BBE, #306998, #4B8BBE);
+}
+
+.kotlin {
+    background-image: linear-gradient(#1AA2D4, #766DB2, #B75EA4, #F6891F);
+    background-image: linear-gradient(#F6891F, #B75EA4);
+}
+
+.html {
+    background-image: linear-gradient(#f06529, #e34c26, #f06529);
+}
+
+.css {
+    background-image: linear-gradient(#2965f1, #264de4, #2965f1);
+}
+
+.javascript {
+    background-image: linear-gradient(#f0db4f, #e0ac00, #f0db4f);
+}
+
+.typescript {
+    background-image: linear-gradient(#007acc, #004370, #007acc);
+}
+
+.react {
+    background-image: linear-gradient(#61DBFB, #0ca8cf, #61DBFB);
+}
+
+.vue {
+    background-image: linear-gradient(#41B883, #068b50, #41B883);
+}
+
+.fire {
+    background-image: linear-gradient(#E94F20, #C72000, #E94F20);
+}
+
+.grass {
+    background-image: linear-gradient(#85C550, #3C980A, #85C550);
+}
+
+.electric {
+    background-image: linear-gradient(#FAC84E, #E79305, #FAC84E);
+}
+
+.fighting {
+    background-image: linear-gradient(#8B4934, #5F2315, #8B4934);
+}
+
+.normal {
+    background-image: linear-gradient(#CDC7C2, #ACA692, #CDC7C2);
+}
+
+.bug {
+    background-image: linear-gradient(#B2C13A, #89960C, #B2C13A);
+}
+
+.spacing-3 {
+    letter-spacing: 0.9rem;
+    text-indent: 0.9rem;
+}
+
+.spacing-4 {
+    letter-spacing: 0.6rem;
+    text-indent: 0.6rem;
+}
+
+.spacing-5 {
+    letter-spacing: 0.3rem;
+    text-indent: 0.3rem;
+}
+
+.spacing-10 {
+    letter-spacing: 0;
+    text-indent: 0;
+}

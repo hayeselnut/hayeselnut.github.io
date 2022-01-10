@@ -4,6 +4,7 @@ import { Icon } from 'semantic-ui-react';
 
 import { bodyStyle } from '../../helpers/body-style';
 
+import LanguageType from '../language-type';
 import '../../styles/socials.css';
 
 const HayesShowcase = () => {
@@ -15,6 +16,26 @@ const HayesShowcase = () => {
 
       <h1>Hayeselnut</h1>
       <h2>Software Engineer</h2>
+
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <LanguageType language="bug" />
+        <LanguageType language="electric" />
+        <LanguageType language="normal" />
+        <LanguageType language="fighting" />
+        <LanguageType language="grass" />
+      </div>
+
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <LanguageType language="python" />
+        <LanguageType language="kotlin" />
+        <LanguageType language="html" />
+        <LanguageType language="css" />
+        <LanguageType language="javascript" />
+        <LanguageType language="typescript" />
+        <LanguageType language="react" />
+        <LanguageType language="vue" />
+      </div>
+
 
       <p>
         UNSW Co-op Scholar (HD WAM)
