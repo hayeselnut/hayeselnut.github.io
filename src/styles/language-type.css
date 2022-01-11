@@ -65,7 +65,7 @@
     border-radius: 1px;
     outline: 2px solid #586060;
 
-    width: 6rem;
+    width: 9rem;
     height: 2rem;
     margin: 1rem;
 
@@ -76,7 +76,7 @@
     align-items: center;
 }
 
-.language-rectangle-text {
+.language-text {
     font-family: "Super Smash TV", sans-serif;
     text-transform: uppercase;
     color: white;
@@ -84,220 +84,123 @@
     font-size: 1.6rem;
 }
 
-.language-text {
-    font-family: "Square", sans-serif;
-    text-transform: uppercase;
-    color: white;
-    font-size: 1.5rem;
-    letter-spacing: 0.15rem;
-    text-indent: 0.15rem;
-    text-shadow:
-        -1.5px -1.5px 0 black,
-        0   -1.5px 0 black,
-        1.5px -1.5px 0 black,
-        1.5px  0   0 black,
-        1.5px  1.5px 0 black,
-        0    1.5px 0 black,
-        -1.5px  1.5px 0 black,
-        -1.5px  0   0 black;
-}
-
-.old-python {
+.python {
     border-top: 1px solid white;
     border-left: 1px solid white;
-    border-bottom: 1px solid #306998;
+    border-bottom: 1px solid #d6ab0d;
     border-right: 1px solid #306998;
-    background-color: #4B8BBE;
+    background: linear-gradient(#4B8BBE 50%, #FFD43B 50%);
 }
 
-.old-kotlin {
+.kotlin {
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-bottom: 1px solid #B75EA4;
     border-right: 1px solid #B75EA4;
-    background-color: #F6891F;
+    background: linear-gradient(#F6891F 50%, #B75EA4 50%);
+
 }
 
-.old-html {
+.html {
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-bottom: 1px solid #e34c26;
     border-right: 1px solid #e34c26;
-    background-color: #f06529;
+    background: #f06529;
 }
 
-.old-css {
+.css {
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-bottom: 1px solid #264de4;
     border-right: 1px solid #264de4;
-    background-color: #2965f1;
+    background: #2965f1;
 }
 
-.old-javascript, .old-js {
+.javascript, .js {
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-bottom: 1px solid #e0ac00;
     border-right: 1px solid #e0ac00;
-    background-color: #f0db4f;
+    background: #f0db4f;
 }
 
-.old-typescript, .old-ts {
+.typescript, .ts {
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-bottom: 1px solid #004370;
     border-right: 1px solid #004370;
-    background-color: #007acc;
+    background: #007acc;
 }
 
-.old-react {
+.react {
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-bottom: 1px solid #0ca8cf;
     border-right: 1px solid #0ca8cf;
-    background-color: #61DBFB;
+    background: #61DBFB;
 }
 
-.old-vue {
+.vue {
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-bottom: 1px solid #068b50;
     border-right: 1px solid #068b50;
-    background-color: #41B883;
+    background: #41B883;
 }
 
-.old-fire {
+.fire {
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-bottom: 1px solid #C72000;
     border-right: 1px solid #C72000;
-    background-color: #E94F20;
+    background: #E94F20;
 }
 
-.old-grass {
+.grass {
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-bottom: 1px solid #3C980A;
     border-right: 1px solid #3C980A;
-    background-color: #85C550;
+    background: #85C550;
 }
 
-.old-water {
+.water {
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-bottom: 1px solid #3473C4;
     border-right: 1px solid #3473C4;
-    background-color: #6898F8;
+    background: #6898F8;
 }
 
-.old-electric {
+.electric {
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-bottom: 1px solid #E79305;
     border-right: 1px solid #E79305;
-    background-color: #FAC84E;
+    background: #FAC84E;
 }
 
-.old-fighting {
+.fighting {
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-bottom: 1px solid #5F2315;
     border-right: 1px solid #5F2315;
-    background-color: #8B4934;
+    background: #8B4934;
 }
 
-.old-normal {
+.normal {
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-bottom: 1px solid #ACA692;
     border-right: 1px solid #ACA692;
-    background-color: #CDC7C2;
+    background: #CDC7C2;
 }
 
-.old-bug {
+.bug {
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-bottom: 1px solid #89960C;
     border-right: 1px solid #89960C;
-    background-color: #B2C13A;
-}
-
-.python {
-    background-image: linear-gradient(#4B8BBE, #306998, #4B8BBE);
-}
-
-.kotlin {
-    background-image: linear-gradient(#F6891F, #B75EA4);
-}
-
-.html {
-    background-image: linear-gradient(#f06529, #e34c26, #f06529);
-}
-
-.css {
-    background-image: linear-gradient(#2965f1, #264de4, #2965f1);
-}
-
-.javascript {
-    background-image: linear-gradient(#f0db4f, #e0ac00, #f0db4f);
-}
-
-.typescript {
-    background-image: linear-gradient(#007acc, #004370, #007acc);
-}
-
-.react {
-    background-image: linear-gradient(#61DBFB, #0ca8cf, #61DBFB);
-}
-
-.vue {
-    background-image: linear-gradient(#41B883, #068b50, #41B883);
-}
-
-.fire {
-    background-image: linear-gradient(#E94F20, #C72000, #E94F20);
-}
-
-.grass {
-    background-image: linear-gradient(#85C550, #3C980A, #85C550);
-}
-
-.water {
-    background-image: linear-gradient(#6898F8, #3473C4, #6898F8);
-}
-
-.electric {
-    background-image: linear-gradient(#FAC84E, #E79305, #FAC84E);
-}
-
-.fighting {
-    background-image: linear-gradient(#8B4934, #5F2315, #8B4934);
-}
-
-.normal {
-    background-image: linear-gradient(#CDC7C2, #ACA692, #CDC7C2);
-}
-
-.bug {
-    background-image: linear-gradient(#B2C13A, #89960C, #B2C13A);
-}
-
-.spacing-3 {
-    letter-spacing: 0.9rem;
-    text-indent: 0.9rem;
-}
-
-.spacing-4 {
-    letter-spacing: 0.6rem;
-    text-indent: 0.6rem;
-}
-
-.spacing-5 {
-    letter-spacing: 0.3rem;
-    text-indent: 0.3rem;
-}
-
-.spacing-10 {
-    letter-spacing: 0;
-    text-indent: 0;
+    background: #B2C13A;
 }

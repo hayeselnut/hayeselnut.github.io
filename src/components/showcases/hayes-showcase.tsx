@@ -31,12 +31,11 @@ const HayesShowcase = () => {
         <LanguageType language="kotlin" />
         <LanguageType language="html" />
         <LanguageType language="css" />
-        <LanguageType language="js" />
-        <LanguageType language="ts" />
+        <LanguageType language="javascript" />
+        <LanguageType language="typescript" />
         <LanguageType language="react" />
         <LanguageType language="vue" />
       </div>
-
 
       <p>
         {/* UNSW Co-op Scholar */}
