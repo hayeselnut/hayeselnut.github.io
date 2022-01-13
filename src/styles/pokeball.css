@@ -48,7 +48,7 @@
     width: 40px;
     height: 20px;
     background-color: var(--red);
-    border-radius: 20px 20px 0 0;
+    border-radius: 25px 25px 0 0;
     border: 2px solid var(--black);
     border-bottom: 1px solid var(--black);
 }
@@ -87,12 +87,12 @@
 .pokeball-base {
     z-index: 1;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 0;
     width: 40px;
     height: 20px;
     background-color: var(--white);
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 25px 25px;
     border: 2px solid var(--black);
     border-top: 1px solid var(--black);
 }

@@ -24,8 +24,8 @@
 }
 
 .dot {
-    height: 0.25rem;
-    width: 0.25rem;
+    height: 2px;
+    width: 2px;
     background-color: rgb(0, 0, 0, 0.2);
     border-radius: 50%;
     display: inline-block;
@@ -34,54 +34,65 @@
 }
 
 .top {
-    top: 0.25rem;
+    top: 2px;
 }
 
 .left {
-    left: 0.25rem;
+    left: 2px;
 }
 
 .bottom {
-    bottom: 0.25rem;
+    bottom: 2px;
 }
 
 .right {
-    right: 0.25rem;
-}
-
-.language-pill {
-    border-radius: 100px;
-    border: 2px solid white;
-    outline: 2px solid black;
-    width: 9rem;
-    height: 3rem;
-    margin: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    right: 2px;
 }
 
 .language-rectangle {
     border-radius: 1px;
-    outline: 2px solid #586060;
+    outline: 1px solid #586060;
 
-    width: 9rem;
-    height: 2rem;
-    margin: 1rem;
+    width: 48px;
+    height: 16px;
+    margin: 2px;
 
     position: relative;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    cursor: pointer;
 }
 
 .language-text {
     font-family: "Super Smash TV", sans-serif;
     text-transform: uppercase;
     color: white;
-    text-shadow: 1.5px 1.5px 0 darkgrey;
-    font-size: 1.6rem;
+    text-shadow: 0.5px 0.5px 0 darkgrey;
+    font-size: 16px;
+}
+
+.scale-5 {
+    -webkit-transform: scale(0.85, 1);
+    -moz-transform: scale(0.85, 1);
+    -o-transform: scale(0.85, 1);
+    transform: scale(0.85, 1);
+}
+
+.scale-6 {
+    -webkit-transform: scale(0.7, 1);
+    -moz-transform: scale(0.7, 1);
+    -o-transform: scale(0.7, 1);
+    transform: scale(0.7, 1);
+}
+
+.scale-10 {
+    -webkit-transform: scale(0.5, 1);
+    -moz-transform: scale(0.5, 1);
+    -o-transform: scale(0.5, 1);
+    transform: scale(0.5, 1);
 }
 
 .python {
@@ -98,7 +109,6 @@
     border-bottom: 1px solid #B75EA4;
     border-right: 1px solid #B75EA4;
     background: linear-gradient(#F6891F 50%, #B75EA4 50%);
-
 }
 
 .html {

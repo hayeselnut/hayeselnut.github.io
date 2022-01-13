@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { ShowcaseContext } from '../App';
+import React, { useState } from 'react';
 import { ProjectSlug } from '../types/project-slugs';
 
 import '../styles/pokeball.css';
@@ -11,14 +10,14 @@ type Props = {
 }
 
 const ProjectCard = ({ slug, img, link }: Props) => {
-  const { projectSlug, setProjectSlug } = useContext(ShowcaseContext);
+  const [open, setOpen] = useState(false);
 
   const handleClick = () => {
-    setProjectSlug(projectSlug === slug ? 'hayes' : slug);
+    setOpen(!open);
   };
 
   return (
-    <div className={`pokeball ${projectSlug === slug && 'pokeball-open'}`} onClick={handleClick}>
+    <div className={`pokeball`} onClick={handleClick}>
       <div className='pokeball-lid'></div>
       <img src={img} className='project-logo' />
       <div className='pokeball-base'></div>
