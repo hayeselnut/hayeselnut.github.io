@@ -1,4 +1,4 @@
-export type Language = 'python'
+export type Technology = 'python'
                         | 'water'
                         | 'bug'
                         | 'normal'
@@ -14,4 +14,3 @@ export type Language = 'python'
                         | 'vue'
                         | 'js'
                         | 'ts';
-
