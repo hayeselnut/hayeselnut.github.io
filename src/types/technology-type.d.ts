@@ -1,16 +1,26 @@
-export type Technology = 'python'
+export type Technology = 'c'
+                        | 'c++'
+                        | 'c#'
+                        | 'python'
+
                         | 'water'
                         | 'bug'
                         | 'normal'
                         | 'grass'
                         | 'fighting'
                         | 'electric'
+
+                        | 'java'
                         | 'kotlin'
+
                         | 'html'
                         | 'css'
-                        | 'javascript'
-                        | 'typescript'
+                        | 'javascript' | 'js'
+                        | 'typescript' | 'ts'
                         | 'react'
                         | 'vue'
-                        | 'js'
-                        | 'ts';
+
+                        | 'aws'
+                        | 'gcp'
+                        | 'azure'
+                        | 'terraform';

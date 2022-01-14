@@ -95,6 +95,70 @@
     transform: scale(0.5, 1);
 }
 
+.c {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid #283593;
+    border-right: 1px solid #283593;
+    background: linear-gradient(160deg, #5c6bc0 50%, #283593 50%);
+}
+
+.c\+\+ {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid #004482;
+    border-right: 1px solid #004482;
+    background: linear-gradient(160deg, #659AD2 50%, #004482 50%);
+}
+
+.c\# {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid #6a1577;
+    border-right: 1px solid #6a1577;
+    background: linear-gradient(160deg, #9a4993 50%, #6a1577 50%);
+}
+
+.java {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid #5382a1;
+    border-right: 1px solid #5382a1;
+    background: linear-gradient(#f89820 50%, #5382a1 50%);
+}
+
+.aws {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid #232F3E;
+    border-right: 1px solid #232F3E;
+    background: linear-gradient(#FF9900 50%, #232F3E 50%);
+}
+
+.gcp {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid #232F3E;
+    border-right: 1px solid #232F3E;
+    background: linear-gradient(30deg, #4285F4 0 25%, #DB4437 25% 50%, #F4B400 50% 75%, #0F9D58 75% 100%);
+}
+
+.azure {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid #004d77;
+    border-right: 1px solid #004d77;
+    background: #008AD7;
+}
+
+.terraform {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid #59288a;
+    border-right: 1px solid #59288a;
+    background: #844FBA;
+}
+
 .python {
     border-top: 1px solid white;
     border-left: 1px solid white;

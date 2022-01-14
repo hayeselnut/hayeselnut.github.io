@@ -26,14 +26,27 @@ const App = () => {
           </div>
 
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            <TechnologyType technology="python" />
-            <TechnologyType technology="kotlin" />
-            <TechnologyType technology="html" />
-            <TechnologyType technology="css" />
-            <TechnologyType technology="javascript" />
-            <TechnologyType technology="typescript" />
-            <TechnologyType technology="react" />
-            <TechnologyType technology="vue" />
+            <TechnologyType technology='c' />
+            <TechnologyType technology='c++' />
+            <TechnologyType technology='c#' />
+            <TechnologyType technology='python' />
+
+            <TechnologyType technology='java' />
+            <TechnologyType technology='kotlin' />
+
+            <TechnologyType technology='html' />
+            <TechnologyType technology='css' />
+            <TechnologyType technology='javascript' />
+            <TechnologyType technology='js' />
+            <TechnologyType technology='typescript' />
+            <TechnologyType technology='ts' />
+            <TechnologyType technology='react' />
+            <TechnologyType technology='vue' />
+
+            <TechnologyType technology='aws' />
+            <TechnologyType technology='gcp' />
+            <TechnologyType technology='azure' />
+            <TechnologyType technology='terraform' />
           </div>
 
           <TextFrame />
