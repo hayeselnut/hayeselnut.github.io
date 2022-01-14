@@ -4,6 +4,7 @@ import { Container } from '@mui/material';
 import Projects from './components/projects';
 import TechnologyType from './components/technology-type';
 import TextFrame from './components/text-frame';
+import TitleCard from './components/title-card';
 
 const App = () => {
   return (
@@ -16,6 +17,8 @@ const App = () => {
       <main>
         <Container className='main-container'>
           {/* <ProjectShowcase /> */}
+          <TitleCard />
+
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             <TechnologyType technology="water" />
             <TechnologyType technology="bug" />

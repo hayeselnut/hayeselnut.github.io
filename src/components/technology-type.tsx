@@ -38,7 +38,7 @@ const TypeText = styled('span')(({ technology }: Props) => ({
 }));
 
 const scale = (technology: Technology) => {
-  if (technology.length >= 10) return 'scale-10';
+  if (technology.length >= 9) return 'scale-9';
   if (technology.length >= 6) return 'scale-6';
   if (technology.length >= 5) return 'scale-5';
   return '';
