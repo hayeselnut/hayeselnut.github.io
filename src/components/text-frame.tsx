@@ -11,13 +11,15 @@ import '../styles/technology-type.css';
 const Frame = styled('div')`
   outline: 2px solid #585858;
 
-  border-radius: 1px;
+  border-radius: 2px;
   background: #E83030;
 
   width: 244px;
   height: 52px;
 
   position: relative;
+
+  box-shadow: 6px 6px #c0c8d0;
 
   display: flex;
   justify-content: center;
@@ -30,9 +32,6 @@ const Textbox = styled('div')`
   border: 1px solid #F898A0;
 
   box-shadow: 0 0 0 1px #F898A0;
-
-  outline-right: 1px solid #F898A0;
-  outline-left: 1px solid #F898A0;
   background: white;
 
   font-size: 12px;
