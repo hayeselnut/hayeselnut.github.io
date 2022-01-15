@@ -1,17 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Technology } from '../types/technology-type';
-
-import '../styles/technology-type.css';
 import { lighten, darken } from '@mui/material';
-
-type Props = {
-  technology: Technology
-}
-
-type ColorDivProps = {
-  color: string
-}
+import { Technology } from '../types/technology-type';
 
 const Rectangle = styled('div')`
   display: grid;
@@ -26,17 +16,10 @@ const Rectangle = styled('div')`
   cursor: pointer;
 `;
 
-const NormalColor = styled('div')(({ color }: ColorDivProps) => ({
-  background: color,
-}));
-
-const LightenColor = styled('div')(({ color }: ColorDivProps) => ({
-  background: lighten(color, 0.5),
-}));
-
-const DarkenColor = styled('div')(({ color }: ColorDivProps) => ({
-  background: darken(color, 0.25),
-}));
+type ColorDivProps = {color: string}
+const NormalColor = styled('div')(({ color }: ColorDivProps) => ({ background: color }));
+const LightenColor = styled('div')(({ color }: ColorDivProps) => ({ background: lighten(color, 0.5) }));
+const DarkenColor = styled('div')(({ color }: ColorDivProps) => ({ background: darken(color, 0.25) }));
 
 const Dot = styled('span')`
   height: 1px;
@@ -79,17 +62,7 @@ const Text = styled('span')(({ technology }: Props) => {
   };
 });
 
-const scale = (technology: Technology) => {
-  if (technology.length >= 9) return 'scale-9';
-  if (technology.length >= 6) return 'scale-6';
-  if (technology.length >= 5) return 'scale-5';
-  return '';
-};
-
-type TechnologyColors = {
-  [key in Technology]: string[]
-}
-
+type TechnologyColors = { [key in Technology]: string[] }
 const colors: TechnologyColors = {
   'c': ['#5c6bc0', '#5c6bc0', '#283593', '#283593'],
   'c++': ['#659AD2', '#659AD2', '#004482', '#004482'],
@@ -104,67 +77,49 @@ const colors: TechnologyColors = {
   'react': ['#61DBFB', '#61DBFB', '#61DBFB', '#61DBFB'],
   'vue': ['#41B883', '#41B883', '#41B883', '#41B883'],
 
-  'fire': ['#E94F20', '#E94F20', '#E94F20', '#E94F20'],
-  'grass': ['#85C550', '#85C550', '#85C550', '#85C550'],
-  'water': ['#6898F8', '#6898F8', '#6898F8', '#6898F8'],
-  'electric': ['#FAC84E', '#FAC84E', '#FAC84E', '#FAC84E'],
-  'fighting': ['#8B4934', '#8B4934', '#8B4934', '#8B4934'],
-  'normal': ['#b8b8a8', '#b8b8a8', '#b8b8a8', '#b8b8a8'],
-  'bug': ['#B2C13A', '#B2C13A', '#B2C13A', '#B2C13A'],
-
   'terraform': ['#844FBA', '#844FBA', '#844FBA', '#844FBA'],
   'aws': ['#FF9900', '#FF9900', '#232F3E', '#232F3E'],
   'gcp': ['#4285F4', '#DB4437', '#F4B400', '#0F9D58'],
   'azure': ['#008AD7', '#008AD7', '#008AD7', '#008AD7'],
 };
 
-const TechnologyType = ({ technology }: Props) => {
-  return (
-  // <div className={`technology-rectangle ${technology}`}>
-  // <span className="dot top left" />
-  // <span className="dot top right" />
-  // <span className="dot bottom left" />
-  // <span className="dot bottom right" />
+type Props = {
+  technology: Technology
+}
 
-  //   <span className={`technology-text ${scale(technology)}`}>
-  //     {technology}
-  //   </span>
-  //   {/* <TypeText technology={technology}>{technology}</TypeText> */}
-  // </div>
+const TechnologyType = ({ technology }: Props) => (
+  <Rectangle>
+    <NormalColor color='#f8f8f8' />
+    <LightenColor color={colors[technology][0]} />
+    <LightenColor color={colors[technology][1]} />
+    <NormalColor color={colors[technology][1]} />
 
-    <Rectangle>
-      <NormalColor color='#f8f8f8' />
-      <LightenColor color={colors[technology][0]} />
-      <LightenColor color={colors[technology][1]} />
-      <NormalColor color={colors[technology][1]} />
+    <LightenColor color={colors[technology][0]} />
+    <NormalColor color={colors[technology][0]} />
+    <NormalColor color={colors[technology][1]} />
+    <DarkenColor color={colors[technology][1]} />
 
-      <LightenColor color={colors[technology][0]} />
-      <NormalColor color={colors[technology][0]} />
-      <NormalColor color={colors[technology][1]} />
-      <DarkenColor color={colors[technology][1]} />
+    <LightenColor color={colors[technology][2]} />
+    <NormalColor color={colors[technology][2]} />
+    <NormalColor color={colors[technology][3]} />
+    <DarkenColor color={colors[technology][3]} />
 
-      <LightenColor color={colors[technology][2]} />
-      <NormalColor color={colors[technology][2]} />
-      <NormalColor color={colors[technology][3]} />
-      <DarkenColor color={colors[technology][3]} />
+    <NormalColor color={colors[technology][2]} />
+    <DarkenColor color={colors[technology][2]} />
+    <DarkenColor color={colors[technology][3]} />
+    <NormalColor color='#586060' />
 
-      <NormalColor color={colors[technology][2]} />
-      <DarkenColor color={colors[technology][2]} />
-      <DarkenColor color={colors[technology][3]} />
-      <NormalColor color='#586060' />
+    <Dot style={{ top: '2px', left: '2px' }} />
+    <Dot style={{ top: '2px', right: '2px' }} />
+    <Dot style={{ bottom: '2px', left: '2px' }} />
+    <Dot style={{ bottom: '2px', right: '2px' }} />
 
-      <Dot style={{ top: '2px', left: '2px' }} />
-      <Dot style={{ top: '2px', right: '2px' }} />
-      <Dot style={{ bottom: '2px', left: '2px' }} />
-      <Dot style={{ bottom: '2px', right: '2px' }} />
-
-      <TextContainer>
-        <Text technology={technology}>
-          {technology}
-        </Text>
-      </TextContainer>
-    </Rectangle>
-  );
-};
+    <TextContainer>
+      <Text technology={technology}>
+        {technology}
+      </Text>
+    </TextContainer>
+  </Rectangle>
+);
 
 export default TechnologyType;

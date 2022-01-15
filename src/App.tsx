@@ -20,15 +20,6 @@ const App = () => {
           <TitleCard />
 
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            <TechnologyType technology="water" />
-            <TechnologyType technology="bug" />
-            <TechnologyType technology="electric" />
-            <TechnologyType technology="normal" />
-            <TechnologyType technology="fighting" />
-            <TechnologyType technology="grass" />
-          </div>
-
-          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             <TechnologyType technology='c' />
             <TechnologyType technology='c++' />
             <TechnologyType technology='c#' />

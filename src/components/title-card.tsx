@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import '../styles/technology-type.css';
-
 // 1px solid border
 // 144px x 32px
 

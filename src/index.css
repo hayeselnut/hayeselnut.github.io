@@ -1,4 +1,9 @@
 @font-face {
+  font-family: "Super Smash TV";
+  src: url("./assets/fonts/Super Smash TV.ttf");
+}
+
+@font-face {
   font-family: "pokemondppt";
   src: url("./assets/fonts/pokemondppt.ttf");
 }

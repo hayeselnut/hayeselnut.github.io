@@ -3,14 +3,6 @@ export type Technology = 'c'
                         | 'c#'
                         | 'python'
 
-                        | 'water'
-                        | 'bug'
-                        | 'normal'
-                        | 'grass'
-                        | 'fighting'
-                        | 'electric'
-                        | 'fire'
-
                         | 'java'
                         | 'kotlin'
 

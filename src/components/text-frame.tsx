@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import '../styles/technology-type.css';
-
 // 244 x 52px
 // 2px #585858
 // 7px #E83030
