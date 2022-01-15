@@ -9,11 +9,11 @@ import TitleCard from './components/title-card';
 const App = () => {
   return (
     <>
-      <header>
+      {/* <header>
         <Container>
           <Projects />
         </Container>
-      </header>
+      </header> */}
       <main>
         <Container className='main-container'>
           {/* <ProjectShowcase /> */}

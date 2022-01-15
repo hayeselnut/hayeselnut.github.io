@@ -9,43 +9,75 @@ type Props = {
   technology: Technology
 }
 
+type ColorDivProps = {
+  color: string
+}
+
 const Rectangle = styled('div')`
   display: grid;
   grid-template-columns: 1px 22px 22px 1px;
   grid-template-rows: 1px 6px 6px 1px;
 
-  margin: 5px;
-  border: 1px solid #586060;
-`;
-
-const TypeRectangle = styled('div')`
-  border-radius: 1px;
-  outline: 1px solid "#586060";
-
-  width: 48px;
-  height: 16px;
   margin: 2px;
+  outline: 1px solid #586060;
+  border-radius: 1px;
 
   position: relative;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   cursor: pointer;
 `;
 
-const TypeText = styled('span')(({ technology }: Props) => ({
-  'fontFamily': `'Super Smash TV', ${technology}, sans-serif`,
-  'textTransform': 'uppercase',
-  'color': 'white',
-  'textShadow': '1px 1px 0 darkgrey',
-  'fontSize': '16px',
-  'transform': 'scale(0.85, 1)',
-  ' -webkit-transform': 'scale(0.85, 1)',
-  '-moz-transform': 'scale(0.85, 1)',
-  '-o-transform': 'scale(0.85, 1)',
+const NormalColor = styled('div')(({ color }: ColorDivProps) => ({
+  background: color,
 }));
+
+const LightenColor = styled('div')(({ color }: ColorDivProps) => ({
+  background: lighten(color, 0.5),
+}));
+
+const DarkenColor = styled('div')(({ color }: ColorDivProps) => ({
+  background: darken(color, 0.25),
+}));
+
+const Dot = styled('span')`
+  height: 1px;
+  width: 1px;
+
+  background-color: rgb(0, 0, 0, 0.2);
+  display: inline-block;
+
+  position: absolute;
+`;
+
+const TextContainer = styled('div')`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center
+`;
+
+const Text = styled('span')(({ technology }: Props) => {
+  const scaleFactor = technology.length <= 5
+    ? 1
+    : technology.length <= 6
+      ? 0.9
+      : technology.length <= 8
+        ? 0.7
+        : 0.6;
+
+  return {
+    'fontFamily': '\'Super Smash TV\', sans-serif',
+    'textTransform': 'uppercase',
+    'color': 'white',
+    'textShadow': '1px 1px 0 #707878',
+    'fontSize': '14px',
+    'transform': `scale(${scaleFactor}, 1)`,
+    ' -webkit-transform': `scale(${scaleFactor}, 1)`,
+    '-moz-transform': `scale(${scaleFactor}, 1)`,
+    '-o-transform': `scale(${scaleFactor}, 1)`,
+  };
+});
 
 const scale = (technology: Technology) => {
   if (technology.length >= 9) return 'scale-9';
@@ -77,7 +109,7 @@ const colors: TechnologyColors = {
   'water': ['#6898F8', '#6898F8', '#6898F8', '#6898F8'],
   'electric': ['#FAC84E', '#FAC84E', '#FAC84E', '#FAC84E'],
   'fighting': ['#8B4934', '#8B4934', '#8B4934', '#8B4934'],
-  'normal': ['#CDC7C2', '#CDC7C2', '#CDC7C2', '#CDC7C2'],
+  'normal': ['#b8b8a8', '#b8b8a8', '#b8b8a8', '#b8b8a8'],
   'bug': ['#B2C13A', '#B2C13A', '#B2C13A', '#B2C13A'],
 
   'terraform': ['#844FBA', '#844FBA', '#844FBA', '#844FBA'],
@@ -89,10 +121,10 @@ const colors: TechnologyColors = {
 const TechnologyType = ({ technology }: Props) => {
   return (
   // <div className={`technology-rectangle ${technology}`}>
-  //   <span className="dot top left" />
-  //   <span className="dot top right" />
-  //   <span className="dot bottom left" />
-  //   <span className="dot bottom right" />
+  // <span className="dot top left" />
+  // <span className="dot top right" />
+  // <span className="dot bottom left" />
+  // <span className="dot bottom right" />
 
   //   <span className={`technology-text ${scale(technology)}`}>
   //     {technology}
@@ -101,25 +133,36 @@ const TechnologyType = ({ technology }: Props) => {
   // </div>
 
     <Rectangle>
-      <div style={{ background: '#f8f8f8' }}></div>
-      <div style={{ background: lighten(colors[technology][0], 0.5) }}></div>
-      <div style={{ background: lighten(colors[technology][1], 0.5) }}></div>
-      <div style={{ background: colors[technology][1] }}></div>
+      <NormalColor color='#f8f8f8' />
+      <LightenColor color={colors[technology][0]} />
+      <LightenColor color={colors[technology][1]} />
+      <NormalColor color={colors[technology][1]} />
 
-      <div style={{ background: lighten(colors[technology][0], 0.5) }}></div>
-      <div style={{ background: colors[technology][0] }}></div>
-      <div style={{ background: colors[technology][1] }}></div>
-      <div style={{ background: darken(colors[technology][1], 0.5) }}></div>
+      <LightenColor color={colors[technology][0]} />
+      <NormalColor color={colors[technology][0]} />
+      <NormalColor color={colors[technology][1]} />
+      <DarkenColor color={colors[technology][1]} />
 
-      <div style={{ background: lighten(colors[technology][2], 0.5) }}></div>
-      <div style={{ background: colors[technology][2] }}></div>
-      <div style={{ background: colors[technology][3] }}></div>
-      <div style={{ background: darken(colors[technology][3], 0.5) }}></div>
+      <LightenColor color={colors[technology][2]} />
+      <NormalColor color={colors[technology][2]} />
+      <NormalColor color={colors[technology][3]} />
+      <DarkenColor color={colors[technology][3]} />
 
-      <div style={{ background: colors[technology][3] }}></div>
-      <div style={{ background: darken(colors[technology][2], 0.5) }}></div>
-      <div style={{ background: darken(colors[technology][3], 0.5) }}></div>
-      <div style={{ background: '#586060' }}></div>
+      <NormalColor color={colors[technology][2]} />
+      <DarkenColor color={colors[technology][2]} />
+      <DarkenColor color={colors[technology][3]} />
+      <NormalColor color='#586060' />
+
+      <Dot style={{ top: '2px', left: '2px' }} />
+      <Dot style={{ top: '2px', right: '2px' }} />
+      <Dot style={{ bottom: '2px', left: '2px' }} />
+      <Dot style={{ bottom: '2px', right: '2px' }} />
+
+      <TextContainer>
+        <Text technology={technology}>
+          {technology}
+        </Text>
+      </TextContainer>
     </Rectangle>
   );
 };
