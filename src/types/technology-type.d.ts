@@ -9,14 +9,15 @@ export type Technology = 'c'
                         | 'grass'
                         | 'fighting'
                         | 'electric'
+                        | 'fire'
 
                         | 'java'
                         | 'kotlin'
 
                         | 'html'
                         | 'css'
-                        | 'javascript' | 'js'
-                        | 'typescript' | 'ts'
+                        | 'javascript'
+                        | 'typescript'
                         | 'react'
                         | 'vue'
 
