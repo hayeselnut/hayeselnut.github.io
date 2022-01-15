@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { Technology } from '../types/technology-type';
 
 import '../styles/technology-type.css';
+import { lighten, darken } from '@mui/material';
 
 type Props = {
   technology: Technology
@@ -15,7 +16,7 @@ const Rectangle = styled('div')`
 
   margin: 5px;
   border: 1px solid #586060;
-  `;
+`;
 
 const TypeRectangle = styled('div')`
   border-radius: 1px;
@@ -101,25 +102,24 @@ const TechnologyType = ({ technology }: Props) => {
 
     <Rectangle>
       <div style={{ background: '#f8f8f8' }}></div>
-      <div style={{ background: 'white' }}></div>
-      <div style={{ background: 'white' }}></div>
+      <div style={{ background: lighten(colors[technology][0], 0.5) }}></div>
+      <div style={{ background: lighten(colors[technology][1], 0.5) }}></div>
       <div style={{ background: colors[technology][1] }}></div>
 
-      <div style={{ background: 'white' }}></div>
+      <div style={{ background: lighten(colors[technology][0], 0.5) }}></div>
       <div style={{ background: colors[technology][0] }}></div>
       <div style={{ background: colors[technology][1] }}></div>
-      <div style={{ background: 'white' }}></div>
+      <div style={{ background: darken(colors[technology][1], 0.5) }}></div>
 
-      <div style={{ background: 'white' }}></div>
+      <div style={{ background: lighten(colors[technology][2], 0.5) }}></div>
       <div style={{ background: colors[technology][2] }}></div>
       <div style={{ background: colors[technology][3] }}></div>
-      <div style={{ background: 'white' }}></div>
+      <div style={{ background: darken(colors[technology][3], 0.5) }}></div>
 
       <div style={{ background: colors[technology][3] }}></div>
-      <div style={{ background: colors[technology][0] }}></div>
-      <div style={{ background: colors[technology][0] }}></div>
+      <div style={{ background: darken(colors[technology][2], 0.5) }}></div>
+      <div style={{ background: darken(colors[technology][3], 0.5) }}></div>
       <div style={{ background: '#586060' }}></div>
-
     </Rectangle>
   );
 };
