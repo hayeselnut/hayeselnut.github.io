@@ -19,8 +19,17 @@ const App = () => {
         <NavBar />
       </header>
       <main>
-        <Container className='main-container'>
-          {/* <ProjectShowcase /> */}
+        <div
+          style={{ position: 'absolute', width: '39rem', height: '39rem',
+            top: '41rem', left: '81rem', background: 'blue' }}
+        />
+
+      </main>
+
+      <div style={{ height: '100vh' }} />
+
+      <footer>
+        <Container>
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             <TitleCard id={1} name="Deduplicatify" category="Spotify" />
             <TitleCard id={2} name="Dewoh" category="League of Legends" />
@@ -85,7 +94,7 @@ const App = () => {
             This is my shitty pokemon website. This is my shitty pokemon website.
           </TextFrame>
         </Container>
-      </main>
+      </footer>
     </>
   );
 };

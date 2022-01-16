@@ -8,6 +8,11 @@
   src: url("./assets/fonts/pokemondppt.ttf");
 }
 
+@font-face {
+  font-family: "Pokedex";
+  src: url("./assets/fonts/Pokedex.TTF");
+}
+
 :root {
   --pokemon-light-red: #F898A0;
   --pokemon-red: #E83030;
