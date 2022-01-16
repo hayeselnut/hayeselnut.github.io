@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import Arrow from './arrow';
-import GitHubLogo from '../assets/github.png';
-import LinkedInLogo from '../assets/linkedin.png';
 
 const Bar = styled('div')`
   height: 16px;
