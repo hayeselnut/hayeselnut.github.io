@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import Arrow from './arrow';
-import { isAbsolute } from 'path';
 
 const Bar = styled('div')`
   height: 16px;
   border-bottom: 2px solid var(--pokemon-black);
   display: flex;
+  box-shadow: 0px 5px rgb(0, 0, 0, 0.1), 0px 7px rgb(0, 0, 0, 0.1), 0px 9px rgb(0, 0, 0, 0.1);
 
   position: relative;
 
