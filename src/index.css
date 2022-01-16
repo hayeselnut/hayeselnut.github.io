@@ -9,8 +9,10 @@
 }
 
 :root {
-  --pokemon-red: #E83030;
   --pokemon-light-red: #F898A0;
+  --pokemon-red: #E83030;
+  --pokemon-dark-red: #C02028;
+  --pokemon-darker-red: #901020;
   --pokemon-white: #F8F8F8;
   --pokemon-light-grey: #D8D8D8;
   --pokemon-grey: #787878;

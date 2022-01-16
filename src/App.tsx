@@ -5,6 +5,7 @@ import Projects from './components/projects';
 import TechnologyType from './components/technology-type';
 import TextFrame from './components/text-frame';
 import TitleCard from './components/title-card';
+import NavBar from './components/nav-bar';
 
 const App = () => {
   return (
@@ -14,19 +15,27 @@ const App = () => {
           <Projects />
         </Container>
       </header> */}
+      <header>
+        <NavBar />
+      </header>
       <main>
         <Container className='main-container'>
           {/* <ProjectShowcase /> */}
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            <TitleCard id={1} name="Guess the Song" category="Discord Bot" />
-            <TitleCard id={2} name="Circles" category="UNSW Degree Planner" />
-            <TitleCard id={2} name="CSESoc Circles" category="UNSW Degree Planner" />
+            <TitleCard id={1} name="Deduplicatify" category="Spotify" />
+            <TitleCard id={2} name="Dewoh" category="League of Legends" />
 
-            <TitleCard id={3} name="Stats Watcher" category="NYT Daily Crossword" />
-            <TitleCard id={4} name="Dewoh" category="League of Legends" />
-            <TitleCard id={5} name="Deduplicatify" category="Spotify" />
-            <TitleCard id={6} name="Glojects" category="Spotify" />
+            <TitleCard id={3} name="Circles" category="UNSW Degree Planner" />
+            <TitleCard id={4} name="CSESoc Circles" category="UNSW Degree Planner" />
 
+            <TitleCard id={5} name="Stats Watcher" category="NYT Daily Crossword" />
+            <TitleCard id={6} name="Glojects" category="Hackathon" />
+
+            <TitleCard id={7} name="Guess the Song" category="Discord Bot" />
+
+            <TitleCard id={8} name="CSElectives" category="UNSW Elective Review" />
+            <TitleCard id={9} name="Chaos" category="Recruitment Platform" />
+            <TitleCard id={10} name="soc-announcer" category="Email Generator" />
           </div>
 
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
