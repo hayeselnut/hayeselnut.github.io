@@ -5,6 +5,9 @@ export type Technology = 'c'
 
                         | 'java'
                         | 'kotlin'
+                        | 'spring boot'
+
+                        | 'swift'
 
                         | 'html'
                         | 'css'
@@ -12,6 +15,14 @@ export type Technology = 'c'
                         | 'typescript'
                         | 'react'
                         | 'vue'
+
+                        | 'sql'
+                        | 'bash'
+                        | 'perl'
+
+                        | 'haskell'
+                        | 'rust'
+                        | 'go'
 
                         | 'aws'
                         | 'gcp'

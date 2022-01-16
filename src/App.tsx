@@ -46,6 +46,9 @@ const App = () => {
 
             <TechnologyType technology='java' />
             <TechnologyType technology='kotlin' />
+            <TechnologyType technology='spring boot' />
+
+            <TechnologyType technology='swift' />
 
             <TechnologyType technology='html' />
             <TechnologyType technology='css' />
@@ -54,6 +57,14 @@ const App = () => {
             <TechnologyType technology='react' />
             <TechnologyType technology='vue' />
 
+            <TechnologyType technology='sql' />
+            <TechnologyType technology='bash' />
+            <TechnologyType technology='perl' />
+
+            <TechnologyType technology='haskell' />
+            <TechnologyType technology='rust' />
+            <TechnologyType technology='go' />
+
             <TechnologyType technology='aws' />
             <TechnologyType technology='gcp' />
             <TechnologyType technology='azure' />
@@ -61,7 +72,11 @@ const App = () => {
           </div>
 
           <TextFrame>
-            This is my shitty pokemon website
+            This is my shitty pokemon website. This is my shitty pokemon website.
+            This is my shitty pokemon website. This is my shitty pokemon website.
+            This is my shitty pokemon website. This is my shitty pokemon website.
+            This is my shitty pokemon website. This is my shitty pokemon website.
+            This is my shitty pokemon website. This is my shitty pokemon website.
           </TextFrame>
         </Container>
       </main>

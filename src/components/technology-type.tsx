@@ -10,7 +10,8 @@ const Rectangle = styled('div')`
   grid-template-rows: 1px 6px 6px 1px;
 
   margin: 2px;
-  box-shadow: 1px 0px var(--pokemon-dark-grey),
+  box-shadow:
+    1px 0px var(--pokemon-dark-grey),
     -1px 0px var(--pokemon-dark-grey),
     0px 1px var(--pokemon-dark-grey),
     0px -1px var(--pokemon-dark-grey);
@@ -19,10 +20,9 @@ const Rectangle = styled('div')`
   cursor: pointer;
 `;
 
-type ColorDivProps = {color: string}
-const NormalColor = styled('div')(({ color }: ColorDivProps) => ({ background: color }));
-const LightenColor = styled('div')(({ color }: ColorDivProps) => ({ background: lighten(color, 0.5) }));
-const DarkenColor = styled('div')(({ color }: ColorDivProps) => ({ background: darken(color, 0.25) }));
+const NormalColor: FC<{color: string}> = styled('div')(({ color }) => ({ background: color }));
+const LightenColor: FC<{color: string}> = styled('div')(({ color }) => ({ background: lighten(color, 0.5) }));
+const DarkenColor: FC<{color: string}> = styled('div')(({ color }) => ({ background: darken(color, 0.25) }));
 
 const Dot = styled('span')`
   height: 1px;
@@ -40,7 +40,8 @@ const TextContainer = styled('div')`
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center
+  align-items: center;
+  white-space: nowrap;
 `;
 
 const Text: FC<{technology: Technology}> = styled('span')(({ technology }) => {
@@ -71,8 +72,13 @@ const colors: TechnologyColors = {
   'c++': ['#659AD2', '#659AD2', '#004482', '#004482'],
   'c#': ['#9a4993', '#9a4993', '#6a1577', '#6a1577'],
   'python': ['#4B8BBE', '#4B8BBE', '#FFD43B', '#FFD43B'],
+
   'java': ['#f89820', '#f89820', '#5382a1', '#5382a1'],
   'kotlin': ['#F6891F', '#F6891F', '#B75EA4', '#B75EA4'],
+  'spring boot': ['#6db33f', '#6db33f', '#6db33f', '#6db33f'],
+
+  'swift': ['#F05138', '#F05138', '#F05138', '#F05138'],
+
   'html': ['#f06529', '#f06529', '#f06529', '#f06529'],
   'css': ['#2965f1', '#2965f1', '#2965f1', '#2965f1'],
   'javascript': ['#f0db4f', '#f0db4f', '#f0db4f', '#f0db4f'],
@@ -80,10 +86,18 @@ const colors: TechnologyColors = {
   'react': ['#61DBFB', '#61DBFB', '#61DBFB', '#61DBFB'],
   'vue': ['#41B883', '#41B883', '#41B883', '#41B883'],
 
-  'terraform': ['#844FBA', '#844FBA', '#844FBA', '#844FBA'],
+  'sql': ['#336791', '#336791', '#336791', '#336791'],
+  'bash': ['#4DA825', '#4DA825', '#283037', '#283037'],
+  'perl': ['#004365', '#004365', '#004365', '#004365'],
+
+  'haskell': ['#5e5086', '#5e5086', '#453a62', '#453a62'],
+  'rust': ['#f74c00', '#f74c00', '#f74c00', '#f74c00'],
+  'go': ['#00ADD8', '#00ADD8', '#00ADD8', '#00ADD8'],
+
   'aws': ['#FF9900', '#FF9900', '#232F3E', '#232F3E'],
   'gcp': ['#4285F4', '#DB4437', '#F4B400', '#0F9D58'],
   'azure': ['#008AD7', '#008AD7', '#008AD7', '#008AD7'],
+  'terraform': ['#844FBA', '#844FBA', '#844FBA', '#844FBA'],
 };
 
 const TechnologyType: FC<{technology: Technology}> = ({ technology }) => (

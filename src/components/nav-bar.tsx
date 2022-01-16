@@ -6,14 +6,17 @@ const Bar = styled('div')`
   height: 16px;
   border-bottom: 2px solid var(--pokemon-black);
   display: flex;
-  box-shadow: 0px 5px rgb(0, 0, 0, 0.1), 0px 7px rgb(0, 0, 0, 0.1), 0px 9px rgb(0, 0, 0, 0.1);
+  box-shadow:
+    0px 5px rgb(0, 0, 0, 0.1),
+    0px 7px rgb(0, 0, 0, 0.1),
+    0px 9px rgb(0, 0, 0, 0.1);
 
   position: relative;
 `;
 
 const Sides = styled('div')`
   background: var(--pokemon-darker-red);
-  width: 7px;
+  min-width: 7px;
 `;
 
 const Middle = styled('div')`
