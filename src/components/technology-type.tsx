@@ -10,8 +10,10 @@ const Rectangle = styled('div')`
   grid-template-rows: 1px 6px 6px 1px;
 
   margin: 2px;
-  outline: 1px solid var(--pokemon-dark-grey);
-  border-radius: 1px;
+  box-shadow: 1px 0px var(--pokemon-dark-grey),
+    -1px 0px var(--pokemon-dark-grey),
+    0px 1px var(--pokemon-dark-grey),
+    0px -1px var(--pokemon-dark-grey);
 
   position: relative;
   cursor: pointer;
