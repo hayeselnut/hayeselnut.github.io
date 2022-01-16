@@ -20,23 +20,26 @@
   --pokemon-black: #212121;
 }
 
+html {
+  font-size: 3px;
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  font-size: 1.125rem;
   transition: 0.3s;
 
   background: var(--pokemon-white);
-  background-size: 40px 40px;
+  background-size: 40rem 40rem;
   background-image:
-    linear-gradient(to right, grey 1px, transparent 1px),
-    linear-gradient(to bottom, grey 1px, transparent 1px);
+    linear-gradient(to right, grey 1rem, transparent 1rem),
+    linear-gradient(to bottom, grey 1rem, transparent 1rem);
 
 }
 
 main {
-  padding-top: 1rem;
+  padding-top: 10rem;
 }

@@ -4,12 +4,12 @@ import styled from '@emotion/styled';
 
 const Grid = styled('div')`
     display: grid;
-    grid-template-columns: repeat(12, 1px);
-    grid-template-rows: repeat(9, 1px);
+    grid-template-columns: repeat(12, 1rem);
+    grid-template-rows: repeat(9, 1rem);
 
     position: absolute;
-    top: 4px;
-    left: 2px;
+    top: 4rem;
+    left: 2rem;
 `;
 
 const DarkGrey = styled('div')`

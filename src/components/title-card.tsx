@@ -3,41 +3,42 @@ import styled from '@emotion/styled';
 
 const Card = styled('div')`
   display: grid;
-  grid-template-rows: 15px 2px 15px;
+  grid-template-rows: 15rem 2rem 15rem;
 
-  width: 144px;
-  height: 32px;
+  width: 144rem;
+  height: 32rem;
 
-  margin: 5px;
+  margin: 5rem;
 
-  outline: 1px solid var(--pokemon-dark-grey);
-  border-radius: 2px;
+  outline: 1rem solid var(--pokemon-dark-grey);
+  border-radius: 2rem;
 
   overflow: hidden;
 
-  box-shadow: 4px 4px var(--pokemon-light-grey);
+  box-shadow: 4rem 4rem rgb(0, 0, 0, 0.2);
 
   color: var(--pokemon-light-grey);
   font-family: pokemondppt, san-serif;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.5rem;
 
   text-shadow:
-    1px 0 var(--pokemon-dark-grey),
-    0 1px var(--pokemon-dark-grey),
-    -1px 0 var(--pokemon-dark-grey),
-    0 -1px var(--pokemon-dark-grey),
-    1px 1px var(--pokemon-dark-grey),
-    -1px 1px var(--pokemon-dark-grey),
-    -1px -1px var(--pokemon-dark-grey),
-    1px -1px var(--pokemon-dark-grey);
+    1rem 0 var(--pokemon-dark-grey),
+    0 1rem var(--pokemon-dark-grey),
+    -1rem 0 var(--pokemon-dark-grey),
+    0 -1rem var(--pokemon-dark-grey),
+    1rem 1rem var(--pokemon-dark-grey),
+    -1rem 1rem var(--pokemon-dark-grey),
+    -1rem -1rem var(--pokemon-dark-grey),
+    1rem -1rem var(--pokemon-dark-grey);
 `;
 
 const Name = styled('div')`
   background: var(--pokemon-red);
   text-transform: uppercase;
+  font-size: 16rem;
   display: flex;
   align-items: center;
-  padding-left: 3px;
+  padding-left: 3rem;
 `;
 
 const Divider = styled('div')`
@@ -49,15 +50,15 @@ const Category = styled('div')`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 4px;
-  padding-bottom: 2px;
-  font-size: 16px;
+  padding-right: 4rem;
+  padding-bottom: 2rem;
+  font-size: 16rem;
 `;
 
 const TitleCard: FC<{id: number, name: string, category: string}> = ({ id, name, category }) => (
   <Card>
     <Name>
-      <span style={{ marginRight: '10px' }}>
+      <span style={{ marginRight: '10rem' }}>
         {String(id).padStart(3, '0')}
       </span>
       <span>
