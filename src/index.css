@@ -27,8 +27,3 @@ body {
   font-size: 1.125rem;
   transition: 0.3s;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
