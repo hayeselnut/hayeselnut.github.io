@@ -1,67 +1,74 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from '@emotion/styled';
 
-// 1px solid border
-// 144px x 32px
-
-
-// background: #E83030;
-// background: linear-gradient(#E83030 0 50%, #F898A0 50% 56%, white 51% 100%);
-
 const Card = styled('div')`
+  display: grid;
+  grid-template-rows: 15px 2px 15px;
+
   width: 144px;
   height: 32px;
 
   margin: 5px;
 
-  border: 1px solid #585858;
-  border-radius: 3px;
+  outline: 1px solid var(--pokemon-dark-grey);
+  border-radius: 2px;
 
   overflow: hidden;
 
-  box-shadow: 4px 4px #c0c8d0;
+  box-shadow: 4px 4px var(--pokemon-light-grey);
 
-  color: #d0d8d8;
+  color: var(--pokemon-light-grey);
+  font-family: pokemondppt, san-serif;
   letter-spacing: 0.5px;
-  font-family: "pokemondppt", san-serif;
+
   text-shadow:
-    1px 0 #585858,
-    0 1px #585858,
-    -1px 0 #585858,
-    0 -1px #585858,
-    1px 1px #585858,
-    -1px 1px #585858,
-    -1px -1px #585858,
-    1px -1px #585858;
+    1px 0 var(--pokemon-dark-grey),
+    0 1px var(--pokemon-dark-grey),
+    -1px 0 var(--pokemon-dark-grey),
+    0 -1px var(--pokemon-dark-grey),
+    1px 1px var(--pokemon-dark-grey),
+    -1px 1px var(--pokemon-dark-grey),
+    -1px -1px var(--pokemon-dark-grey),
+    1px -1px var(--pokemon-dark-grey);
 `;
 
 const Name = styled('div')`
-  background: #E83030;
+  background: var(--pokemon-red);
+  text-transform: uppercase;
   display: flex;
-  align-itmes: center;
-  height: 15px;
-  border-bottom: 2px solid #F898A0;
+  align-items: center;
+  padding-left: 3px;
+`;
+
+const Divider = styled('div')`
+  background: var(--pokemon-light-red);
 `;
 
 const Category = styled('div')`
   background: white;
   display: flex;
   align-items: center;
-  height: 15px;
   justify-content: flex-end;
+  padding-right: 4px;
+  padding-bottom: 2px;
+  font-size: 16px;
 `;
 
-const TitleCard = () => {
-  return (
-    <Card>
-      <Name>
-        010 GUESS THE SONG
-      </Name>
-      <Category>
-        Discord Bot
-      </Category>
-    </Card>
-  );
-};
+const TitleCard: FC<{id: number, name: string, category: string}> = ({ id, name, category }) => (
+  <Card>
+    <Name>
+      <span style={{ marginRight: '10px' }}>
+        {String(id).padStart(3, '0')}
+      </span>
+      <span>
+        {name}
+      </span>
+    </Name>
+    <Divider />
+    <Category>
+      {category}
+    </Category>
+  </Card>
+);
 
 export default TitleCard;

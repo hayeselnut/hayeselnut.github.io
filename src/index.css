@@ -8,6 +8,16 @@
   src: url("./assets/fonts/pokemondppt.ttf");
 }
 
+:root {
+  --pokemon-red: #E83030;
+  --pokemon-light-red: #F898A0;
+  --pokemon-white: #F8F8F8;
+  --pokemon-light-grey: #D8D8D8;
+  --pokemon-grey: #787878;
+  --pokemon-dark-grey: #585858;
+  --pokemon-black: #212121;
+}
+
 body {
   margin: 0;
   font-family: sans-serif;

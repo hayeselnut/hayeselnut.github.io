@@ -1,23 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from '@emotion/styled';
 
-// 244 x 52px
-// 2px #585858
-// 7px #E83030
-// 2px #F898A0 (1px bottom top)
-
 const Frame = styled('div')`
-  outline: 2px solid #585858;
+  outline: 2px solid var(--pokemon-dark-grey);
 
   border-radius: 2px;
-  background: #E83030;
+  background: var(--pokemon-red);
 
   width: 244px;
   height: 52px;
 
   position: relative;
 
-  box-shadow: 6px 6px #c0c8d0;
+  box-shadow: 6px 6px var(--pokemon-light-grey);
 
   display: flex;
   justify-content: center;
@@ -27,20 +22,20 @@ const Frame = styled('div')`
 const Textbox = styled('div')`
   height: 50px;
   width: 226px;
-  border: 1px solid #F898A0;
+  border: 1px solid var(--pokemon-light-red);
 
-  box-shadow: 0 0 0 1px #F898A0;
+  box-shadow: 0 0 0 1px var(--pokemon-light-red);
   background: white;
 
   font-size: 12px;
   font-family: "pokemondppt";
 `;
 
-const TextFrame = () => {
+const TextFrame: FC = ({ children }) => {
   return (
     <Frame>
       <Textbox>
-        This is my shitty pokemon website
+        {children}
       </Textbox>
     </Frame>
   );

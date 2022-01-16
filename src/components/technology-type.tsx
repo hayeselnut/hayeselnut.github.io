@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { lighten, darken } from '@mui/material';
 import { Technology } from '../types/technology-type';
+import { FC } from 'react';
 
 const Rectangle = styled('div')`
   display: grid;
@@ -9,7 +10,7 @@ const Rectangle = styled('div')`
   grid-template-rows: 1px 6px 6px 1px;
 
   margin: 2px;
-  outline: 1px solid #586060;
+  outline: 1px solid var(--pokemon-dark-grey);
   border-radius: 1px;
 
   position: relative;
@@ -40,7 +41,7 @@ const TextContainer = styled('div')`
   align-items: center
 `;
 
-const Text = styled('span')(({ technology }: Props) => {
+const Text: FC<{technology: Technology}> = styled('span')(({ technology }) => {
   const scaleFactor = technology.length <= 5
     ? 1
     : technology.length <= 6
@@ -53,7 +54,7 @@ const Text = styled('span')(({ technology }: Props) => {
     'fontFamily': '\'Super Smash TV\', sans-serif',
     'textTransform': 'uppercase',
     'color': 'white',
-    'textShadow': '1px 1px 0 #707878',
+    'textShadow': '1px 1px 0 var(--pokemon-grey)',
     'fontSize': '14px',
     'transform': `scale(${scaleFactor}, 1)`,
     ' -webkit-transform': `scale(${scaleFactor}, 1)`,
@@ -83,13 +84,9 @@ const colors: TechnologyColors = {
   'azure': ['#008AD7', '#008AD7', '#008AD7', '#008AD7'],
 };
 
-type Props = {
-  technology: Technology
-}
-
-const TechnologyType = ({ technology }: Props) => (
+const TechnologyType: FC<{technology: Technology}> = ({ technology }) => (
   <Rectangle>
-    <NormalColor color='#f8f8f8' />
+    <NormalColor color='var(--pokemon-white)' />
     <LightenColor color={colors[technology][0]} />
     <LightenColor color={colors[technology][1]} />
     <NormalColor color={colors[technology][1]} />
@@ -107,7 +104,7 @@ const TechnologyType = ({ technology }: Props) => (
     <NormalColor color={colors[technology][2]} />
     <DarkenColor color={colors[technology][2]} />
     <DarkenColor color={colors[technology][3]} />
-    <NormalColor color='#586060' />
+    <NormalColor color='var(--pokemon-dark-grey)' />
 
     <Dot style={{ top: '2px', left: '2px' }} />
     <Dot style={{ top: '2px', right: '2px' }} />

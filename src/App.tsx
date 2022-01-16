@@ -17,7 +17,17 @@ const App = () => {
       <main>
         <Container className='main-container'>
           {/* <ProjectShowcase /> */}
-          <TitleCard />
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+            <TitleCard id={1} name="Guess the Song" category="Discord Bot" />
+            <TitleCard id={2} name="Circles" category="UNSW Degree Planner" />
+            <TitleCard id={2} name="CSESoc Circles" category="UNSW Degree Planner" />
+
+            <TitleCard id={3} name="Stats Watcher" category="NYT Daily Crossword" />
+            <TitleCard id={4} name="Dewoh" category="League of Legends" />
+            <TitleCard id={5} name="Deduplicatify" category="Spotify" />
+            <TitleCard id={6} name="Glojects" category="Spotify" />
+
+          </div>
 
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             <TechnologyType technology='c' />
@@ -41,7 +51,9 @@ const App = () => {
             <TechnologyType technology='terraform' />
           </div>
 
-          <TextFrame />
+          <TextFrame>
+            This is my shitty pokemon website
+          </TextFrame>
         </Container>
       </main>
     </>
