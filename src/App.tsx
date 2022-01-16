@@ -56,6 +56,7 @@ const App = () => {
             <TechnologyType technology='typescript' />
             <TechnologyType technology='react' />
             <TechnologyType technology='vue' />
+            <TechnologyType technology='apps script' />
 
             <TechnologyType technology='sql' />
             <TechnologyType technology='bash' />
@@ -69,6 +70,11 @@ const App = () => {
             <TechnologyType technology='gcp' />
             <TechnologyType technology='azure' />
             <TechnologyType technology='terraform' />
+
+            <TechnologyType technology='docker' />
+            <TechnologyType technology='kubernetes' />
+            <TechnologyType technology='heroku' />
+
           </div>
 
           <TextFrame>

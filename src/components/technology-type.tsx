@@ -85,6 +85,7 @@ const colors: TechnologyColors = {
   'typescript': ['#007acc', '#007acc', '#007acc', '#007acc'],
   'react': ['#61DBFB', '#61DBFB', '#61DBFB', '#61DBFB'],
   'vue': ['#41B883', '#41B883', '#41B883', '#41B883'],
+  'apps script': ['#F4B400', '#0F9D58', '#DB4437', '#4285F4'],
 
   'sql': ['#336791', '#336791', '#336791', '#336791'],
   'bash': ['#4DA825', '#4DA825', '#283037', '#283037'],
@@ -98,6 +99,10 @@ const colors: TechnologyColors = {
   'gcp': ['#4285F4', '#DB4437', '#F4B400', '#0F9D58'],
   'azure': ['#008AD7', '#008AD7', '#008AD7', '#008AD7'],
   'terraform': ['#844FBA', '#844FBA', '#844FBA', '#844FBA'],
+
+  'docker': ['#0db7ed', '#0db7ed', '#0db7ed', '#0db7ed'],
+  'kubernetes': ['#326ce5', '#326ce5', '#326ce5', '#326ce5'],
+  'heroku': ['#430098', '#430098', '#430098', '#430098'],
 };
 
 const TechnologyType: FC<{technology: Technology}> = ({ technology }) => (

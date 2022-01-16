@@ -15,6 +15,7 @@ export type Technology = 'c'
                         | 'typescript'
                         | 'react'
                         | 'vue'
+                        | 'apps script'
 
                         | 'sql'
                         | 'bash'
@@ -27,4 +28,8 @@ export type Technology = 'c'
                         | 'aws'
                         | 'gcp'
                         | 'azure'
-                        | 'terraform';
+                        | 'terraform'
+
+                        | 'docker'
+                        | 'kubernetes'
+                        | 'heroku';
