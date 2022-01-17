@@ -8,8 +8,6 @@ const Card = styled('div')`
   width: 144rem;
   height: 32rem;
 
-  margin: 5rem;
-
   outline: 1rem solid var(--pokemon-dark-grey);
   border-radius: 2rem;
 

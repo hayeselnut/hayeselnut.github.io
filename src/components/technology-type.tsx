@@ -8,6 +8,8 @@ const Rectangle = styled('div')`
   display: grid;
   grid-template-columns: 1rem 22rem 22rem 1rem;
   grid-template-rows: 1rem 6rem 6rem 1rem;
+  width: 46rem;
+  height: 14rem;
 
   margin: 2rem;
   box-shadow:

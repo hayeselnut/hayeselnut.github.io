@@ -1,29 +1,79 @@
 import React, { useState, createContext } from 'react';
 import { Container } from '@mui/material';
+import styled from '@emotion/styled';
 
 import Projects from './components/projects';
 import TechnologyType from './components/technology-type';
 import TextFrame from './components/text-frame';
 import TitleCard from './components/title-card';
 import NavBar from './components/nav-bar';
+import PokedexSelector from './components/pokedex-selector';
+
+import GTSDB from './assets/gtsdb.svg';
+
+const Square = styled('div')`
+  width: 40rem;
+  height: 40rem;
+  border: 2rem solid red;
+  box-sizing: border-box;
+`;
+
+const MainContainer = styled('div')`
+  position: absolute;
+  left: 70rem;
+  top: 40rem;
+
+  width: calc(10 * 40rem + 20rem);
+
+  display: grid;
+  grid-template-columns: 1fr 20rem 120rem;
+`;
 
 const App = () => {
   return (
     <>
-      {/* <header>
-        <Container>
-          <Projects />
-        </Container>
-      </header> */}
       <header>
         <NavBar />
       </header>
       <main>
-        <div
-          style={{ position: 'absolute', width: '39rem', height: '39rem',
-            top: '41rem', left: '81rem', background: 'blue' }}
-        />
-
+        <MainContainer>
+          <div style={{ border: '0rem solid red', width: '100%', display: 'flex',
+            flexDirection: 'column', position: 'relative' }}
+          >
+            <div style={{ position: 'absolute', top: 0, right: 0, display: 'flex', alignItems: 'flex-end',
+              flexDirection: 'column',
+            }}
+            >
+              <TitleCard id={1} name="Deduplicatify" category="Spotify" />
+              <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '6rem', maxWidth: '70%',
+                justifyContent: 'flex-end' }}
+              >
+                <TechnologyType technology='html' />
+                <TechnologyType technology='css' />
+                <TechnologyType technology='javascript' />
+                <TechnologyType technology='heroku' />
+              </div>
+            </div>
+            <img src={GTSDB} height='70%' style={{ marginRight: '150rem' }} />
+            <div style={{ flexGrow: 1 }} />
+            <TextFrame>
+              This is my shitty pokemon website and here I would write something about my application or project
+            </TextFrame>
+          </div>
+          <div />
+          <PokedexSelector>
+            <Square />
+            <Square />
+            <Square />
+            <Square />
+            <Square />
+            <Square />
+            <Square />
+            <Square />
+            <Square />
+            <Square />
+          </PokedexSelector>
+        </MainContainer>
       </main>
 
       <div style={{ height: '100vh' }} />
@@ -83,7 +133,6 @@ const App = () => {
             <TechnologyType technology='docker' />
             <TechnologyType technology='kubernetes' />
             <TechnologyType technology='heroku' />
-
           </div>
 
           <TextFrame>

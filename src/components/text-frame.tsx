@@ -12,7 +12,7 @@ const Rectangle = styled('div')`
     1rem 0rem var(--pokemon-light-grey),
     1rem 1rem var(--pokemon-light-grey);
   font-family: pokemondppt, sans-serif;
-  font-size: 16rem;
+  font-size: 12rem;
 
   box-shadow: 4rem 4rem rgb(0, 0, 0, 0.2);
 
@@ -28,7 +28,7 @@ const Middle = styled('div')`
   background: var(--pokemon-white);
 
   flex-grow: 1;
-  padding: 2rem 20rem;
+  padding: 2rem 7rem;
   min-height: 46rem;
 `;
 
