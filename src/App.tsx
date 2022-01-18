@@ -8,6 +8,8 @@ import TextFrame from './components/text-frame';
 import TitleCard from './components/title-card';
 import NavBar from './components/nav-bar';
 import PokedexSelector from './components/pokedex-selector';
+import PokedexSquare from './components/pokedex-square';
+
 
 import GTSDB from './assets/gtsdb.svg';
 
@@ -27,7 +29,22 @@ const MainContainer = styled('div')`
   grid-template-columns: 1fr 20rem 120rem;
 `;
 
+const projects = [
+  { name: 'Deduplicatify', category: 'Spotify', img: '' },
+  { name: 'Dewoh', category: 'League of Legends', img: '' },
+  { name: 'Circles', category: 'UNSW Degree Planner', img: '' },
+  { name: 'CSESoc Circles', category: 'UNSW Degree Planner', img: '' },
+  { name: 'Stats Watcher', category: 'NYT Daily Crossword', img: '' },
+  { name: 'Glojects', category: 'Hackathon', img: '' },
+  { name: 'Guess the Song', category: 'Discord Bot', img: '' },
+  { name: 'CSElectives', category: 'UNSW Elective Review', img: '' },
+  { name: 'Chaos', category: 'Recruitment Platform', img: '' },
+  { name: 'soc-announcer', category: 'Email Generator', img: '' },
+];
+
 const App = () => {
+  const [selectedProject, setSelectedProject] = useState('Deduplicatify');
+
   return (
     <>
       <header>
@@ -60,18 +77,14 @@ const App = () => {
           </div>
           <div />
           <PokedexSelector>
-            <Square />
-            <Square />
-            <Square />
-            <Square style={{ outline: '3rem solid rgb(255, 0, 0, 1)' }} />
-            <Square />
-            <Square />
-            <Square />
-            <Square />
-            <Square />
-            <Square />
-            <Square />
-            <Square />
+            {projects.map((project, index) => (
+              <PokedexSquare
+                id={index+1}
+                key={project.name}
+                project={project}
+                selected={selectedProject === project.name}
+              />
+            ))}
           </PokedexSelector>
         </MainContainer>
       </main>
