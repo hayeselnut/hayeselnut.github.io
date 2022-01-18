@@ -3,8 +3,9 @@ import { Project } from '../types/project';
 import GuessTheSongLogo from '../assets/gtsdb.svg';
 
 export const GuessTheSong: Project = {
+  id: 7,
   name: 'Guess the Song',
-  category: 'Discord bot',
+  category: 'Discord Bot',
   participation: true,
   stack: ['html', 'css', 'typescript', 'react', 'heroku'],
   color: '#FC4E56',

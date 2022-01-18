@@ -8,17 +8,18 @@ import { GuessTheSong } from './guess-the-song';
 import { CSElectives } from './cselectives';
 import { Chaos } from './chaos';
 import { SocAnnouncer } from './soc-announcer';
+import { Project, ProjectName } from '../types/project';
 
-export const projects = [
-  Deduplicatify,
-  Dewoh,
-  Circles,
-  CSESocCircles,
-  StatsWatcher,
-  Glojects,
-  GuessTheSong,
-  CSElectives,
-  Chaos,
-  SocAnnouncer,
-];
+export const projects: {[key in ProjectName]: Project} = {
+  'Deduplicatify': Deduplicatify,
+  'Dewoh': Dewoh,
+  'Circles': Circles,
+  'CSESoc Circles': CSESocCircles,
+  'Stats Watcher': StatsWatcher,
+  'Glojects': Glojects,
+  'Guess the Song': GuessTheSong,
+  'CSElectives': CSElectives,
+  'Chaos': Chaos,
+  'soc-announcer': SocAnnouncer,
+};
 

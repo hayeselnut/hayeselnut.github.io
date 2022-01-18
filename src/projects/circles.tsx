@@ -3,6 +3,7 @@ import { Project } from '../types/project';
 import CirclesLogo from '../assets/circles.svg';
 
 export const Circles: Project = {
+  id: 3,
   name: 'Circles',
   category: 'UNSW Degree Planner',
   participation: true,

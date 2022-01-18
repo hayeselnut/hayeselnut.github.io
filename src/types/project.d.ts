@@ -1,6 +1,7 @@
 import { Technology } from './technology-type';
 
 export type Project = {
+    id: number,
     name: ProjectName,
     category: string,
     participation: boolean,

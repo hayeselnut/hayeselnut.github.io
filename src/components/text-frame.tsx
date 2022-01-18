@@ -32,11 +32,11 @@ const Middle = styled('div')`
   min-height: 46rem;
 `;
 
-const TextFrame: FC = ({ children }) => (
+const TextFrame: FC<{content: JSX.Element[]}> = ({ content }) => (
   <Rectangle>
     <Side style={{ borderRight: '1rem solid var(--pokemon-light-red)' }} />
     <Middle>
-      {children}
+      {content[0]}
     </Middle>
     <Side style={{ borderLeft: '1rem solid var(--pokemon-light-red)' }} />
   </Rectangle>
