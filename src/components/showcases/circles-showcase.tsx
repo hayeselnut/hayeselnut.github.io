@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Label } from 'semantic-ui-react';
 
-import { bodyStyle } from '../../helpers/body-style';
-
 const CirclesShowcase = () => {
   const [podcastLoading, setPodcastLoading] = useState(true);
   const handleLoad = () => {
@@ -13,7 +11,7 @@ const CirclesShowcase = () => {
   return (
     <>
       <Helmet>
-        <style type="text/css">{bodyStyle('#39B54A')}</style>
+        {/* <style type="text/css">{bodyStyle('#39B54A')}</style> */}
       </Helmet>
 
       <h1>Circles</h1>

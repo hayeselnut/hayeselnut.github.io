@@ -11,7 +11,7 @@ const Rectangle = styled('div')`
   width: 46rem;
   height: 14rem;
 
-  margin: 2rem;
+  margin: 1.5rem;
   box-shadow:
     1rem 0rem var(--pokemon-dark-grey),
     -1rem 0rem var(--pokemon-dark-grey),

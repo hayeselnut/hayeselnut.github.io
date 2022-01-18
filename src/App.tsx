@@ -12,16 +12,14 @@ import PokedexSelector from './components/pokedex-selector';
 import GTSDB from './assets/gtsdb.svg';
 
 const Square = styled('div')`
-  width: 40rem;
-  height: 40rem;
-  border: 2rem solid red;
-  box-sizing: border-box;
+  width: 37rem;
+  height: 37em;
 `;
 
 const MainContainer = styled('div')`
   position: absolute;
-  left: 70rem;
-  top: 40rem;
+  left: 72rem;
+  top: 42rem;
 
   width: calc(10 * 40rem + 20rem);
 
@@ -50,7 +48,7 @@ const App = () => {
               >
                 <TechnologyType technology='html' />
                 <TechnologyType technology='css' />
-                <TechnologyType technology='javascript' />
+                <TechnologyType technology='typescript' />
                 <TechnologyType technology='heroku' />
               </div>
             </div>
@@ -64,6 +62,8 @@ const App = () => {
           <PokedexSelector>
             <Square />
             <Square />
+            <Square />
+            <Square style={{ outline: '3rem solid rgb(255, 0, 0, 1)' }} />
             <Square />
             <Square />
             <Square />

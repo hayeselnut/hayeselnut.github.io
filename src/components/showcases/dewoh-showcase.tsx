@@ -1,13 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { bodyStyle } from '../../helpers/body-style';
-
 const DewohShowcase = () => {
   return (
     <>
       <Helmet>
-        <style type="text/css">{bodyStyle('#C89C38')}</style>
+        {/* <style type="text/css">{bodyStyle('#C89C38')}</style> */}
       </Helmet>
 
       <h1>Dewoh</h1>

@@ -1,13 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { bodyStyle } from '../../helpers/body-style';
-
 const GTSDBShowcase = () => {
   return (
     <>
       <Helmet>
-        <style type="text/css">{bodyStyle('#1ED760')}</style>
+        {/* <style type="text/css">{bodyStyle('#1ED760')}</style> */}
       </Helmet>
 
       <h1>Deduplicatify</h1>

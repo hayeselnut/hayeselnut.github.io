@@ -3,12 +3,12 @@ import styled from '@emotion/styled';
 
 const GridContainer = styled('div')`
     width: 100%;
-    background: pink;
 `;
 
 const Grid = styled('div')`
     display: grid;
     grid-template-columns: repeat(auto-fill, 40rem);
+    row-gap: 3rem;
 `;
 
 const PokedexSelector: FC = ({ children }) => (

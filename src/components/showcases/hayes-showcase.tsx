@@ -1,8 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { bodyStyle } from '../../helpers/body-style';
-
 // import TechnologyType from '../TechnologyType';
 import '../../styles/socials.css';
 
@@ -10,7 +8,7 @@ const HayesShowcase = () => {
   return (
     <>
       <Helmet>
-        <style type="text/css">{bodyStyle('white')}</style>
+        {/* <style type="text/css">{bodyStyle('white')}</style> */}
       </Helmet>
 
       <h1>Hayeselnut</h1>
