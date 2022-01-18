@@ -6,7 +6,7 @@ export const CSESocCircles: Project = {
   id: 4,
   name: 'CSESoc Circles',
   category: 'UNSW Degree Planner',
-  participation: true,
+  participation: false,
   stack: ['html', 'css', 'javascript', 'react', 'docker'],
   color: '#39B54A',
   img: CSESocCirclesLogo,

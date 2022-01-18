@@ -1,4 +1,4 @@
-import React, { FC, MouseEventHandler } from 'react';
+import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Project } from '../types/project';
 
@@ -9,26 +9,27 @@ const Square: FC<{selected: boolean}> = styled('div')(({ selected }) => ({
   'font-family': 'deltarune',
   'font-size': '12rem',
   'box-sizing': 'border-box',
-  'padding': '3rem',
-  'color': 'var(--pokemon-grid-grey)',
+  'padding': '2rem',
   ...(
     selected
       ? {
         outline: '3rem solid var(--pokemon-red)',
-        zIndex: 100,
         color: 'var(--pokemon-grey)',
       }
-      : { '&:hover': { outline: '3rem solid var(--pokemon-light-red)' } }
+      : {
+        'color': 'var(--pokemon-grid-grey)',
+        '&:hover': { outline: '3rem solid var(--pokemon-light-red)' },
+      }
   ),
 }));
+
+const Id = styled('span')``;
 
 const PokedexSquare: FC<{project: Project, selected: boolean}>
 = ({ project, selected }) => (
   <Square selected={selected}>
-    <span>
-      {String(project.id).padStart(3, '0')}
-    </span>
-    <img src={project.img} width="100%" />
+    <Id>{String(project.id).padStart(3, '0')}</Id>
+    <img src={project.img} width="50%" />
   </Square>
 );
 

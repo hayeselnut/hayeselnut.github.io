@@ -7,7 +7,7 @@ export const SocAnnouncer: Project = {
   name: 'soc-announcer',
   category: 'Email Generator',
   participation: true,
-  stack: ['html', 'css', 'javascript', 'react', 'docker'],
+  stack: ['html', 'css', 'python'],
   color: '#000',
   img: SocAnnouncerLogo,
   description: [

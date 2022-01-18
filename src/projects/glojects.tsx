@@ -7,7 +7,7 @@ export const Glojects: Project = {
   name: 'Glojects',
   category: 'Hackathon',
   participation: true,
-  stack: ['html', 'css', 'javascript'],
+  stack: ['html', 'css', 'javascript', 'react'],
   color: '#000',
   img: GlojectsLogo,
   description: [
