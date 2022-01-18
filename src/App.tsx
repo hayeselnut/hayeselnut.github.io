@@ -2,21 +2,15 @@ import React, { useState, createContext } from 'react';
 import { Container } from '@mui/material';
 import styled from '@emotion/styled';
 
-import Projects from './components/projects';
 import TechnologyType from './components/technology-type';
 import TextFrame from './components/text-frame';
 import TitleCard from './components/title-card';
 import NavBar from './components/nav-bar';
 import PokedexSelector from './components/pokedex-selector';
 import PokedexSquare from './components/pokedex-square';
-
-
 import GTSDB from './assets/gtsdb.svg';
 
-const Square = styled('div')`
-  width: 37rem;
-  height: 37em;
-`;
+import { projects } from './projects';
 
 const MainContainer = styled('div')`
   position: absolute;
@@ -29,21 +23,8 @@ const MainContainer = styled('div')`
   grid-template-columns: 1fr 20rem 120rem;
 `;
 
-const projects = [
-  { name: 'Deduplicatify', category: 'Spotify', img: '' },
-  { name: 'Dewoh', category: 'League of Legends', img: '' },
-  { name: 'Circles', category: 'UNSW Degree Planner', img: '' },
-  { name: 'CSESoc Circles', category: 'UNSW Degree Planner', img: '' },
-  { name: 'Stats Watcher', category: 'NYT Daily Crossword', img: '' },
-  { name: 'Glojects', category: 'Hackathon', img: '' },
-  { name: 'Guess the Song', category: 'Discord Bot', img: '' },
-  { name: 'CSElectives', category: 'UNSW Elective Review', img: '' },
-  { name: 'Chaos', category: 'Recruitment Platform', img: '' },
-  { name: 'soc-announcer', category: 'Email Generator', img: '' },
-];
-
 const App = () => {
-  const [selectedProject, setSelectedProject] = useState('Deduplicatify');
+  const [selectedProject, setSelectedProject] = useState('Chaos');
 
   return (
     <>

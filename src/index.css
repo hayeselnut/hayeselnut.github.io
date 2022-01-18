@@ -13,6 +13,11 @@
   src: url("./assets/fonts/Pokedex.TTF");
 }
 
+@font-face {
+  font-family: "deltarune";
+  src: url("./assets/fonts/deltarune.ttf");
+}
+
 :root {
   --pokemon-light-red: #F898A0;
   --pokemon-red: #E83030;

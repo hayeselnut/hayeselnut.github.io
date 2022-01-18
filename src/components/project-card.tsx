@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import { ProjectSlug } from '../types/project-slugs';
 
 import '../styles/pokeball.css';
 
 type Props = {
-  slug: ProjectSlug
   img: string,
   link: string,
 }
 
-const ProjectCard = ({ slug, img, link }: Props) => {
+const ProjectCard = ({ img, link }: Props) => {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
