@@ -29,7 +29,7 @@ const PokedexSquare: FC<{project: Project, selected: boolean}>
 = ({ project, selected }) => (
   <Square selected={selected}>
     <Id>{String(project.id).padStart(3, '0')}</Id>
-    <img src={project.img} width="50%" />
+    <img src={project.img} width="50%" style={{ opacity: project.participation ? 1 : 0.3 }} />
   </Square>
 );
 
