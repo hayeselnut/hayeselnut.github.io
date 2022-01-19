@@ -2,18 +2,18 @@ import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Project } from '../types/project';
 
-const Square: FC<{selected: boolean, project: Project}> = styled.div(({ selected, project }) => ({
-  'width': '37rem',
-  'height': '37rem',
-  'cursor': 'pointer',
-  'font-family': 'deltarune',
-  'font-size': '12rem',
-  'box-sizing': 'border-box',
-  // 'padding': '1rem',
-  'background-image': `url(${project.img})`,
-  'background-repeat': 'no-repeat',
-  'background-size': '60%',
-  'background-position': '50% 80%',
+const Square: FC<{selected: boolean}> = styled.div(({ selected }) => ({
+  width: '37rem',
+  height: '37rem',
+  cursor: 'pointer',
+  fontFamily: 'deltarune',
+  fontSize: '12rem',
+  boxSizing: 'border-box',
+
+  display: 'grid',
+  gridTemplateRows: '1fr 2fr',
+  paddingBottom: '3rem',
+
   ...(
     selected
       ? {
@@ -27,15 +27,23 @@ const Square: FC<{selected: boolean, project: Project}> = styled.div(({ selected
   ),
 }));
 
-const Id = styled('span')`
-  // border: 1px solid black;
-  float: right;
+const Id = styled.span`
+  display: flex;
+  justify-content: flex-end;
 `;
 
+const Icon: FC<{project: Project}> = styled.div(({ project }) => ({
+  opacity: project.participation ? 1 : 0.4,
+  backgroundImage: `url(${project.img})`,
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'contain',
+  backgroundPosition: 'center',
+}));
+
 const PokedexSquare: FC<{project: Project, selected: boolean}> = ({ project, selected }) => (
-  <Square selected={selected} project={project}>
+  <Square selected={selected}>
     <Id>{String(project.id).padStart(3, '0')}</Id>
-    {/* <img src={project.img} width="50%" style={{ opacity: project.participation ? 1 : 0.3 }} /> */}
+    <Icon project={project} />
   </Square>
 );
 
