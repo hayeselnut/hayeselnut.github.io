@@ -26,7 +26,7 @@ const NormalColor: FC<{color: string}> = styled.div(({ color }) => ({ background
 const LightenColor: FC<{color: string}> = styled.div(({ color }) => ({ background: lighten(color, 0.5) }));
 const DarkenColor: FC<{color: string}> = styled.div(({ color }) => ({ background: darken(color, 0.25) }));
 
-const Dot = styled('span')`
+const Dot = styled.span`
   height: 1rem;
   width: 1rem;
 
@@ -46,7 +46,7 @@ const TextContainer = styled.div`
   white-space: nowrap;
 `;
 
-const Text: FC<{technology: Technology}> = styled('span')(({ technology }) => {
+const Text: FC<{technology: Technology}> = styled.span(({ technology }) => {
   const scaleFactor = technology.length <= 5
     ? 1
     : technology.length <= 6

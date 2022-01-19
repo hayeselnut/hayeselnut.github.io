@@ -32,7 +32,7 @@ const Middle = styled.div`
   padding-right: 10rem;
 `;
 
-const Title = styled('span')`
+const Title = styled.span`
   flex-grow: 1;
 
   color: var(--pokemon-white);
@@ -56,7 +56,7 @@ const LinkContainer = styled.div`
   align-self: flex-end;
 `;
 
-const Link = styled('a')`
+const Link = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,9 +83,7 @@ const NavBar: FC = () => (
       <Arrow />
     </div>
     <Middle>
-      <Title>
-        HAYES CHOY
-      </Title>
+      <Title>HAYES CHOY</Title>
 
       <LinkContainer>
         <Link href='https://github.com/hayeselnut/' target='_blank' rel="noreferrer">
