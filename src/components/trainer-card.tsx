@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
+import Badge from './badge';
 
 import AtlassianLogo from '../assets/experience/atlassian.svg';
 import WisetechLogo from '../assets/experience/wisetech.svg';
@@ -15,8 +16,8 @@ const Card = styled.div`
     border-radius: 4rem;
     border: 1rem solid var(--pokemon-white);
     outline: 3rem solid var(--pokemon-grey);
-    // background: #0052CC;
-    background: #371ee1;
+    background: #0052CC;
+    // background: #371ee1;
 
     position: relative;
 `;
@@ -36,10 +37,10 @@ const Title = styled.div`
 
 const Watermark = styled.div`
     position: absolute;
-    top: -70rem;
-    right: -100rem;
-    width: 250rem;
-    height: 250rem;
+    top: -40rem;
+    right: -80rem;
+    width: 200rem;
+    height: 200rem;
 
     opacity: 0.3;
     z-index: -1;
@@ -65,14 +66,20 @@ const Avatar = styled.div`
 
 const RowGroup = styled.div`
     display: grid;
-    row-gap: 1rem;
+    row-gap: 4rem;
     margin-bottom: 9rem;
 `;
 
 const Row = styled.div`
     width: 140rem;
-    height: 15rem;
-    border-radius: 4rem;
+    height: 13rem;
+
+    box-shadow:
+        1rem 0rem rgb(255, 255, 255, 0.5),
+        -1rem 0rem rgb(255, 255, 255, 0.5),
+        0rem 1rem rgb(255, 255, 255, 0.5),
+        0rem -1rem rgb(255, 255, 255, 0.5);
+
     padding: 0 3rem;
     color: var(--pokemon-dark-grey);
     text-shadow:
@@ -91,26 +98,16 @@ const Row = styled.div`
     align-items: center;
 
     background: rgb(255, 255, 255, 0.5);
+    // background: var(--pokemon-white);
 `;
 
-const Badges = styled.div`
+const BadgeRow = styled.div`
     width: 100%;
-    background: #000;
+    background: rgb(0, 0, 0, 0.2);
 
     display: flex;
     justify-content: center;
 `;
-
-const Badge: FC<{badge: string}> = styled.div(({ badge }) => ({
-  width: '20rem',
-  height: '20rem',
-  border: '1rem solid white',
-
-  backgroundImage: `url(${badge})`,
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'contain',
-  backgroundPosition: 'center',
-}));
 
 const TrainerCard = () => (
   <Card>
@@ -133,10 +130,10 @@ const TrainerCard = () => (
         <span>Software Eng</span>
       </Row>
     </RowGroup>
-    <Badges>
+    <BadgeRow>
       <Badge badge={AtlassianLogo} />
       <Badge badge={WisetechLogo} />
-    </Badges>
+    </BadgeRow>
   </Card>
 );
 
