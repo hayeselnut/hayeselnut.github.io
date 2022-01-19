@@ -1,7 +1,10 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react';
+import Arrow from './arrow';
+// import { keyframes } from 'styled-components';
 
-const Rectangle = styled('div')`
+const Rectangle = styled.div`
   display: flex;
   border: 2rem solid var(--pokemon-dark-grey);
   border-radius: 2rem;
@@ -18,12 +21,25 @@ const Rectangle = styled('div')`
 
 `;
 
-const Side = styled('div')`
-  min-width: 7rem;
+const LeftSide = styled.div`
+  min-width: 4rem;
   background: var(--pokemon-red);
+  border-right: 1rem solid var(--pokemon-light-red);
 `;
 
-const Middle = styled('div')`
+const RightSide = styled.div`
+  min-width: 14rem;
+  background: var(--pokemon-red);
+  border-left: 1rem solid var(--pokemon-light-red);
+
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+
+  padding-bottom: 8rem;
+`;
+
+const Middle = styled.div`
   border: 1rem solid var(--pokemon-light-red);
   background: var(--pokemon-white);
 
@@ -32,14 +48,47 @@ const Middle = styled('div')`
   min-height: 46rem;
 `;
 
-const TextFrame: FC<{content: JSX.Element[]}> = ({ content }) => (
-  <Rectangle>
-    <Side style={{ borderRight: '1rem solid var(--pokemon-light-red)' }} />
-    <Middle>
-      {content[0]}
-    </Middle>
-    <Side style={{ borderLeft: '1rem solid var(--pokemon-light-red)' }} />
-  </Rectangle>
-);
+const floating = keyframes`
+    0% { transform: translate(0, 0); }
+    50%  { transform: translate(0, 4rem); }
+    100%   { transform: translate(0, 0); }
+`;
+
+const Floating = styled.div`
+  cursor: pointer;
+  animation: ${floating} 1.5s ease-in-out infinite;
+`;
+
+const TextFrame: FC<{content: JSX.Element[]}> = ({ content }) => {
+  const [idx, setIdx] = useState<number>(0);
+
+  useEffect(() => {
+    setIdx(0);
+  }, [content]);
+
+  const handleClick = () => {
+    if (idx >= content.length - 1) return;
+    setIdx(idx + 1);
+  };
+
+  return (
+    <Rectangle>
+      <LeftSide />
+      <Middle>
+        {content[idx]}
+      </Middle>
+      <RightSide>
+        {idx < content.length - 1 && (
+          <div onClick={handleClick}>
+            <Floating>
+              <Arrow />
+            </Floating>
+          </div>
+        )
+        }
+      </RightSide>
+    </Rectangle>
+  );
+};
 
 export default TextFrame;

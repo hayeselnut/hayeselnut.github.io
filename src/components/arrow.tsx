@@ -2,21 +2,17 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 
-const Grid = styled('div')`
+const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(12, 1rem);
     grid-template-rows: repeat(9, 1rem);
-
-    position: absolute;
-    top: 4rem;
-    left: 2rem;
 `;
 
-const DarkGrey = styled('div')`
+const DarkGrey = styled.div`
     background: var(--pokemon-dark-grey);
 `;
 
-const White = styled('div')`
+const White = styled.div`
     background: var(--pokemon-white);
 `;
 

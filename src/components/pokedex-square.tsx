@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Project } from '../types/project';
 
-const Square: FC<{selected: boolean}> = styled('div')(({ selected }) => ({
+const Square: FC<{selected: boolean}> = styled.div(({ selected }) => ({
   'width': '37rem',
   'height': '37rem',
   'cursor': 'pointer',

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import Arrow from './arrow';
 
-const Bar = styled('div')`
+const Bar = styled.div`
   height: 16rem;
   border-bottom: 2rem solid var(--pokemon-black);
   display: flex;
@@ -14,12 +14,12 @@ const Bar = styled('div')`
   position: relative;
 `;
 
-const Side = styled('div')`
+const Side = styled.div`
   background: var(--pokemon-darker-red);
   min-width: 7rem;
 `;
 
-const Middle = styled('div')`
+const Middle = styled.div`
   background: var(--pokemon-red);
   flex-grow: 1;
   border-bottom: 1rem solid var(--pokemon-dark-red);
@@ -50,7 +50,7 @@ const Title = styled('span')`
     1rem -1rem var(--pokemon-dark-grey);
 `;
 
-const LinkContainer = styled('div')`
+const LinkContainer = styled.div`
   height: 75%;
   margin-left: 10rem;
   align-self: flex-end;
@@ -79,7 +79,9 @@ const Link = styled('a')`
 const NavBar: FC = () => (
   <Bar>
     <Side />
-    <Arrow />
+    <div style={{ position: 'absolute', top: '4rem', left: '2rem' }}>
+      <Arrow />
+    </div>
     <Middle>
       <Title>
         HAYES CHOY

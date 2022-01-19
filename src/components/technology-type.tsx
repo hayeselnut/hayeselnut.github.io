@@ -4,7 +4,7 @@ import { lighten, darken } from '@mui/material';
 import { Technology } from '../types/technology-type';
 import { FC } from 'react';
 
-const Rectangle = styled('div')`
+const Rectangle = styled.div`
   display: grid;
   grid-template-columns: 1rem 22rem 22rem 1rem;
   grid-template-rows: 1rem 6rem 6rem 1rem;
@@ -22,9 +22,9 @@ const Rectangle = styled('div')`
   cursor: pointer;
 `;
 
-const NormalColor: FC<{color: string}> = styled('div')(({ color }) => ({ background: color }));
-const LightenColor: FC<{color: string}> = styled('div')(({ color }) => ({ background: lighten(color, 0.5) }));
-const DarkenColor: FC<{color: string}> = styled('div')(({ color }) => ({ background: darken(color, 0.25) }));
+const NormalColor: FC<{color: string}> = styled.div(({ color }) => ({ background: color }));
+const LightenColor: FC<{color: string}> = styled.div(({ color }) => ({ background: lighten(color, 0.5) }));
+const DarkenColor: FC<{color: string}> = styled.div(({ color }) => ({ background: darken(color, 0.25) }));
 
 const Dot = styled('span')`
   height: 1rem;
@@ -36,7 +36,7 @@ const Dot = styled('span')`
   position: absolute;
 `;
 
-const TextContainer = styled('div')`
+const TextContainer = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;

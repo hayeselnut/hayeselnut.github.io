@@ -13,7 +13,7 @@ import ProjectDetails from './components/project-details';
 import { projects } from './projects';
 import { ProjectName } from './types/project';
 
-const MainContainer = styled('div')`
+const MainContainer = styled.div`
   position: absolute;
   left: 72rem;
   top: 42rem;

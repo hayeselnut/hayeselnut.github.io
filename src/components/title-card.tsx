@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 
-const Card = styled('div')`
+const Card = styled.div`
   display: grid;
   grid-template-rows: 15rem 2rem 15rem;
 
@@ -30,7 +30,7 @@ const Card = styled('div')`
     1rem -1rem var(--pokemon-dark-grey);
 `;
 
-const Name = styled('div')`
+const Name = styled.div`
   background: var(--pokemon-red);
   text-transform: uppercase;
   font-size: 16rem;
@@ -39,11 +39,11 @@ const Name = styled('div')`
   padding-left: 3rem;
 `;
 
-const Divider = styled('div')`
+const Divider = styled.div`
   background: var(--pokemon-light-red);
 `;
 
-const Category = styled('div')`
+const Category = styled.div`
   background: white;
   display: flex;
   align-items: center;
