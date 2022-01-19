@@ -1,6 +1,6 @@
 import React from 'react';
 import { Project } from '../types/project';
-import ChaosLogo from '../assets/chaos.svg';
+import ChaosLogo from '../assets/missingno.png';
 
 export const Chaos: Project = {
   id: 9,

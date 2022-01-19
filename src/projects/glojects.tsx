@@ -1,6 +1,6 @@
 import React from 'react';
 import { Project } from '../types/project';
-import GlojectsLogo from '../assets/glojects.svg';
+import GlojectsLogo from '../assets/glojects.png';
 
 export const Glojects: Project = {
   id: 6,
