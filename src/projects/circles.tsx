@@ -31,11 +31,11 @@ export const Circles: Project = {
     <>
       <iframe
         src="https://open.spotify.com/embed/episode/1Rc5zmmAJYl8LyxC80q11U"
-        width="100%"
-        height="232"
+        width="600"
+        height="100"
         frameBorder="0"
         allow="encrypted-media"
-        className='podcast'
+        // className='podcast'
         // onLoad={handleLoad}
         // style={{ opacity: podcastLoading ? 0 : 1 }}
       />

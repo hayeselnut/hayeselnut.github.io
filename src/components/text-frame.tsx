@@ -2,7 +2,6 @@ import React, { FC, useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 import Arrow from './arrow';
-// import { keyframes } from 'styled-components';
 
 const Rectangle = styled.div`
   display: flex;
@@ -15,7 +14,7 @@ const Rectangle = styled.div`
     1rem 0rem var(--pokemon-light-grey),
     1rem 1rem var(--pokemon-light-grey);
   font-family: pokemondppt, sans-serif;
-  font-size: 12rem;
+  font-size: 14rem;
 
   box-shadow: 4rem 4rem rgb(0, 0, 0, 0.2);
 
@@ -46,6 +45,8 @@ const Middle = styled.div`
   flex-grow: 1;
   padding: 2rem 7rem;
   min-height: 46rem;
+  max-height: 46rem;
+  overflow: hidden;
 `;
 
 const floating = keyframes`
