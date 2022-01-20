@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import Badge from './badge';
 
-import AtlassianLogo from '../assets/experience/atlassian.svg';
-import WisetechLogo from '../assets/experience/wisetech.svg';
+import AtlassianLogo from '../assets/experiences/atlassian.svg';
+import WisetechLogo from '../assets/experiences/wisetech.svg';
 
-import LucasSprite from '../assets/lucas.png';
+import LucasSprite from '../assets/avatar/lucas.png';
 
 const Card = styled.div`
     width: 244rem;

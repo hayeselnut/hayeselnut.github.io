@@ -1,6 +1,6 @@
 import React from 'react';
 import { Project } from '../types/project';
-import SocAnnouncerLogo from '../assets/missingno.png';
+import SocAnnouncerLogo from '../assets/projects/missingno.png';
 
 export const SocAnnouncer: Project = {
   id: 10,

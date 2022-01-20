@@ -1,6 +1,6 @@
 import React from 'react';
 import { Project } from '../types/project';
-import GuessTheSongLogo from '../assets/gtsdb.svg';
+import GuessTheSongLogo from '../assets/projects/gtsdb.svg';
 
 export const GuessTheSong: Project = {
   id: 7,
