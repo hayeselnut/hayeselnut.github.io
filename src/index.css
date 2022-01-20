@@ -18,6 +18,11 @@
   src: url("./assets/fonts/deltarune.ttf");
 }
 
+@font-face {
+  font-family: "eightbithud";
+  src: url("./assets/fonts/eightbithud.ttf");
+}
+
 :root {
   --pokemon-light-red: #F898A0;
   --pokemon-red: #E83030;

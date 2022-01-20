@@ -15,7 +15,7 @@ import { ProjectName } from './types/project';
 const MainContainer = styled.div`
   position: absolute;
   left: 72rem;
-  top: 402rem;
+  top: 42rem;
 
   width: calc(10 * 40rem + 20rem);
 
@@ -24,7 +24,7 @@ const MainContainer = styled.div`
 `;
 
 const App = () => {
-  const [selectedProject, setSelectedProject] = useState<ProjectName>('Chaos');
+  const [selectedProject, setSelectedProject] = useState<ProjectName | ''>('');
 
   return (
     <>
@@ -32,11 +32,10 @@ const App = () => {
         <NavBar />
       </header>
       <main>
-        <div style={{ height: '100vh', display: 'flex', justifyContent: 'center' }}>
-          <TrainerCard />
-        </div>
         <MainContainer>
-          {selectedProject in projects ? <ProjectDetails project={projects[selectedProject]} /> : <TrainerCard />}
+          {selectedProject !== ''
+            ? <ProjectDetails project={projects[selectedProject]} />
+            : <TrainerCard />}
           <div />
           <PokedexSelector>
             {Object.values(projects).map((project) => (
@@ -56,7 +55,7 @@ const App = () => {
 
       <div style={{ height: '100vh' }} />
 
-      <footer>
+      {/* <footer>
         <Container>
 
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
@@ -97,7 +96,7 @@ const App = () => {
             <TechnologyType technology='heroku' />
           </div>
         </Container>
-      </footer>
+      </footer> */}
     </>
   );
 };

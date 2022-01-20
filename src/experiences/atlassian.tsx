@@ -10,9 +10,10 @@ export const Atlassian: Experience = {
   stack: ['python', 'kotlin', 'spring boot', 'docker', 'kubernetes', 'aws', 'terraform'],
   color: '#0052CC',
   logo: AtlassianLogo,
+  badge: <></>,
   description: (
     <>
       Atlassian blah blah blah
-    </>,
-  )
+    </>
+  ),
 };

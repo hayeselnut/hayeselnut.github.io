@@ -23,7 +23,12 @@ const ProjectDetails: FC<{project: Project}> = ({ project }) => (
         )}
       </div>
     </div>
-    <img src={project.img} height='200rem' width="200rem" style={{ marginRight: '150rem' }} />
+    <img
+      src={project.img}
+      height='200rem'
+      width="200rem"
+      style={{ marginRight: '150rem', imageRendering: 'pixelated' }}
+    />
     <div style={{ flexGrow: 1 }} />
     <TextFrame content={project.description} />
   </div>

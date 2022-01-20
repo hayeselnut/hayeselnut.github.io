@@ -8,8 +8,10 @@ export type Experience = {
     stack: Technology[],
     color: string,
     logo: string,
+    badge: JSX.Element,
     description: JSX.Element,
 }
 
 export type ExperienceName = 'Atlassian'
-                            | 'WiseTech Global';
+                            | 'WiseTech Global'
+                            | 'CSESoc';
