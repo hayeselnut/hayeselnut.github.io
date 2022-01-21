@@ -1,5 +1,6 @@
 import React from 'react';
 import AtlassianLogo from '../assets/experiences/atlassian.svg';
+import AtlassianBadge from '../assets/experiences/atlassian.png';
 import { Experience } from '../types/experience';
 
 export const Atlassian: Experience = {
@@ -10,7 +11,7 @@ export const Atlassian: Experience = {
   stack: ['python', 'kotlin', 'spring boot', 'docker', 'kubernetes', 'aws', 'terraform'],
   color: '#0052CC',
   logo: AtlassianLogo,
-  badge: <></>,
+  badge: AtlassianBadge,
   description: (
     <>
       Atlassian blah blah blah

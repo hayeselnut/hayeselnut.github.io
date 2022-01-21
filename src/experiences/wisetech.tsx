@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import WiseTechLogo from '../assets/experiences/wisetech.svg';
+import WiseTechBadge from '../assets/experiences/wisetech.png';
 import { Experience } from '../types/experience';
 
 const Grid = styled.div`
@@ -52,7 +53,7 @@ export const WiseTechGlobal: Experience = {
   stack: ['html', 'css', 'javascript', 'react', 'c#'],
   color: '#371ee1',
   logo: WiseTechLogo,
-  badge: WiseTechGlobalBadge,
+  badge: WiseTechBadge,
   description: (
     <>
       Wisetech blah blah blah
