@@ -116,7 +116,6 @@ const BadgesHeading = styled.span`
   color: var(--pokemon-white);
 
   padding: 1rem 15rem;
-  margin-bottom: -4rem;
 `;
 
 const Badges = styled.div`
@@ -125,7 +124,7 @@ const Badges = styled.div`
 `;
 
 const TrainerCard = () => {
-  const [selectedBadge, setSelectedBadge] = useState<ExperienceName | ''>('CSESoc');
+  const [selectedBadge, setSelectedBadge] = useState<ExperienceName | ''>('');
 
   return (
     <Card backgroundColor={selectedBadge ? experiences[selectedBadge].color : '#4a4a4a'}>
@@ -156,7 +155,12 @@ const TrainerCard = () => {
         <BadgesHeading>Badges</BadgesHeading>
         <Badges>
           {Object.values(experiences).map((experience, index) => (
-            <Badge id={index + 1} experience={experience} key={experience.name} />
+            <div
+              key={experience.name}
+              onClick={() => setSelectedBadge(experience.name)}
+            >
+              <Badge id={index + 1} experience={experience} />
+            </div>
           ))}
           {Array(8 - Object.keys(experiences).length).fill(0).map((_, index) => (
             <Badge id={index + Object.keys(experiences).length + 1} experience={null} key={index} />

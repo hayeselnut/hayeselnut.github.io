@@ -6,8 +6,8 @@ const Square = styled.div`
     width: 14rem;
     height: 14rem;
 
-    cursor: pointer;
-    margin: 4rem;
+    margin: 0rem 4rem;
+    margin-bottom: 2rem;
 
     position: relative;
 
@@ -35,18 +35,22 @@ const BadgeIcon = styled.div`
   left: -1rem;
 `;
 
+const BadgeName = styled.div`
+  color: var(--pokemon-white);
+  font-family: pokemondppt;
+  font-size: 8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+`;
+
 const Badge: FC<{id: number, experience: Experience | null }> = ({ id, experience }) => (
-  // <>
-  // <Logo badge={experience.logo} />
+  // <div>
   <Square>
     <BadgeId>{id}</BadgeId>
     {experience && <BadgeIcon>{experience.badge}</BadgeIcon>}
   </Square>
-  // <LogoImg src={experience.logo} />
-  //   <span>
-  //     {experience.name}
-  //   </span>
-  // </>
+  //  {experience && <BadgeName>{experience.name}</BadgeName>}
+  // </div>
 );
 
 export default Badge;
