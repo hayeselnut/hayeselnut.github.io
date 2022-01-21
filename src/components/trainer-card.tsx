@@ -8,6 +8,31 @@ import { Divider } from '@mui/material';
 
 import { displayDateAsMonthYear } from '../helpers/date';
 import TechnologyType from './technology-type';
+import { Technology } from '../types/technology-type';
+
+const familiarTechnologies: Technology[] = [
+  'c',
+  'c++',
+  'c#',
+  'python',
+  'java',
+  'kotlin',
+  'spring boot',
+  'html',
+  'css',
+  'javascript',
+  'typescript',
+  'react',
+  'apps script',
+  'sql',
+  'bash',
+  'perl',
+  'haskell',
+  'aws',
+  'docker',
+  'kubernetes',
+  'heroku',
+];
 
 const Card: FC<{backgroundColor: string}> = styled.div(({ backgroundColor }) => ({
   width: '244rem',
@@ -23,10 +48,16 @@ const Card: FC<{backgroundColor: string}> = styled.div(({ backgroundColor }) => 
   flexDirection: 'column',
 }));
 
+const ContentLayout = styled.div`
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  height: 100%;
+`;
+
 const Title = styled.div`
     font-family: pokemondppt;
-    // color: var(--pokemon-white);
-    color: #ffff73;
+    color: var(--pokemon-white);
+    // color: #ffff73;
     font-weight: bold;
     font-size: 16rem;
     text-transform: uppercase;
@@ -52,10 +83,10 @@ const Watermark: FC<{experience: Experience}> = styled.div(({ experience }) => (
 
 const Avatar = styled.div`
     position: absolute;
-    top: 40rem;
+    top: 20rem;
     right: 0;
     width: 100rem;
-    height: 100rem;
+    height: 80rem;
 
     background-image: url(${LucasSprite});
     background-repeat: no-repeat;
@@ -71,7 +102,7 @@ const RowGroup = styled.div`
 `;
 
 const Row = styled.div`
-    width: 140rem;
+    width: 130rem;
     min-height: 13rem;
 
     box-shadow:
@@ -138,49 +169,64 @@ const TrainerCard = () => {
 
       {selectedBadge
         ? (
-          <>
-            <Title>
-              {experiences[selectedBadge].name}
-            </Title>
-            <div style={{ display: 'flex', marginBottom: '4rem', flexWrap: 'wrap' }}>
-              {experiences[selectedBadge].stack.map((technology) => (
-                <TechnologyType technology={technology} small key={technology} />
-              ))}
+          <ContentLayout>
+            <div>
+              <Title>{experiences[selectedBadge].name}</Title>
+              <RowGroup>
+                <Row>
+                  <span>{experiences[selectedBadge].position}</span>
+                </Row>
+                <Row>
+                  <span>Time</span>
+                  <span>{`${displayDateAsMonthYear(experiences[selectedBadge].startDate)} -
+                  ${displayDateAsMonthYear(experiences[selectedBadge].endDate)}`}
+                  </span>
+                </Row>
+              </RowGroup>
+              <RowGroup>
+                <Row>
+                  {experiences[selectedBadge].description}
+                </Row>
+              </RowGroup>
             </div>
-            <RowGroup>
-              <Row>
-                {/* <span>Position</span> */}
-                <span>{experiences[selectedBadge].position}</span>
-              </Row>
-              <Row>
-                <span>Time</span>
-                <span>{`${displayDateAsMonthYear(experiences[selectedBadge].startDate)} -
-                ${displayDateAsMonthYear(experiences[selectedBadge].endDate)}`}
-                </span>
-              </Row>
-            </RowGroup>
-          </>
+            <div style={{ alignSelf: 'end', paddingBottom: '4rem' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                {experiences[selectedBadge].stack.map((technology) => (
+                  <TechnologyType technology={technology} small key={technology} />
+                ))}
+              </div>
+            </div>
+          </ContentLayout>
         )
         : (
-          <>
-            <Title>Trainer Card</Title>
-            <RowGroup>
-              <Row>
-                <span>Name</span>
-                <span>Hayes Choy</span>
-              </Row>
-            </RowGroup>
-            <RowGroup>
-              <Row>
-                <span>University</span>
-                <span>UNSW</span>
-              </Row>
-              <Row>
-                <span>Degree</span>
-                <span>Software Eng</span>
-              </Row>
-            </RowGroup>
-          </>
+          <ContentLayout>
+            <div>
+              <Title>Trainer Card</Title>
+              <RowGroup>
+                <Row>
+                  <span>Name</span>
+                  <span>Hayes Choy</span>
+                </Row>
+              </RowGroup>
+              <RowGroup>
+                <Row>
+                  <span>University</span>
+                  <span>UNSW</span>
+                </Row>
+                <Row>
+                  <span>Degree</span>
+                  <span>Software Eng</span>
+                </Row>
+              </RowGroup>
+            </div>
+            <div style={{ alignSelf: 'end', paddingBottom: '4rem' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                {familiarTechnologies.map((technology) => (
+                  <TechnologyType technology={technology} small key={technology} />
+                ))}
+              </div>
+            </div>
+          </ContentLayout>
         )
       }
 
