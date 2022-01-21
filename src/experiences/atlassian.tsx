@@ -21,7 +21,6 @@ const AtlassianBadge = (
     <div /><div /><div /><div /><div /><div /><Blk /><Wht /><Wht /><Blk /><div /><div /><div /><div /><div /><div />
     <div /><div /><div /><div /><div /><div /><Blk /><Wht /><LGr /><Blk /><div /><div /><div /><div /><div /><div />
     <div /><div /><div /><div /><div /><Blk /><Wht /><LGr /><LGr /><Gry /><Blk /><div /><div /><div /><div /><div />
-    <div /><div /><div /><div /><div /><Blk /><Wht /><LGr /><LGr /><Gry /><Blk /><div /><div /><div /><div /><div />
     <div /><div /><div /><div /><div /><Blk /><Wht /><LGr /><LGr /><LGr /><Gry /><Blk /><div /><div /><div /><div />
     <div /><div /><div /><div /><div /><Blk /><Wht /><LGr /><LGr /><LGr /><Gry /><Blk /><div /><div /><div /><div />
     <div /><div /><div /><div /><div /><Blk /><Wht /><LGr /><LGr /><LGr /><LGr /><Gry /><Blk /><div /><div /><div />
@@ -32,7 +31,9 @@ const AtlassianBadge = (
     <div /><div /><Blk /><Wht /><LGr /><LGr /><LGr /><Gry /><Blk /><LGr /><LGr /><LGr /><LGr /><Gry /><Blk /><div />
     <div /><Blk /><Wht /><LGr /><LGr /><LGr /><LGr /><Gry /><Blk /><LGr /><LGr /><LGr /><LGr /><LGr /><Gry /><Blk />
     <Blk /><Wht /><LGr /><LGr /><LGr /><Gry /><Gry /><Blk /><div /><Blk /><LGr /><LGr /><LGr /><LGr /><Gry /><Blk />
-    <Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><div /><div /><div /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk />
+    <Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><div /><div /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk />
+    <div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div />
+
   </Grid>
 );
 
