@@ -116,6 +116,7 @@ const BadgesHeading = styled.span`
   color: var(--pokemon-white);
 
   padding: 1rem 15rem;
+  margin-bottom: 1rem;
 `;
 
 const Badges = styled.div`
@@ -157,7 +158,7 @@ const TrainerCard = () => {
           {Object.values(experiences).map((experience, index) => (
             <div
               key={experience.name}
-              onClick={() => setSelectedBadge(experience.name)}
+              onClick={() => setSelectedBadge(selectedBadge === experience.name ? '' : experience.name)}
             >
               <Badge id={index + 1} experience={experience} />
             </div>
