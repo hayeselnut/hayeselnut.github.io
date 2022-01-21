@@ -1,6 +1,7 @@
 import { Technology } from './technology-type';
 
 export type Experience = {
+    id: number,
     name: ExperienceName,
     position: string,
     startDate: Date,

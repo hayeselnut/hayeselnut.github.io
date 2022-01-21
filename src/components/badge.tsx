@@ -18,47 +18,29 @@ const Square = styled.div`
         0rem -1rem rgb(255, 255, 255, 0.5);
 `;
 
-const Logo: FC<{badge: string}> = styled.div(({ badge }) => ({
-  width: '16rem',
-  height: '16rem',
-  margin: '2rem',
+const BadgeId = styled.div`
+  font-family: deltarune;
+  font-size: 8rem;
+  color: rgb(255, 255, 255, 0.5);
 
-  // backgroundColor: 'rgb(255, 255, 255, 0.5)',
-
-  boxShadow: `
-    1rem 0rem rgb(255, 255, 255, 0.5),
-    -1rem 0rem rgb(255, 255, 255, 0.5),
-    0rem 1rem rgb(255, 255, 255, 0.5),
-    0rem -1rem rgb(255, 255, 255, 0.5)`,
-
-  // border: '1rem solid var(--pokemon-white)',
-  backgroundImage: `url(${badge})`,
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: '80%',
-  backgroundPosition: 'center',
-  zIndex: 200,
-  cursor: 'pointer',
-}));
-
-const LogoImg = styled.img`
-  cursor: pointer;
-  z-index: 200;
+  position: absolute;
+  right: 0;
+  bottom: -1rem;
 `;
 
 const BadgeIcon = styled.div`
   position: absolute;
+  cursor: pointer;
   top: -1rem;
   left: -1rem;
 `;
 
-const Badge: FC<{experience: Experience}> = ({ experience }) => (
+const Badge: FC<{id: number, experience: Experience | null }> = ({ id, experience }) => (
   // <>
   // <Logo badge={experience.logo} />
   <Square>
-    <BadgeIcon>
-      {experience.badge}
-      {/* <img src={experience.badge} style={{ imageRendering: 'pixelated', width: '16rem', height: '16rem' }} /> */}
-    </BadgeIcon>
+    <BadgeId>{id}</BadgeId>
+    {experience && <BadgeIcon>{experience.badge}</BadgeIcon>}
   </Square>
   // <LogoImg src={experience.logo} />
   //   <span>

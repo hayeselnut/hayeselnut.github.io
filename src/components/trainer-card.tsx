@@ -9,7 +9,6 @@ import { Divider } from '@mui/material';
 const Card: FC<{backgroundColor: string}> = styled.div(({ backgroundColor }) => ({
   width: '244rem',
   height: '180rem',
-  zIndex: -2,
   borderRadius: '4rem',
   border: '1rem solid var(--pokemon-white)',
   outline: '3rem solid var(--pokemon-grey)',
@@ -42,7 +41,6 @@ const Watermark: FC<{experience: Experience}> = styled.div(({ experience }) => (
   width: '200rem',
   height: '200rem',
   opacity: 0.3,
-  zIndex: -1,
   backgroundImage: `url(${experience.logo})`,
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'contain',
@@ -98,7 +96,6 @@ const Row = styled.div`
     align-items: center;
 
     background: rgb(255, 255, 255, 0.5);
-    // background: var(--pokemon-white);
 `;
 
 const BadgeRow = styled.div`
@@ -109,7 +106,6 @@ const BadgeRow = styled.div`
     flex-direction: column;
     justify-content: center;
 
-    z-index: 10;
     margin-bottom: 4rem;
 `;
 
@@ -119,15 +115,13 @@ const BadgesHeading = styled.span`
   font-size: 4rem;
   color: var(--pokemon-white);
 
-  padding: 1rem 40rem;
+  padding: 1rem 15rem;
   margin-bottom: -4rem;
 `;
 
 const Badges = styled.div`
   display: flex;
   justify-content: center;
-
-  z-index: 20;
 `;
 
 const TrainerCard = () => {
@@ -161,8 +155,11 @@ const TrainerCard = () => {
       <BadgeRow>
         <BadgesHeading>Badges</BadgesHeading>
         <Badges>
-          {Object.values(experiences).map((experience) => (
-            <Badge experience={experience} key={experience.name} />
+          {Object.values(experiences).map((experience, index) => (
+            <Badge id={index + 1} experience={experience} key={experience.name} />
+          ))}
+          {Array(8 - Object.keys(experiences).length).fill(0).map((_, index) => (
+            <Badge id={index + Object.keys(experiences).length + 1} experience={null} key={index} />
           ))}
         </Badges>
       </BadgeRow>
