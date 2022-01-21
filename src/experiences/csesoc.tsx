@@ -2,7 +2,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import CSESocLogo from '../assets/experiences/csesoc.svg';
-import CSESocBadge from '../assets/experiences/csesoc.png';
 import { Experience } from '../types/experience';
 
 const Grid = styled.div`
@@ -11,42 +10,32 @@ const Grid = styled.div`
     grid-template-rows: repeat(16, 1rem);
 `;
 
-const Blk = styled.div`
-  background: #000;
-`;
+const Blk = styled.div`background: black;`;
+const Wht = styled.div`background: var(--pokemon-white);`;
+const LGr = styled.div`background: var(--pokemon-light-grey);`;
+const Gry = styled.div`background: var(--pokemon-grey);`;
+const DGr = styled.div`background: var(--pokemon-dark-grey);`;
 
-const Wht = styled.div`
-    background: var(--pokemon-white);
-`;
-
-const LGr = styled.div`
-  background: var(--pokemon-light-grey);
-`;
-
-const Gry = styled.div`
-    background: var(--pokemon-grey);
-`;
-
-// const CSESocBadge = (
-//   <Grid>
-//     <Blk /><Blk /><Blk /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div />
-//     <Blk /><Wht /><Wht /><Blk /><Blk /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div />
-//     <Blk /><Blk /><Wht /><Wht /><Wht /><Blk /><Blk /><div /><div /><div /><div /><div /><div /><div /><div /><div />
-//     <div /><div /><Blk /><Blk /><Wht /><Wht /><Wht /><Blk /><Blk /><div /><div /><div /><div /><div /><div /><div />
-//     <div /><div /><div /><div /><Blk /><Blk /><Wht /><Wht /><Blk /><div /><div /><div /><div /><div /><div /><div />
-//     <div /><div /><div /><div /><Blk /><Blk /><LGr /><LGr /><Blk /><div /><div /><div /><div /><div /><div /><div />
-//     <div /><div /><Blk /><Blk /><LGr /><LGr /><LGr /><Blk /><Blk /><div /><div /><div /><div /><div /><div /><div />
-//     <Blk /><Blk /><LGr /><LGr /><LGr /><Blk /><Blk /><div /><div /><div /><div /><div /><div /><div /><div /><div />
-//     <Blk /><LGr /><LGr /><Blk /><Blk /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div />
-//     <Blk /><Blk /><Blk /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div />
-//     <div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div />
-//     <div /><div /><div /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><div /><div /><div />
-//     <div /><div /><div /><Blk /><Wht /><Wht /><Wht /><Wht /><Wht /><Wht /><Wht /><Wht /><Blk /><div /><div /><div />
-//     <div /><div /><div /><Blk /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><Blk /><div /><div /><div />
-//     <div /><div /><div /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><div /><div /><div />
-//     <div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div />
-//   </Grid>
-// );
+const CSESocBadge = (
+  <Grid>
+    <div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div />
+    <div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div />
+    <div /><div /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><div /><div />
+    <div /><Blk /><Wht /><Wht /><Wht /><Wht /><Wht /><Wht /><Wht /><Wht /><Wht /><Wht /><Wht /><Wht /><Blk /><div />
+    <Blk /><Wht /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><Gry /><Blk />
+    <Blk /><Wht /><LGr /><DGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><Gry /><Blk />
+    <Blk /><Wht /><LGr /><LGr /><DGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><Gry /><Blk />
+    <Blk /><Wht /><LGr /><LGr /><LGr /><DGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><Gry /><Blk />
+    <Blk /><Wht /><LGr /><LGr /><DGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><Gry /><Blk />
+    <Blk /><Wht /><LGr /><DGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><Gry /><Blk />
+    <Blk /><Wht /><LGr /><LGr /><LGr /><LGr /><DGr /><DGr /><DGr /><DGr /><LGr /><LGr /><LGr /><LGr /><Gry /><Blk />
+    <Blk /><Wht /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><LGr /><Gry /><Blk />
+    <div /><Blk /><Gry /><Gry /><Gry /><Gry /><Gry /><Gry /><Gry /><Gry /><Gry /><Gry /><Gry /><Gry /><Blk /><div />
+    <div /><div /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><Blk /><div /><div />
+    <div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div />
+    <div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div />
+  </Grid>
+);
 
 export const CSESoc: Experience = {
   name: 'CSESoc',

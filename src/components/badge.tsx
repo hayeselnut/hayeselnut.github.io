@@ -56,7 +56,8 @@ const Badge: FC<{experience: Experience}> = ({ experience }) => (
   // <Logo badge={experience.logo} />
   <Square>
     <BadgeIcon>
-      <img src={experience.badge} style={{ imageRendering: 'pixelated', width: '16rem', height: '16rem' }} />
+      {experience.badge}
+      {/* <img src={experience.badge} style={{ imageRendering: 'pixelated', width: '16rem', height: '16rem' }} /> */}
     </BadgeIcon>
   </Square>
   // <LogoImg src={experience.logo} />

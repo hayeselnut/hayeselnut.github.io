@@ -8,7 +8,7 @@ export type Experience = {
     stack: Technology[],
     color: string,
     logo: string,
-    badge: string,
+    badge: JSX.Element,
     description: JSX.Element,
 }
 
