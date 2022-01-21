@@ -4,23 +4,21 @@ import { lighten, darken } from '@mui/material';
 import { Technology } from '../types/technology-type';
 import { FC } from 'react';
 
-const Rectangle = styled.div`
-  display: grid;
-  grid-template-columns: 1rem 22rem 22rem 1rem;
-  grid-template-rows: 1rem 6rem 6rem 1rem;
-  width: 46rem;
-  height: 14rem;
-
-  margin: 1.5rem;
-  box-shadow:
+const Rectangle: FC<{small: boolean}> = styled.div(({ small }) => ({
+  display: 'grid',
+  gridTemplateColumns: `1rem ${small ? '14rem 14rem' : '22rem 22rem'} 1rem`,
+  gridTemplateRows: `1rem ${small ? '4rem 4rem' : '6rem 6rem'} 1rem`,
+  width: small ? '30rem' : '46rem',
+  height: small ? '10rem' : '14rem',
+  margin: '1.5rem',
+  boxShadow: `
     1rem 0rem var(--pokemon-dark-grey),
     -1rem 0rem var(--pokemon-dark-grey),
     0rem 1rem var(--pokemon-dark-grey),
-    0rem -1rem var(--pokemon-dark-grey);
-
-  position: relative;
-  cursor: pointer;
-`;
+    0rem -1rem var(--pokemon-dark-grey)`,
+  position: 'relative',
+  cursor: 'pointer',
+}));
 
 const NormalColor: FC<{color: string}> = styled.div(({ color }) => ({ background: color }));
 const LightenColor: FC<{color: string}> = styled.div(({ color }) => ({ background: lighten(color, 0.5) }));
@@ -46,7 +44,7 @@ const TextContainer = styled.div`
   white-space: nowrap;
 `;
 
-const Text: FC<{technology: Technology}> = styled.span(({ technology }) => {
+const Text: FC<{technology: Technology, small: boolean}> = styled.span(({ technology, small }) => {
   const scaleFactor = technology.length <= 5
     ? 1
     : technology.length <= 6
@@ -60,7 +58,7 @@ const Text: FC<{technology: Technology}> = styled.span(({ technology }) => {
     'textTransform': 'uppercase',
     'color': 'white',
     'textShadow': '1rem 1rem 0 var(--pokemon-grey)',
-    'fontSize': '14rem',
+    'fontSize': small ? '9rem' : '14rem',
     'transform': `scale(${scaleFactor}, 1)`,
     ' -webkit-transform': `scale(${scaleFactor}, 1)`,
     '-moz-transform': `scale(${scaleFactor}, 1)`,
@@ -107,8 +105,8 @@ const colors: TechnologyColors = {
   'heroku': ['#430098', '#430098', '#430098', '#430098'],
 };
 
-const TechnologyType: FC<{technology: Technology}> = ({ technology }) => (
-  <Rectangle>
+const TechnologyType: FC<{technology: Technology, small?: boolean}> = ({ technology, small = false }) => (
+  <Rectangle small={small}>
     <NormalColor color='var(--pokemon-white)' />
     <LightenColor color={colors[technology][0]} />
     <LightenColor color={colors[technology][1]} />
@@ -135,7 +133,7 @@ const TechnologyType: FC<{technology: Technology}> = ({ technology }) => (
     <Dot style={{ bottom: '2rem', right: '2rem' }} />
 
     <TextContainer>
-      <Text technology={technology}>
+      <Text technology={technology} small={small}>
         {technology}
       </Text>
     </TextContainer>

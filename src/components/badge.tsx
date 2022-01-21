@@ -2,21 +2,18 @@ import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Experience } from '../types/experience';
 
-const Square = styled.div`
-    width: 14rem;
-    height: 14rem;
-
-    margin: 0rem 4rem;
-    margin-bottom: 2rem;
-
-    position: relative;
-
-    box-shadow:
-        1rem 0rem rgb(255, 255, 255, 0.5),
-        -1rem 0rem rgb(255, 255, 255, 0.5),
-        0rem 1rem rgb(255, 255, 255, 0.5),
-        0rem -1rem rgb(255, 255, 255, 0.5);
-`;
+const Square: FC<{selected: boolean}> = styled.div(({ selected }) => ({
+  width: '14rem',
+  height: '14rem',
+  margin: '0rem 4rem',
+  marginBottom: '2rem',
+  position: 'relative',
+  boxShadow: `
+    1rem 0rem rgb(255, 255, 255, ${selected ? 1 : 0.5}),
+    -1rem 0rem rgb(255, 255, 255, ${selected ? 1 : 0.5}),
+    0rem 1rem rgb(255, 255, 255, ${selected ? 1 : 0.5}),
+    0rem -1rem rgb(255, 255, 255, ${selected ? 1 : 0.5})`,
+}));
 
 const BadgeId = styled.div`
   font-family: deltarune;
@@ -35,22 +32,12 @@ const BadgeIcon = styled.div`
   left: -1rem;
 `;
 
-const BadgeName = styled.div`
-  color: var(--pokemon-white);
-  font-family: pokemondppt;
-  font-size: 8rem;
-  text-align: center;
-  margin-bottom: 1rem;
-`;
-
-const Badge: FC<{id: number, experience: Experience | null }> = ({ id, experience }) => (
-  // <div>
-  <Square>
+const Badge: FC<{id: number, experience?: Experience | null, selected?: boolean }>
+= ({ id, experience = null, selected = false }) => (
+  <Square selected={selected}>
     <BadgeId>{id}</BadgeId>
     {experience && <BadgeIcon>{experience.badge}</BadgeIcon>}
   </Square>
-  //  {experience && <BadgeName>{experience.name}</BadgeName>}
-  // </div>
 );
 
 export default Badge;

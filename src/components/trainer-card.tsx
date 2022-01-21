@@ -6,6 +6,9 @@ import { Experience, ExperienceName } from '../types/experience';
 import LucasSprite from '../assets/avatar/lucas.png';
 import { Divider } from '@mui/material';
 
+import { displayDateAsMonthYear } from '../helpers/date';
+import TechnologyType from './technology-type';
+
 const Card: FC<{backgroundColor: string}> = styled.div(({ backgroundColor }) => ({
   width: '244rem',
   height: '180rem',
@@ -29,7 +32,7 @@ const Title = styled.div`
     text-transform: uppercase;
     letter-spacing: 0.3rem;
 
-    margin: 4rem 2rem;
+    margin: 4rem 4rem;
 
     text-shadow: 1rem 1rem rgb(0, 0, 0, 0.4);
 `;
@@ -69,7 +72,7 @@ const RowGroup = styled.div`
 
 const Row = styled.div`
     width: 140rem;
-    height: 13rem;
+    min-height: 13rem;
 
     box-shadow:
         1rem 0rem rgb(255, 255, 255, 0.5),
@@ -78,8 +81,8 @@ const Row = styled.div`
         0rem -1rem rgb(255, 255, 255, 0.5);
 
     padding: 0 3rem;
-    // color: var(--pokemon-dark-grey);
-    color: #ffff73;
+    color: var(--pokemon-white);
+    // color: #ffff73;
     text-shadow:
         1rem 0rem var(--pokemon-grid-grey),
         0rem 1rem var(--pokemon-grid-grey),
@@ -88,19 +91,20 @@ const Row = styled.div`
     z-index: 1;
 
     font-family: pokemondppt;
-    font-size: 14rem;
+    font-size: 12rem;
     text-transform: uppercase;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 
     background: rgb(255, 255, 255, 0.5);
 `;
 
 const BadgeRow = styled.div`
     width: 100%;
-    background: rgb(0, 0, 0, 0.2);
+    background: rgb(0, 0, 0, 0.5);
 
     display: flex;
     flex-direction: column;
@@ -132,23 +136,53 @@ const TrainerCard = () => {
       {selectedBadge !== '' && <Watermark experience={experiences[selectedBadge]} />}
       <Avatar />
 
-      <Title>🤓Trainer Card🤓</Title>
-      <RowGroup>
-        <Row>
-          <span>Name</span>
-          <span>Hayes Choy</span>
-        </Row>
-      </RowGroup>
-      <RowGroup>
-        <Row>
-          <span>University</span>
-          <span>UNSW</span>
-        </Row>
-        <Row>
-          <span>Degree</span>
-          <span>Software Eng</span>
-        </Row>
-      </RowGroup>
+      {selectedBadge
+        ? (
+          <>
+            <Title>
+              {experiences[selectedBadge].name}
+            </Title>
+            <div style={{ display: 'flex', marginBottom: '4rem', flexWrap: 'wrap' }}>
+              {experiences[selectedBadge].stack.map((technology) => (
+                <TechnologyType technology={technology} small key={technology} />
+              ))}
+            </div>
+            <RowGroup>
+              <Row>
+                {/* <span>Position</span> */}
+                <span>{experiences[selectedBadge].position}</span>
+              </Row>
+              <Row>
+                <span>Time</span>
+                <span>{`${displayDateAsMonthYear(experiences[selectedBadge].startDate)} -
+                ${displayDateAsMonthYear(experiences[selectedBadge].endDate)}`}
+                </span>
+              </Row>
+            </RowGroup>
+          </>
+        )
+        : (
+          <>
+            <Title>Trainer Card</Title>
+            <RowGroup>
+              <Row>
+                <span>Name</span>
+                <span>Hayes Choy</span>
+              </Row>
+            </RowGroup>
+            <RowGroup>
+              <Row>
+                <span>University</span>
+                <span>UNSW</span>
+              </Row>
+              <Row>
+                <span>Degree</span>
+                <span>Software Eng</span>
+              </Row>
+            </RowGroup>
+          </>
+        )
+      }
 
       <div style={{ flexGrow: 1 }} />
 
@@ -160,11 +194,11 @@ const TrainerCard = () => {
               key={experience.name}
               onClick={() => setSelectedBadge(selectedBadge === experience.name ? '' : experience.name)}
             >
-              <Badge id={index + 1} experience={experience} />
+              <Badge id={index + 1} experience={experience} selected={selectedBadge === experience.name} />
             </div>
           ))}
           {Array(8 - Object.keys(experiences).length).fill(0).map((_, index) => (
-            <Badge id={index + Object.keys(experiences).length + 1} experience={null} key={index} />
+            <Badge id={index + Object.keys(experiences).length + 1} key={index} />
           ))}
         </Badges>
       </BadgeRow>

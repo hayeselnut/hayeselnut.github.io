@@ -41,7 +41,7 @@ const App = () => {
             {Object.values(projects).map((project) => (
               <div
                 key={project.name}
-                onClick={() => setSelectedProject(project.name)}
+                onClick={() => setSelectedProject(selectedProject === project.name ? '' : project.name)}
               >
                 <PokedexSquare
                   project={project}
