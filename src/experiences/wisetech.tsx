@@ -39,7 +39,7 @@ const WiseTechGlobalBadge = (
 export const WiseTechGlobal: Experience = {
   id: 0,
   name: 'WiseTech Global',
-  position: 'Software Engineering Developer',
+  position: 'Software Engineer',
   startDate: new Date('2022-01-11'),
   endDate: null,
   stack: ['html', 'css', 'javascript', 'react', 'c#'],
@@ -48,7 +48,11 @@ export const WiseTechGlobal: Experience = {
   badge: WiseTechGlobalBadge,
   description: (
     <>
-      Wisetech blah blah blah
+      <ul>
+        <li>
+          Maintained and developed new features for internal testing website
+        </li>
+      </ul>
     </>
   ),
 };

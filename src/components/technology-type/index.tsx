@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Technology, TechnologyName } from '../types/technology';
+import { Technology, TechnologyName } from '../../types/technology';
 import Rectangle from './rectangle';
 
 const technologies: {[key in TechnologyName as key]: Technology} = {

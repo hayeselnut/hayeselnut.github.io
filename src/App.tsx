@@ -1,8 +1,6 @@
-import React, { useState, createContext } from 'react';
-import { Container } from '@mui/material';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 
-import TechnologyType from './technology';
 import NavBar from './components/nav-bar';
 import TrainerCard from './components/trainer-card';
 import PokedexSelector from './components/pokedex-selector';

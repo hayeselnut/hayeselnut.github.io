@@ -4,10 +4,9 @@ import Badge from './badge';
 import { experiences } from '../experiences';
 import { Experience, ExperienceName } from '../types/experience';
 import LucasSprite from '../assets/avatar/lucas.png';
-import { Divider } from '@mui/material';
 
 import { displayDateAsMonthYear } from '../helpers/date';
-import TechnologyType from '../technology';
+import TechnologyType from './technology-type';
 import { TechnologyName } from '../types/technology';
 
 const familiarTechnologies: TechnologyName[] = [

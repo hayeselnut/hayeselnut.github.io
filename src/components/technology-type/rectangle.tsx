@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { lighten, darken } from '@mui/material';
-import { Technology, TechnologyName } from '../types/technology';
+import { Technology, TechnologyName } from '../../types/technology';
 
 const Rectangle: FC<{small: boolean}> = styled.div(({ small }) => ({
   display: 'grid',

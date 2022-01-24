@@ -1,8 +1,7 @@
 
 import React, { FC } from 'react';
-import styled from '@emotion/styled';
 import TitleCard from '../components/title-card';
-import TechnologyType from '../technology';
+import TechnologyType from './technology-type';
 import TextFrame from '../components/text-frame';
 import { Project } from '../types/project';
 
