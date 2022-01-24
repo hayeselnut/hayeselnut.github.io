@@ -71,7 +71,7 @@ const Title = styled.div`
 const Watermark: FC<{experience: Experience}> = styled.div(({ experience }) => ({
   position: 'absolute',
   top: '-40rem',
-  right: '-70rem',
+  right: '-100rem',
   width: '200rem',
   height: '200rem',
   opacity: 0.3,
@@ -206,7 +206,7 @@ const TrainerCard = () => {
         )
         : (
           <>
-            <Title>Trainer Card</Title>
+            <Title><span style={{ fontSize: '12rem' }}>🤓</span>Trainer Card</Title>
             <RowGroup>
               <Row>
                 <span>Name</span>

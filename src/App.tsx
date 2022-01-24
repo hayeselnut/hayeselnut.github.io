@@ -50,51 +50,6 @@ const App = () => {
           </PokedexSelector>
         </MainContainer>
       </main>
-
-      <div style={{ height: '100vh' }} />
-
-      {/* <footer>
-        <Container>
-
-          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            <TechnologyType technology='c' />
-            <TechnologyType technology='c++' />
-            <TechnologyType technology='c#' />
-            <TechnologyType technology='python' />
-
-            <TechnologyType technology='java' />
-            <TechnologyType technology='kotlin' />
-            <TechnologyType technology='spring boot' />
-
-            <TechnologyType technology='swift' />
-
-            <TechnologyType technology='html' />
-            <TechnologyType technology='css' />
-            <TechnologyType technology='javascript' />
-            <TechnologyType technology='typescript' />
-            <TechnologyType technology='react' />
-            <TechnologyType technology='vue' />
-            <TechnologyType technology='apps script' />
-
-            <TechnologyType technology='sql' />
-            <TechnologyType technology='bash' />
-            <TechnologyType technology='perl' />
-
-            <TechnologyType technology='haskell' />
-            <TechnologyType technology='rust' />
-            <TechnologyType technology='go' />
-
-            <TechnologyType technology='aws' />
-            <TechnologyType technology='gcp' />
-            <TechnologyType technology='azure' />
-            <TechnologyType technology='terraform' />
-
-            <TechnologyType technology='docker' />
-            <TechnologyType technology='kubernetes' />
-            <TechnologyType technology='heroku' />
-          </div>
-        </Container>
-      </footer> */}
     </>
   );
 };
