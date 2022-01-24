@@ -161,7 +161,9 @@ const technologies: {[key in TechnologyName as key]: Technology} = {
 };
 
 const TechnologyType: FC<{name: TechnologyName, small?: boolean}> = ({ name, small = false }) => (
-  <Rectangle technology={technologies[name]} small={small} />
+  <a href={technologies[name].link} target="_blank" rel="noreferrer">
+    <Rectangle technology={technologies[name]} small={small} />
+  </a>
 );
 
 export default TechnologyType;

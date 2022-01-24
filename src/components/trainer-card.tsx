@@ -31,6 +31,8 @@ const familiarTechnologies: TechnologyName[] = [
   'docker',
   'kubernetes',
   'heroku',
+  'firebase',
+  'druid',
 ];
 
 const Card: FC<{backgroundColor: string}> = styled.div(({ backgroundColor }) => ({
@@ -56,7 +58,6 @@ const ContentLayout = styled.div`
 const Title = styled.div`
     font-family: pokemondppt;
     color: var(--pokemon-white);
-    // color: #ffff73;
     font-weight: bold;
     font-size: 16rem;
     text-transform: uppercase;
@@ -70,7 +71,7 @@ const Title = styled.div`
 const Watermark: FC<{experience: Experience}> = styled.div(({ experience }) => ({
   position: 'absolute',
   top: '-40rem',
-  right: '-80rem',
+  right: '-70rem',
   width: '200rem',
   height: '200rem',
   opacity: 0.3,
@@ -82,14 +83,22 @@ const Watermark: FC<{experience: Experience}> = styled.div(({ experience }) => (
 
 const Avatar = styled.div`
     position: absolute;
-    top: 20rem;
-    right: 0;
-    width: 100rem;
-    height: 80rem;
+    top: 10rem;
+    right: 10rem;
 
+    width: 80rem;
+    height: 80rem;
+    border-radius: 2rem;
+    border-left: 1rem solid rgb(0, 0, 0, 0.2);
+    border-top: 1rem solid rgb(0, 0, 0, 0.2);
+    border-right: 1rem solid rgb(255, 255, 255, 0.2);
+    border-bottom: 1rem solid rgb(255, 255, 255, 0.2);
+
+
+    background-color: rgb(255, 255, 255, 0.1);
     background-image: url(${LucasSprite});
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 50%;
     background-position: center;
 `;
 
@@ -112,7 +121,6 @@ const Description = styled.div`
 
   padding: 0 3rem;
   color: var(--pokemon-white);
-  // color: #ffff73;
 
   z-index: 1;
 
@@ -160,7 +168,7 @@ const TrainerCard = () => {
   const [selectedBadge, setSelectedBadge] = useState<ExperienceName | ''>('');
 
   return (
-    <Card backgroundColor={selectedBadge ? experiences[selectedBadge].color : '#4a4a4a'}>
+    <Card backgroundColor={selectedBadge ? experiences[selectedBadge].color : '#222222'}>
       {selectedBadge !== '' && <Watermark experience={experiences[selectedBadge]} />}
       <Avatar />
 
@@ -171,6 +179,7 @@ const TrainerCard = () => {
               <Title>{experiences[selectedBadge].name}</Title>
               <RowGroup>
                 <Row>
+                  <span>Role</span>
                   <span>{experiences[selectedBadge].position}</span>
                 </Row>
                 <Row>
@@ -186,7 +195,7 @@ const TrainerCard = () => {
                 </Description>
               </RowGroup>
             </div>
-            <div style={{ alignSelf: 'end', paddingBottom: '4rem' }}>
+            <div style={{ paddingTop: '95rem' }}>
               <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                 {experiences[selectedBadge].stack.map((technology) => (
                   <TechnologyType name={technology} small key={technology} />
@@ -196,34 +205,36 @@ const TrainerCard = () => {
           </ContentLayout>
         )
         : (
-          <ContentLayout>
-            <div>
-              <Title>Trainer Card</Title>
-              <RowGroup>
-                <Row>
-                  <span>Name</span>
-                  <span>Hayes Choy</span>
-                </Row>
-              </RowGroup>
-              <RowGroup>
-                <Row>
-                  <span>University</span>
-                  <span>UNSW</span>
-                </Row>
-                <Row>
-                  <span>Degree</span>
-                  <span>Software Eng</span>
-                </Row>
-              </RowGroup>
+          <>
+            <Title>Trainer Card</Title>
+            <RowGroup>
+              <Row>
+                <span>Name</span>
+                <span>Hayes Choy</span>
+              </Row>
+            </RowGroup>
+            <RowGroup>
+              <Row>
+                <span>University</span>
+                <span>UNSW</span>
+              </Row>
+              <Row>
+                <span>Degree</span>
+                <span>Software Engineering</span>
+              </Row>
+            </RowGroup>
+            <RowGroup>
+              <Row>
+                <span>Favourite Pokemon</span>
+                <span>Turtwig :)</span>
+              </Row>
+            </RowGroup>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+              {familiarTechnologies.map((technology) => (
+                <TechnologyType name={technology} small key={technology} />
+              ))}
             </div>
-            <div style={{ alignSelf: 'end', paddingBottom: '4rem' }}>
-              <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                {familiarTechnologies.map((technology) => (
-                  <TechnologyType name={technology} small key={technology} />
-                ))}
-              </div>
-            </div>
-          </ContentLayout>
+          </>
         )
       }
 
