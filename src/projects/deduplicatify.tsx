@@ -3,7 +3,7 @@ import { Project } from '../types/project';
 import DeduplicatifyLogo from '../assets/projects/deduplicatify_green.svg';
 
 export const Deduplicatify: Project = {
-  id: 1,
+  id: 0,
   name: 'Deduplicatify',
   category: 'Spotify',
   participation: true,

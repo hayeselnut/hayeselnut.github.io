@@ -3,7 +3,7 @@ import { Project } from '../types/project';
 import SocAnnouncerLogo from '../assets/projects/missingno.png';
 
 export const SocAnnouncer: Project = {
-  id: 10,
+  id: 0,
   name: 'soc-announcer',
   category: 'Email Generator',
   participation: true,

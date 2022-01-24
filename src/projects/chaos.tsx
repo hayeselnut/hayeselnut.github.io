@@ -3,7 +3,7 @@ import { Project } from '../types/project';
 import ChaosLogo from '../assets/projects/missingno.png';
 
 export const Chaos: Project = {
-  id: 9,
+  id: 0,
   name: 'Chaos',
   category: 'Recruitment Platform',
   participation: true,

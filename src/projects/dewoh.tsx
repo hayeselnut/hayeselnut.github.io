@@ -3,7 +3,7 @@ import { Project } from '../types/project';
 import DewohLogo from '../assets/projects/dewoh.svg';
 
 export const Dewoh: Project = {
-  id: 2,
+  id: 0,
   name: 'Dewoh',
   category: 'League of Legends',
   participation: true,

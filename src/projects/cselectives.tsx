@@ -3,7 +3,7 @@ import { Project } from '../types/project';
 import CSElectivesLogo from '../assets/projects/cselectives.svg';
 
 export const CSElectives: Project = {
-  id: 8,
+  id: 0,
   name: 'CSElectives',
   category: 'UNSW Elective Reviws',
   participation: true,

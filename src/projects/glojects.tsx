@@ -3,7 +3,7 @@ import { Project } from '../types/project';
 import GlojectsLogo from '../assets/projects/glojects.png';
 
 export const Glojects: Project = {
-  id: 6,
+  id: 0,
   name: 'Glojects',
   category: 'Hackathon',
   participation: true,

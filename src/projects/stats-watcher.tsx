@@ -3,7 +3,7 @@ import { Project } from '../types/project';
 import StatsWatcherLogo from '../assets/projects/nytsw.svg';
 
 export const StatsWatcher: Project = {
-  id: 5,
+  id: 0,
   name: 'Stats Watcher',
   category: 'NYT Mini Crossword',
   participation: true,

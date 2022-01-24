@@ -39,7 +39,7 @@ const AtlassianBadge = (
 );
 
 export const Atlassian: Experience = {
-  id: 2,
+  id: 0,
   name: 'Atlassian',
   position: 'Analytics Platform Engineering Developer',
   startDate: new Date('2020-09-07'),

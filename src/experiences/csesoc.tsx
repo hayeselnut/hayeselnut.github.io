@@ -38,7 +38,7 @@ const CSESocBadge = (
 );
 
 export const CSESoc: Experience = {
-  id: 1,
+  id: 0,
   name: 'CSESoc',
   position: 'Student Experience Director / Secretary',
   startDate: new Date('2020-11-17'),

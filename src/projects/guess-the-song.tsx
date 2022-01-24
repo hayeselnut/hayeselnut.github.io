@@ -3,7 +3,7 @@ import { Project } from '../types/project';
 import GuessTheSongLogo from '../assets/projects/gtsdb.svg';
 
 export const GuessTheSong: Project = {
-  id: 7,
+  id: 0,
   name: 'Guess the Song',
   category: 'Discord Bot',
   participation: true,
