@@ -60,3 +60,13 @@ body {
 main {
   padding-top: 10rem;
 }
+
+ul {
+  margin: 0;
+  padding-left: 6rem;
+  list-style-type: square;
+}
+
+a {
+  color: var(--pokemon-white);
+}

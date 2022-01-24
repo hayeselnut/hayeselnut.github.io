@@ -95,42 +95,40 @@ const Avatar = styled.div`
 `;
 
 const RowGroup = styled.div`
-    display: grid;
-    row-gap: 4rem;
-    margin-bottom: 9rem;
-    margin-left: 4rem;
+  display: grid;
+  row-gap: 4rem;
+  margin-bottom: 9rem;
+  margin-left: 4rem;
 `;
 
-const Row = styled.div`
-    width: 130rem;
-    min-height: 13rem;
+const Description = styled.div`
+  width: 130rem;
+  min-height: 10rem;
 
-    box-shadow:
-        1rem 0rem rgb(255, 255, 255, 0.5),
-        -1rem 0rem rgb(255, 255, 255, 0.5),
-        0rem 1rem rgb(255, 255, 255, 0.5),
-        0rem -1rem rgb(255, 255, 255, 0.5);
+  box-shadow:
+      1rem 0rem rgb(255, 255, 255, 0.3),
+      -1rem 0rem rgb(255, 255, 255, 0.3),
+      0rem 1rem rgb(255, 255, 255, 0.3),
+      0rem -1rem rgb(255, 255, 255, 0.3);
 
-    padding: 0 3rem;
-    color: var(--pokemon-white);
-    // color: #ffff73;
-    text-shadow:
-        1rem 0rem var(--pokemon-grid-grey),
-        0rem 1rem var(--pokemon-grid-grey),
-        1rem 1rem var(--pokemon-grid-grey);
+  padding: 0 3rem;
+  color: var(--pokemon-white);
+  // color: #ffff73;
 
-    z-index: 1;
+  z-index: 1;
 
-    font-family: pokemondppt;
-    font-size: 12rem;
-    text-transform: uppercase;
+  font-family: pokemondppt;
+  font-size: 8rem;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  background: rgb(255, 255, 255, 0.3);
+`;
 
-    background: rgb(255, 255, 255, 0.5);
+const Row = styled(Description)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-transform: uppercase;
 `;
 
 const BadgeRow = styled.div`
@@ -184,9 +182,9 @@ const TrainerCard = () => {
                 </Row>
               </RowGroup>
               <RowGroup>
-                <Row>
+                <Description>
                   {experiences[selectedBadge].description}
-                </Row>
+                </Description>
               </RowGroup>
             </div>
             <div style={{ alignSelf: 'end', paddingBottom: '4rem' }}>

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import styled from '@emotion/styled';
 import AtlassianLogo from '../assets/experiences/atlassian.svg';
@@ -49,7 +50,11 @@ export const Atlassian: Experience = {
   badge: AtlassianBadge,
   description: (
     <>
-      Atlassian blah blah blah
+      <ul>
+        <li>Assisted in the integration of Apache Druid into the Atlassian stack.</li>
+        <li>Improved Confluence Analytics load times from 20+ secs to under 1 sec.</li>
+        <li>Used Kotlin and Spring Boot to design and implement Druid Platform Service, an internal API for internal teams to onboard onto Druid.</li>
+      </ul>
     </>
   ),
 };
