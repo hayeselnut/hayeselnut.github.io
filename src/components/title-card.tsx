@@ -8,30 +8,30 @@ const Card = styled.div`
   width: 144rem;
   height: 32rem;
 
-  outline: 1rem solid var(--pokemon-dark-grey);
+  outline: 1rem solid var(--dark-grey);
   border-radius: 2rem;
 
   overflow: hidden;
 
   box-shadow: 4rem 4rem rgb(0, 0, 0, 0.2);
 
-  color: var(--pokemon-light-grey);
+  color: var(--light-grey);
   font-family: pokemondppt, san-serif;
   letter-spacing: 0.5rem;
 
   text-shadow:
-    1rem 0 var(--pokemon-dark-grey),
-    0 1rem var(--pokemon-dark-grey),
-    -1rem 0 var(--pokemon-dark-grey),
-    0 -1rem var(--pokemon-dark-grey),
-    1rem 1rem var(--pokemon-dark-grey),
-    -1rem 1rem var(--pokemon-dark-grey),
-    -1rem -1rem var(--pokemon-dark-grey),
-    1rem -1rem var(--pokemon-dark-grey);
+    1rem 0 var(--dark-grey),
+    0 1rem var(--dark-grey),
+    -1rem 0 var(--dark-grey),
+    0 -1rem var(--dark-grey),
+    1rem 1rem var(--dark-grey),
+    -1rem 1rem var(--dark-grey),
+    -1rem -1rem var(--dark-grey),
+    1rem -1rem var(--dark-grey);
 `;
 
 const Name = styled.div`
-  background: var(--pokemon-red);
+  background: var(--red);
   text-transform: uppercase;
   font-size: 16rem;
   display: flex;
@@ -40,7 +40,7 @@ const Name = styled.div`
 `;
 
 const Divider = styled.div`
-  background: var(--pokemon-light-red);
+  background: var(--light-red);
 `;
 
 const Category = styled.div`

@@ -24,16 +24,16 @@
 }
 
 :root {
-  --pokemon-light-red: #F898A0;
-  --pokemon-red: #E83030;
-  --pokemon-dark-red: #C02028;
-  --pokemon-darker-red: #901020;
-  --pokemon-white: #F8F8F8;
-  --pokemon-light-grey: #D8D8D8;
-  --pokemon-grid-grey: #A8A8A8;
-  --pokemon-grey: #787878;
-  --pokemon-dark-grey: #585858;
-  --pokemon-black: #212121;
+  --light-red: #F898A0;
+  --red: #E83030;
+  --dark-red: #C02028;
+  --darker-red: #901020;
+  --white: #F8F8F8;
+  --light-grey: #D8D8D8;
+  --grid-grey: #A8A8A8;
+  --grey: #787878;
+  --dark-grey: #585858;
+  --black: #212121;
 }
 
 html {
@@ -49,12 +49,12 @@ body {
 
   /* transition: 0.3s; */
 
-  background: var(--pokemon-white);
+  background: var(--white);
   background-size: 40rem 40rem;
   background-position: 10rem 0rem;
   background-image:
-    linear-gradient(to right, var(--pokemon-grid-grey) 1rem, transparent 1rem),
-    linear-gradient(to bottom, var(--pokemon-grid-grey) 1rem, transparent 1rem);
+    linear-gradient(to right, var(--grid-grey) 1rem, transparent 1rem),
+    linear-gradient(to bottom, var(--grid-grey) 1rem, transparent 1rem);
 }
 
 main {
@@ -68,5 +68,5 @@ ul {
 }
 
 a {
-  color: var(--pokemon-white);
+  color: var(--white);
 }

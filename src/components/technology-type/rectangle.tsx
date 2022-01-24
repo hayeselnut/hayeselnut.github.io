@@ -11,10 +11,10 @@ const Rectangle: FC<{small: boolean}> = styled.div(({ small }) => ({
   height: small ? '10rem' : '14rem',
   margin: '1.5rem',
   boxShadow: `
-    1rem 0rem var(--pokemon-dark-grey),
-    -1rem 0rem var(--pokemon-dark-grey),
-    0rem 1rem var(--pokemon-dark-grey),
-    0rem -1rem var(--pokemon-dark-grey)`,
+    1rem 0rem var(--dark-grey),
+    -1rem 0rem var(--dark-grey),
+    0rem 1rem var(--dark-grey),
+    0rem -1rem var(--dark-grey)`,
   position: 'relative',
   cursor: 'pointer',
 }));
@@ -56,7 +56,7 @@ const Text: FC<{name: TechnologyName, small: boolean}> = styled.span(({ name, sm
     'fontFamily': '\'Super Smash TV\', sans-serif',
     'textTransform': 'uppercase',
     'color': 'white',
-    'textShadow': '1rem 1rem 0 var(--pokemon-grey)',
+    'textShadow': '1rem 1rem 0 var(--grey)',
     'fontSize': small ? '9rem' : '14rem',
     'transform': `scale(${scaleFactor}, 1)`,
     ' -webkit-transform': `scale(${scaleFactor}, 1)`,
@@ -67,7 +67,7 @@ const Text: FC<{name: TechnologyName, small: boolean}> = styled.span(({ name, sm
 
 const TechnologyType: FC<{technology: Technology, small?: boolean}> = ({ technology, small = false }) => (
   <Rectangle small={small}>
-    <NormalColor color='var(--pokemon-white)' />
+    <NormalColor color='var(--white)' />
     <LightenColor color={technology.colors[0]} />
     <LightenColor color={technology.colors[1]} />
     <NormalColor color={technology.colors[1]} />
@@ -85,7 +85,7 @@ const TechnologyType: FC<{technology: Technology, small?: boolean}> = ({ technol
     <NormalColor color={technology.colors[2]} />
     <DarkenColor color={technology.colors[2]} />
     <DarkenColor color={technology.colors[3]} />
-    <NormalColor color='var(--pokemon-dark-grey)' />
+    <NormalColor color='var(--dark-grey)' />
 
     <Dot style={{ top: '2rem', left: '2rem' }} />
     <Dot style={{ top: '2rem', right: '2rem' }} />

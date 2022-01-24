@@ -15,4 +15,4 @@ export type Experience = {
 
 export type ExperienceName = 'Atlassian'
                             | 'WiseTech Global'
-                            | 'CSESoc';
+                            | 'CSE Society UNSW';

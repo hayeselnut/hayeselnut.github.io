@@ -8,7 +8,6 @@ import LucasSprite from '../assets/avatar/lucas.png';
 import { displayDateAsMonthYear } from '../helpers/date';
 import TechnologyType from './technology-type';
 import { TechnologyName } from '../types/technology';
-import { autocompleteClasses } from '@mui/material';
 
 const familiarTechnologies: TechnologyName[] = [
   'c',
@@ -40,8 +39,8 @@ const Card: FC<{backgroundColor: string}> = styled.div(({ backgroundColor }) => 
   width: '244rem',
   height: '180rem',
   borderRadius: '4rem',
-  border: '1rem solid var(--pokemon-white)',
-  outline: '3rem solid var(--pokemon-grey)',
+  border: '1rem solid var(--white)',
+  outline: '3rem solid var(--grey)',
   background: backgroundColor,
   position: 'relative',
   overflow: 'hidden',
@@ -58,7 +57,7 @@ const ContentLayout = styled.div`
 
 const Title = styled.div`
     font-family: pokemondppt;
-    color: var(--pokemon-white);
+    color: var(--white);
     font-weight: bold;
     font-size: 16rem;
     text-transform: uppercase;
@@ -121,7 +120,7 @@ const Description = styled.div`
       0rem -1rem rgb(255, 255, 255, 0.3);
 
   padding: 0 3rem;
-  color: var(--pokemon-white);
+  color: var(--white);
 
   z-index: 1;
 
@@ -154,7 +153,7 @@ const BadgesHeading = styled.span`
   text-transform: uppercase;
   font-family: eightbithud;
   font-size: 4rem;
-  color: var(--pokemon-white);
+  color: var(--white);
 
   padding: 1rem 15rem;
   margin-bottom: 1rem;

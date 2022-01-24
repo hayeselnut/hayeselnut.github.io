@@ -5,14 +5,14 @@ import Arrow from './arrow';
 
 const Rectangle = styled.div`
   display: flex;
-  border: 2rem solid var(--pokemon-dark-grey);
+  border: 2rem solid var(--dark-grey);
   border-radius: 2rem;
 
-  color: var(--pokemon-dark-grey);
+  color: var(--dark-grey);
   text-shadow:
-    0rem 1rem var(--pokemon-light-grey),
-    1rem 0rem var(--pokemon-light-grey),
-    1rem 1rem var(--pokemon-light-grey);
+    0rem 1rem var(--light-grey),
+    1rem 0rem var(--light-grey),
+    1rem 1rem var(--light-grey);
   font-family: pokemondppt, sans-serif;
   font-size: 14rem;
 
@@ -22,14 +22,14 @@ const Rectangle = styled.div`
 
 const LeftSide = styled.div`
   min-width: 4rem;
-  background: var(--pokemon-red);
-  border-right: 1rem solid var(--pokemon-light-red);
+  background: var(--red);
+  border-right: 1rem solid var(--light-red);
 `;
 
 const RightSide = styled.div`
   min-width: 14rem;
-  background: var(--pokemon-red);
-  border-left: 1rem solid var(--pokemon-light-red);
+  background: var(--red);
+  border-left: 1rem solid var(--light-red);
 
   display: flex;
   flex-direction: column-reverse;
@@ -39,8 +39,8 @@ const RightSide = styled.div`
 `;
 
 const Middle = styled.div`
-  border: 1rem solid var(--pokemon-light-red);
-  background: var(--pokemon-white);
+  border: 1rem solid var(--light-red);
+  background: var(--white);
 
   flex-grow: 1;
   padding: 2rem 7rem;

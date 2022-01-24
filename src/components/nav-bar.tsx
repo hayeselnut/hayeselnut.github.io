@@ -4,7 +4,7 @@ import Arrow from './arrow';
 
 const Bar = styled.div`
   height: 16rem;
-  border-bottom: 2rem solid var(--pokemon-black);
+  border-bottom: 2rem solid var(--black);
   display: flex;
   box-shadow:
     0rem 5rem rgb(0, 0, 0, 0.1),
@@ -15,16 +15,16 @@ const Bar = styled.div`
 `;
 
 const Side = styled.div`
-  background: var(--pokemon-darker-red);
+  background: var(--darker-red);
   min-width: 7rem;
 `;
 
 const Middle = styled.div`
-  background: var(--pokemon-red);
+  background: var(--red);
   flex-grow: 1;
-  border-bottom: 1rem solid var(--pokemon-dark-red);
-  border-left: 2rem solid var(--pokemon-dark-red);
-  border-right: 2rem solid var(--pokemon-dark-red);
+  border-bottom: 1rem solid var(--dark-red);
+  border-left: 2rem solid var(--dark-red);
+  border-right: 2rem solid var(--dark-red);
 
   display: flex;
   align-items: center;
@@ -35,19 +35,19 @@ const Middle = styled.div`
 const Title = styled.span`
   flex-grow: 1;
 
-  color: var(--pokemon-white);
+  color: var(--white);
   font-family: pokemondppt, san-serif;
   font-size: 16rem;
   letter-spacing: 0.5rem;
   text-shadow:
-    1rem 0 var(--pokemon-dark-grey),
-    0 1rem var(--pokemon-dark-grey),
-    -1rem 0 var(--pokemon-dark-grey),
-    0 -1rem var(--pokemon-dark-grey),
-    1rem 1rem var(--pokemon-dark-grey),
-    -1rem 1rem var(--pokemon-dark-grey),
-    -1rem -1rem var(--pokemon-dark-grey),
-    1rem -1rem var(--pokemon-dark-grey);
+    1rem 0 var(--dark-grey),
+    0 1rem var(--dark-grey),
+    -1rem 0 var(--dark-grey),
+    0 -1rem var(--dark-grey),
+    1rem 1rem var(--dark-grey),
+    -1rem 1rem var(--dark-grey),
+    -1rem -1rem var(--dark-grey),
+    1rem -1rem var(--dark-grey);
 `;
 
 const LinkContainer = styled.div`
@@ -61,14 +61,14 @@ const Link = styled.a`
   align-items: center;
   justify-content: center;
   box-shadow:
-    1rem 0rem var(--pokemon-white),
-    -1rem 0rem var(--pokemon-white),
-    0rem 1rem var(--pokemon-white),
-    0rem -1rem var(--pokemon-white);
+    1rem 0rem var(--white),
+    -1rem 0rem var(--white),
+    0rem 1rem var(--white),
+    0rem -1rem var(--white);
 
-  background: var(--pokemon-white);
+  background: var(--white);
 
-  color: var(--pokemon-red);
+  color: var(--red);
   text-decoration: none;
   font-family: "Super Smash TV";
   font-size: 12rem;

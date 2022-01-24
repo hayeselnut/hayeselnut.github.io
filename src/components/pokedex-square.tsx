@@ -17,12 +17,12 @@ const Square: FC<{selected: boolean}> = styled.div(({ selected }) => ({
   ...(
     selected
       ? {
-        outline: '3rem solid var(--pokemon-red)',
-        color: 'var(--pokemon-grey)',
+        outline: '3rem solid var(--red)',
+        color: 'var(--grey)',
       }
       : {
-        'color': 'var(--pokemon-grid-grey)',
-        '&:hover': { outline: '3rem solid var(--pokemon-light-red)' },
+        'color': 'var(--grid-grey)',
+        '&:hover': { outline: '3rem solid var(--light-red)' },
       }
   ),
 }));

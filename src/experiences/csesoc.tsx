@@ -11,10 +11,10 @@ const Grid = styled.div`
 `;
 
 const Blk = styled.div`background: black;`;
-const Wht = styled.div`background: var(--pokemon-white);`;
-const LGr = styled.div`background: var(--pokemon-light-grey);`;
-const Gry = styled.div`background: var(--pokemon-grey);`;
-const DGr = styled.div`background: var(--pokemon-dark-grey);`;
+const Wht = styled.div`background: var(--white);`;
+const LGr = styled.div`background: var(--light-grey);`;
+const Gry = styled.div`background: var(--grey);`;
+const DGr = styled.div`background: var(--dark-grey);`;
 
 const CSESocBadge = (
   <Grid>
@@ -39,7 +39,7 @@ const CSESocBadge = (
 
 export const CSESoc: Experience = {
   id: 0,
-  name: 'CSESoc',
+  name: 'CSE Society UNSW',
   position: 'Student Experience Director & Secretary',
   startDate: new Date('2020-11-17'),
   endDate: null,

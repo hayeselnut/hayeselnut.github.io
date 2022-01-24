@@ -11,9 +11,9 @@ const Grid = styled.div`
 `;
 
 const Blk = styled.div`background: black;`;
-const Wht = styled.div`background: var(--pokemon-white);`;
-const LGr = styled.div`background: var(--pokemon-light-grey);`;
-const Gry = styled.div`background: var(--pokemon-grey);`;
+const Wht = styled.div`background: var(--white);`;
+const LGr = styled.div`background: var(--light-grey);`;
+const Gry = styled.div`background: var(--grey);`;
 
 const AtlassianBadge = (
   <Grid>

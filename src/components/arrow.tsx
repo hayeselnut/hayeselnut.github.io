@@ -9,11 +9,11 @@ const Grid = styled.div`
 `;
 
 const DarkGrey = styled.div`
-    background: var(--pokemon-dark-grey);
+    background: var(--dark-grey);
 `;
 
 const White = styled.div`
-    background: var(--pokemon-white);
+    background: var(--white);
 `;
 
 const Arrow: FC = () => (
