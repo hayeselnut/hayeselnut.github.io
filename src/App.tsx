@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled';
 
 import NavBar from './components/nav-bar';
-import TrainerCard from './components/trainer-card';
+import DeveloperCard from './components/developer-card';
 import PokedexSelector from './components/pokedex-selector';
 import PokedexSquare from './components/pokedex-square';
 import ProjectDetails from './components/project-details';
@@ -33,7 +33,7 @@ const App = () => {
         <MainContainer>
           {selectedProject !== ''
             ? <ProjectDetails project={projects[selectedProject]} />
-            : <TrainerCard />}
+            : <DeveloperCard />}
           <div />
           <PokedexSelector>
             {Object.values(projects).map((project) => (

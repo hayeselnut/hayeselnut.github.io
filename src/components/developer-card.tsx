@@ -8,6 +8,7 @@ import LucasSprite from '../assets/avatar/lucas.png';
 import { displayDateAsMonthYear } from '../helpers/date';
 import TechnologyType from './technology-type';
 import { TechnologyName } from '../types/technology';
+import { autocompleteClasses } from '@mui/material';
 
 const familiarTechnologies: TechnologyName[] = [
   'c',
@@ -164,7 +165,7 @@ const Badges = styled.div`
   justify-content: center;
 `;
 
-const TrainerCard = () => {
+const DeveloperCard = () => {
   const [selectedBadge, setSelectedBadge] = useState<ExperienceName | ''>('');
 
   return (
@@ -206,7 +207,7 @@ const TrainerCard = () => {
         )
         : (
           <>
-            <Title><span style={{ fontSize: '12rem' }}>🤓</span>Trainer Card</Title>
+            <Title><span style={{ fontSize: '12rem' }}>🤓</span>Developer Card</Title>
             <RowGroup>
               <Row>
                 <span>Name</span>
@@ -229,7 +230,7 @@ const TrainerCard = () => {
                 <span>Turtwig :)</span>
               </Row>
             </RowGroup>
-            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', paddingLeft: '4rem' }}>
               {familiarTechnologies.map((technology) => (
                 <TechnologyType name={technology} small key={technology} />
               ))}
@@ -260,4 +261,4 @@ const TrainerCard = () => {
   );
 };
 
-export default TrainerCard;
+export default DeveloperCard;
