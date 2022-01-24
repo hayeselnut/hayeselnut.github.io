@@ -2,7 +2,7 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import TitleCard from '../components/title-card';
-import TechnologyType from '../components/technology-type';
+import TechnologyType from '../technology';
 import TextFrame from '../components/text-frame';
 import { Project } from '../types/project';
 
@@ -19,7 +19,7 @@ const ProjectDetails: FC<{project: Project}> = ({ project }) => (
         justifyContent: 'flex-end' }}
       >
         {project.stack.map((technology) =>
-          <TechnologyType key={technology} technology={technology} />,
+          <TechnologyType key={technology} name={technology} />,
         )}
       </div>
     </div>

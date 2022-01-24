@@ -7,10 +7,10 @@ import LucasSprite from '../assets/avatar/lucas.png';
 import { Divider } from '@mui/material';
 
 import { displayDateAsMonthYear } from '../helpers/date';
-import TechnologyType from './technology-type';
-import { Technology } from '../types/technology-type';
+import TechnologyType from '../technology';
+import { TechnologyName } from '../types/technology';
 
-const familiarTechnologies: Technology[] = [
+const familiarTechnologies: TechnologyName[] = [
   'c',
   'c++',
   'c#',
@@ -190,7 +190,7 @@ const TrainerCard = () => {
             <div style={{ alignSelf: 'end', paddingBottom: '4rem' }}>
               <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                 {experiences[selectedBadge].stack.map((technology) => (
-                  <TechnologyType technology={technology} small key={technology} />
+                  <TechnologyType name={technology} small key={technology} />
                 ))}
               </div>
             </div>
@@ -220,7 +220,7 @@ const TrainerCard = () => {
             <div style={{ alignSelf: 'end', paddingBottom: '4rem' }}>
               <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                 {familiarTechnologies.map((technology) => (
-                  <TechnologyType technology={technology} small key={technology} />
+                  <TechnologyType name={technology} small key={technology} />
                 ))}
               </div>
             </div>

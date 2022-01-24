@@ -8,6 +8,7 @@ import { GuessTheSong } from './guess-the-song';
 import { CSElectives } from './cselectives';
 import { Chaos } from './chaos';
 import { SocAnnouncer } from './soc-announcer';
+import { Project, ProjectName } from '../types/project';
 
 const projectsOrder = [
   Deduplicatify,
@@ -22,11 +23,11 @@ const projectsOrder = [
   SocAnnouncer,
 ];
 
-export const projects = projectsOrder.reduce((a, project, index) => ({
+export const projects: {[key in ProjectName as key]: Project} = projectsOrder.reduce((a, proj, idx) => ({
   ...a,
-  [project.name]: {
-    ...project,
-    id: index + 1,
+  [proj.name]: {
+    ...proj,
+    id: idx + 1,
   },
-}), {});
+}), {} as {[key in ProjectName as key]: Project});
 

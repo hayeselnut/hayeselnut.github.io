@@ -44,7 +44,7 @@ export const Atlassian: Experience = {
   position: 'Analytics Platform Engineering Developer',
   startDate: new Date('2020-09-07'),
   endDate: new Date('2021-07-01'),
-  stack: ['python', 'kotlin', 'spring boot', 'docker', 'kubernetes', 'aws', 'terraform'],
+  stack: ['kotlin', 'spring boot', 'druid', 'docker', 'kubernetes', 'aws', 'terraform', 'python'],
   color: '#0052CC',
   logo: AtlassianLogo,
   badge: AtlassianBadge,

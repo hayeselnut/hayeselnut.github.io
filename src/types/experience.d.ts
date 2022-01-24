@@ -1,4 +1,4 @@
-import { Technology } from './technology-type';
+import { TechnologyName } from './technology';
 
 export type Experience = {
     id: number,
@@ -6,7 +6,7 @@ export type Experience = {
     position: string,
     startDate: Date,
     endDate: Date | null,
-    stack: Technology[],
+    stack: TechnologyName[],
     color: string,
     logo: string,
     badge: JSX.Element,

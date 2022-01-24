@@ -1,6 +1,7 @@
 import { Atlassian } from './atlassian';
 import { WiseTechGlobal } from './wisetech';
 import { CSESoc } from './csesoc';
+import { Experience, ExperienceName } from '../types/experience';
 
 const experiencesOrder = [
   CSESoc,
@@ -8,10 +9,10 @@ const experiencesOrder = [
   WiseTechGlobal,
 ];
 
-export const experiences = experiencesOrder.reduce((a, experience, index) => ({
+export const experiences: {[key in ExperienceName as key]: Experience} = experiencesOrder.reduce((a, exp, idx) => ({
   ...a,
-  [experience.name]: {
-    ...experience,
-    id: index + 1,
+  [exp.name]: {
+    ...exp,
+    id: idx + 1,
   },
-}), {});
+}), {} as {[key in ExperienceName as key]: Experience});

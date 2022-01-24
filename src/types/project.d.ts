@@ -1,11 +1,11 @@
-import { Technology } from './technology-type';
+import { TechnologyName } from './technology';
 
 export type Project = {
     id: number,
     name: ProjectName,
     category: string,
     participation: boolean,
-    stack: Technology[],
+    stack: TechnologyName[],
     color: string,
     img: string,
     description: JSX.Element[],
