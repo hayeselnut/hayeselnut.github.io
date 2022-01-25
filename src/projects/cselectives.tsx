@@ -1,6 +1,6 @@
 import React from 'react';
 import { Project } from '../types/project';
-import CSElectivesLogo from '../assets/projects/cselectives.svg';
+import CSElectivesLogo from '../assets/projects/cselectives.png';
 
 export const CSElectives: Project = {
   id: 0,

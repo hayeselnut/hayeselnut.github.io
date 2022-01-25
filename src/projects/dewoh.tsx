@@ -1,6 +1,6 @@
 import React from 'react';
 import { Project } from '../types/project';
-import DewohLogo from '../assets/projects/dewoh.svg';
+import DewohLogo from '../assets/projects/dewoh.png';
 
 export const Dewoh: Project = {
   id: 0,

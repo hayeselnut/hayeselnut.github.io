@@ -1,6 +1,6 @@
 import React from 'react';
 import { Project } from '../types/project';
-import CSESocCirclesLogo from '../assets/projects/csesoc-circles.svg';
+import CSESocCirclesLogo from '../assets/projects/csesoc-circles.png';
 
 export const CSESocCircles: Project = {
   id: 0,

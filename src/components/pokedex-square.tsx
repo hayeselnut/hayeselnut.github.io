@@ -21,7 +21,7 @@ const Square: FC<{selected: boolean}> = styled.div(({ selected }) => ({
         color: 'var(--grey)',
       }
       : {
-        'color': 'var(--grid-grey)',
+        'color': 'var(--light-grey)',
         '&:hover': { outline: '3rem solid var(--light-red)' },
       }
   ),
@@ -34,16 +34,18 @@ const Id = styled.span`
 
 const Icon: FC<{project: Project}> = styled.div(({ project }) => ({
   opacity: project.participation ? 1 : 0.4,
-  backgroundImage: `url(${project.img})`,
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'contain',
-  backgroundPosition: 'center',
+  // backgroundImage: `url(${project.img})`,
+  // backgroundRepeat: 'no-repeat',
+  // backgroundSize: 'contain',
+  // backgroundPosition: 'center',
 }));
 
 const PokedexSquare: FC<{project: Project, selected: boolean}> = ({ project, selected }) => (
   <Square selected={selected}>
     <Id>{String(project.id).padStart(3, '0')}</Id>
-    <Icon project={project} />
+    <Icon project={project}>
+      <img src={project.img} style={{ imageRendering: 'pixelated', height: '100%' }} />
+    </Icon>
   </Square>
 );
 

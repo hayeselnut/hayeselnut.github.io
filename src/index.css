@@ -29,10 +29,11 @@
   --dark-red: #C02028;
   --darker-red: #901020;
   --white: #F8F8F8;
-  --light-grey: #D8D8D8;
-  --grid-grey: #A8A8A8;
+  --lighter-grey: #D8D8D8;
+  --light-grey: #A8A8A8;
   --grey: #787878;
   --dark-grey: #585858;
+  --darker-grey: #404040;
   --black: #212121;
 }
 
@@ -53,8 +54,8 @@ body {
   background-size: 40rem 40rem;
   background-position: 10rem 0rem;
   background-image:
-    linear-gradient(to right, var(--grid-grey) 1rem, transparent 1rem),
-    linear-gradient(to bottom, var(--grid-grey) 1rem, transparent 1rem);
+    linear-gradient(to right, var(--light-grey) 1rem, transparent 1rem),
+    linear-gradient(to bottom, var(--light-grey) 1rem, transparent 1rem);
 }
 
 main {

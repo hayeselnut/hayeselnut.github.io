@@ -10,9 +10,9 @@ const Rectangle = styled.div`
 
   color: var(--dark-grey);
   text-shadow:
-    0rem 1rem var(--light-grey),
-    1rem 0rem var(--light-grey),
-    1rem 1rem var(--light-grey);
+    0rem 1rem var(--lighter-grey),
+    1rem 0rem var(--lighter-grey),
+    1rem 1rem var(--lighter-grey);
   font-family: pokemondppt, sans-serif;
   font-size: 14rem;
 

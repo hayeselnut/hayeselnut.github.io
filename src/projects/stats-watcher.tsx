@@ -1,6 +1,6 @@
 import React from 'react';
 import { Project } from '../types/project';
-import StatsWatcherLogo from '../assets/projects/nytsw.svg';
+import StatsWatcherLogo from '../assets/projects/nytsw.png';
 
 export const StatsWatcher: Project = {
   id: 0,

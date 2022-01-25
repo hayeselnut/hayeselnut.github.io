@@ -15,7 +15,7 @@ const Card = styled.div`
 
   box-shadow: 4rem 4rem rgb(0, 0, 0, 0.2);
 
-  color: var(--light-grey);
+  color: var(--lighter-grey);
   font-family: pokemondppt, san-serif;
   letter-spacing: 0.5rem;
 
