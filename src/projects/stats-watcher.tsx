@@ -12,6 +12,7 @@ export const StatsWatcher: Project = {
   color: '#4083FB',
   img: StatsWatcherLogo,
   sprite: StatsWatcherSprite,
+  link: 'https://hayeselnut.github.io/nytimes-stats-watcher/',
   description: [
     <>
       The Mini Crossword by the New York Times is a fun daily puzzle my friends play everyday. There{'\''}s an
