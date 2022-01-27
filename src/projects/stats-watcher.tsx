@@ -8,7 +8,7 @@ export const StatsWatcher: Project = {
   name: 'Stats Watcher',
   category: 'NYT Mini Crossword',
   participation: true,
-  stack: ['html', 'css', 'javascript', 'react'],
+  stack: ['html', 'css', 'javascript', 'react', 'firebase'],
   color: '#4083FB',
   img: StatsWatcherLogo,
   sprite: StatsWatcherSprite,

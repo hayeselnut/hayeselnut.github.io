@@ -8,7 +8,7 @@ export const GuessTheSong: Project = {
   name: 'Guess the Song',
   category: 'Discord Bot',
   participation: true,
-  stack: ['html', 'css', 'typescript', 'react', 'heroku'],
+  stack: ['html', 'css', 'typescript', 'react', 'heroku', 'firebase'],
   color: '#FC4E56',
   img: GuessTheSongLogo,
   sprite: GuessTheSongSprite,
