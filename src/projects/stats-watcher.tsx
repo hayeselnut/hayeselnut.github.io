@@ -15,22 +15,23 @@ export const StatsWatcher: Project = {
   link: 'https://hayeselnut.github.io/nytimes-stats-watcher/',
   description: [
     <>
-      The Mini Crossword by the New York Times is a fun daily puzzle my friends play everyday. There{'\''}s an
-      inbuilt statistics page but it is only for yourself and a premium feature. I wanted to track
-      everyone{'\''}s progress over time so I made a dashboard by scraping the daily leaderboard
-      and storing everyone{'\''}s results and time.
+      The <a href='https://www.nytimes.com/crosswords/game/mini' target='_blank' rel="noreferrer">Mini Crossword</a> by
+      the New York Times is a fun daily puzzle my friends play everyday.
     </>,
     <>
-      TWO GOALS:
-      <ul>
-        <li>
-          completely emulate the theming as if it was an official{' '}
-          <a href='https://www.nytimes.com/crosswords/game/mini' target='_blank' rel="noreferrer">NYT page</a>.
-        </li>
-        <li>
-          automate the page by deploying a daily scraper (was blocked by strong antibot system, however)
-        </li>
-      </ul>
+      There{'\''}s an inbuilt statistics page but you can only see yourself.
+    </>,
+    <>
+      Oh, and it{'\''}s also a premium feature 🤑🤑.
+    </>,
+    <>
+      I wanted to track my friend{'\''}s progress over time so I made a
+      dashboard by scraping the daily leaderboard and storing everyone{'\''}s
+      results and time.
+    </>,
+    <>
+      I only managed to finish the frontend though since the NYT{'\''}s bot detection
+      was too stronk 😢
     </>,
   ],
 };

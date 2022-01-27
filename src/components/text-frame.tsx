@@ -14,7 +14,7 @@ const Rectangle = styled.div`
     1rem 0rem var(--lighter-grey),
     1rem 1rem var(--lighter-grey);
   font-family: pokemondppt, sans-serif;
-  font-size: 14rem;
+  font-size: 12rem;
 
   box-shadow: 4rem 4rem rgb(0, 0, 0, 0.2);
 

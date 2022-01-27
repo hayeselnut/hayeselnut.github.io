@@ -69,5 +69,5 @@ ul {
 }
 
 a {
-  color: var(--white);
+  color: inherit;
 }

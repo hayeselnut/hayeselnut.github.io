@@ -18,7 +18,7 @@ const projectsOrder = [
   GuessTheSong,
   CSElectives,
   Chaos,
-  SocAnnouncer,
+  // SocAnnouncer,
 ];
 
 export const projects: {[key in ProjectName as key]: Project} = projectsOrder.reduce((a, proj, idx) => ({

@@ -19,8 +19,8 @@ export const Circles: Project = {
       shown on a flowchart, kinda like a Minecraft Achievements page.
     </>,
     <>
-      Students can then use the auto timetable feature to plan which courses
-      they will take per term, taking into account prerequisites, degree
+      Students can use the auto timetable feature to plan which courses
+      they{'\''}ll take per term, taking into account prerequisites, degree
       requirements and term availability.
     </>,
     <>
@@ -34,13 +34,9 @@ export const Circles: Project = {
     <>
       <iframe
         src="https://open.spotify.com/embed/episode/1Rc5zmmAJYl8LyxC80q11U"
-        width="600"
-        height="100"
+        style={{ width: '100%', height: '100%' }}
         frameBorder="0"
         allow="encrypted-media"
-        // className='podcast'
-        // onLoad={handleLoad}
-        // style={{ opacity: podcastLoading ? 0 : 1 }}
       />
     </>,
   ],

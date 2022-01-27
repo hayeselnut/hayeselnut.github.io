@@ -16,7 +16,7 @@ export const Dewoh: Project = {
   description: [
     <>
       An analysis tool to measure the synergy between two players in League
-      of Legends
+      of Legends.
     </>,
   ],
 };
