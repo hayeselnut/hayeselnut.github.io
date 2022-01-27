@@ -12,6 +12,7 @@ export const SocAnnouncer: Project = {
   color: '#000',
   img: SocAnnouncerLogo,
   sprite: SocAnnouncerSprite,
+  link: 'https://github.com/csesoc/soc-announcer',
   description: [
     <>
       Email Generator

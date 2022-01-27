@@ -12,6 +12,7 @@ export const GuessTheSong: Project = {
   color: '#FC4E56',
   img: GuessTheSongLogo,
   sprite: GuessTheSongSprite,
+  link: 'https://hayeselnut.github.io/guess-the-song-discord-bot/',
   description: [
     <>
       A Discord bot that hosts a song guessing competition

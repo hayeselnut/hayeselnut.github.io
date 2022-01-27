@@ -12,6 +12,7 @@ export const CSESocCircles: Project = {
   color: '#39B54A',
   img: CSESocCirclesLogo,
   sprite: CSESocCirclesSprite,
+  link: 'https://github.com/csesoc/Circles',
   description: [
     <>
       The following year, our mini project was adopted by CSESoc officially

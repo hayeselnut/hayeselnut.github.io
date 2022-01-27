@@ -12,6 +12,7 @@ export const Circles: Project = {
   color: '#39B54A',
   img: CirclesLogo,
   sprite: CirclesSprite,
+  link: 'https://circles360.github.io/',
   description: [
     <>
       A visual UNSW degree planner, where courses and their prerequites are

@@ -12,6 +12,7 @@ export const Chaos: Project = {
   color: '#000',
   img: ChaosLogo,
   sprite: ChaosSprite,
+  link: 'https://github.com/csesoc/chaos',
   description: [
     <>
       Subcommittee Application Reviwer

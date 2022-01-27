@@ -9,6 +9,7 @@ export type Project = {
     color: string,
     img: string,
     sprite: string,
+    link: string,
     description: JSX.Element[],
 }
 

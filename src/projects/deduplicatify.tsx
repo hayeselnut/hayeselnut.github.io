@@ -12,6 +12,7 @@ export const Deduplicatify: Project = {
   color: '#1ED760',
   img: DeduplicatifyLogo,
   sprite: DeduplicatifySprite,
+  link: 'https://hayeselnut.github.io/deduplicatify/',
   description: [
     <>
       A web app to detect duplicate or similar songs in a Spotify playlist.
