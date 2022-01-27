@@ -10,7 +10,7 @@ import { Project } from '../types/project';
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 130rem auto auto;
-  grid-template-rows: auto 80rem auto;
+  grid-template-rows: 36rem 80rem auto;
   gap: 5rem;
 `;
 
@@ -18,6 +18,14 @@ const ProjectImgContainer = styled.div`
   // border: 1rem solid red;
   grid-row: 1 / 3;
   grid-column: 1 / 2;
+
+  padding: 20rem;
+`;
+
+const ProjectImg = styled.img`
+  height: 100%;
+  width: 100%;
+  image-rendering: pixelated;
 `;
 
 const TitleCardContainer = styled.div`
@@ -51,7 +59,7 @@ const TextFrameContainer = styled.div`
 const ProjectDetails: FC<{project: Project}> = ({ project }) => (
   <Grid>
     <ProjectImgContainer>
-      <img src={project.img} style={{ imageRendering: 'pixelated' }} />
+      <ProjectImg src={project.img} />
     </ProjectImgContainer>
 
     <TitleCardContainer>
@@ -70,25 +78,6 @@ const ProjectDetails: FC<{project: Project}> = ({ project }) => (
       <TextFrame content={project.description} />
     </TextFrameContainer>
   </Grid>
-  // <div style={{ border: '0rem solid red', width: '100%', display: 'flex',
-  //   flexDirection: 'column', position: 'relative' }}
-  // >
-  //   <div style={{ position: 'absolute', top: 0, right: 0, display: 'flex', alignItems: 'flex-end',
-  //     flexDirection: 'column',
-  //   }}
-  //   >
-  //
-  //     <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '6rem', maxWidth: '70%',
-  //       justifyContent: 'flex-end' }}
-  //     >
-  //
-  //     </div>
-  //   </div>
-  //
-  //   <div style={{ flexGrow: 1 }} />
-  //
-  // </div>
-
 );
 
 export default ProjectDetails;
