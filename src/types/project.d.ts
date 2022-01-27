@@ -8,6 +8,7 @@ export type Project = {
     stack: TechnologyName[],
     color: string,
     img: string,
+    sprite: string,
     description: JSX.Element[],
 }
 

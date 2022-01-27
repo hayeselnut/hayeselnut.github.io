@@ -1,6 +1,7 @@
 import React from 'react';
 import { Project } from '../types/project';
-import CSESocCirclesLogo from '../assets/projects/csesoc-circles.png';
+import CSESocCirclesLogo from '../assets/projects/csesoc-circles.svg';
+import CSESocCirclesSprite from '../assets/projects/csesoc-circles.png';
 
 export const CSESocCircles: Project = {
   id: 0,
@@ -10,6 +11,7 @@ export const CSESocCircles: Project = {
   stack: ['html', 'css', 'javascript', 'react', 'docker'],
   color: '#39B54A',
   img: CSESocCirclesLogo,
+  sprite: CSESocCirclesSprite,
   description: [
     <>
       The following year, our mini project was adopted by CSESoc officially

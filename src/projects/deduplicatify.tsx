@@ -1,6 +1,7 @@
 import React from 'react';
 import { Project } from '../types/project';
-import DeduplicatifyLogo from '../assets/projects/deduplicatify.png';
+import DeduplicatifyLogo from '../assets/projects/deduplicatify.svg';
+import DeduplicatifySprite from '../assets/projects/deduplicatify.png';
 
 export const Deduplicatify: Project = {
   id: 0,
@@ -10,6 +11,7 @@ export const Deduplicatify: Project = {
   stack: ['html', 'css', 'javascript'],
   color: '#1ED760',
   img: DeduplicatifyLogo,
+  sprite: DeduplicatifySprite,
   description: [
     <>
       A web app to detect duplicate or similar songs in a Spotify playlist.

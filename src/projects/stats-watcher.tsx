@@ -1,6 +1,7 @@
 import React from 'react';
 import { Project } from '../types/project';
-import StatsWatcherLogo from '../assets/projects/nytsw.png';
+import StatsWatcherLogo from '../assets/projects/nytsw.svg';
+import StatsWatcherSprite from '../assets/projects/nytsw.png';
 
 export const StatsWatcher: Project = {
   id: 0,
@@ -10,6 +11,7 @@ export const StatsWatcher: Project = {
   stack: ['html', 'css', 'javascript', 'react'],
   color: '#4083FB',
   img: StatsWatcherLogo,
+  sprite: StatsWatcherSprite,
   description: [
     <>
       The Mini Crossword by the New York Times is a fun daily puzzle my friends play everyday. There{'\''}s an

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Project } from '../types/project';
-import CirclesLogo from '../assets/projects/circles.png';
+import CirclesLogo from '../assets/projects/circles.svg';
+import CirclesSprite from '../assets/projects/circles.png';
 
 export const Circles: Project = {
   id: 0,
@@ -10,6 +11,7 @@ export const Circles: Project = {
   stack: ['html', 'css', 'javascript', 'react'],
   color: '#39B54A',
   img: CirclesLogo,
+  sprite: CirclesSprite,
   description: [
     <>
       A visual UNSW degree planner, where courses and their prerequites are

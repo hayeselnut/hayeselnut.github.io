@@ -32,20 +32,19 @@ const Id = styled.span`
   justify-content: flex-end;
 `;
 
-const Icon: FC<{project: Project}> = styled.div(({ project }) => ({
+const Sprite: FC<{project: Project}> = styled.div(({ project }) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
   opacity: project.participation ? 1 : 0.4,
-  // backgroundImage: `url(${project.img})`,
-  // backgroundRepeat: 'no-repeat',
-  // backgroundSize: 'contain',
-  // backgroundPosition: 'center',
 }));
 
 const PokedexSquare: FC<{project: Project, selected: boolean}> = ({ project, selected }) => (
   <Square selected={selected}>
     <Id>{String(project.id).padStart(3, '0')}</Id>
-    <Icon project={project}>
-      <img src={project.img} style={{ imageRendering: 'pixelated', height: '100%' }} />
-    </Icon>
+    <Sprite project={project}>
+      <img src={project.sprite} style={{ imageRendering: 'pixelated', height: '24rem' }} />
+    </Sprite>
   </Square>
 );
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Project } from '../types/project';
-import GuessTheSongLogo from '../assets/projects/gtsdb.png';
+import GuessTheSongLogo from '../assets/projects/gtsdb.svg';
+import GuessTheSongSprite from '../assets/projects/gtsdb.png';
 
 export const GuessTheSong: Project = {
   id: 0,
@@ -10,6 +11,7 @@ export const GuessTheSong: Project = {
   stack: ['html', 'css', 'typescript', 'react', 'heroku'],
   color: '#FC4E56',
   img: GuessTheSongLogo,
+  sprite: GuessTheSongSprite,
   description: [
     <>
       A Discord bot that hosts a song guessing competition
