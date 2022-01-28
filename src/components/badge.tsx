@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Experience } from '../types/experience';
+import { keyframes } from '@emotion/react';
 
 const Square: FC<{selected: boolean}> = styled.div(({ selected }) => ({
   width: '14rem',
@@ -25,18 +26,28 @@ const BadgeId = styled.div`
   bottom: -1rem;
 `;
 
-const BadgeIcon = styled.div`
+const BadgeIcon = styled.img`
   position: absolute;
-  cursor: pointer;
   top: -1rem;
   left: -1rem;
+  height: 16rem;
+  width: 16rem;
+
+  image-rendering: pixelated;
+  cursor: pointer;
+  transition: 0.1s ;
+
+  &:hover {
+    transform: scale(1.1);
+    filter: brightness(1.3);
+  }
 `;
 
 const Badge: FC<{id: number, experience?: Experience | null, selected?: boolean }>
 = ({ id, experience = null, selected = false }) => (
   <Square selected={selected}>
     <BadgeId>{id}</BadgeId>
-    {experience && <BadgeIcon>{experience.badge}</BadgeIcon>}
+    {experience && <BadgeIcon src={experience.badge} style={selected ? { filter: 'brightness(1.3)' } : {}} />}
   </Square>
 );
 

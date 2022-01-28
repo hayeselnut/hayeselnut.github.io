@@ -9,7 +9,7 @@ export type Experience = {
     stack: TechnologyName[],
     color: string,
     logo: string,
-    badge: JSX.Element,
+    badge: string,
     description: JSX.Element,
 }
 

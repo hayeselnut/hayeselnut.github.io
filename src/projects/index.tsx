@@ -6,7 +6,6 @@ import { StatsWatcher } from './stats-watcher';
 import { GuessTheSong } from './guess-the-song';
 import { CSElectives } from './cselectives';
 import { Chaos } from './chaos';
-import { SocAnnouncer } from './soc-announcer';
 import { Project, ProjectName } from '../types/project';
 
 const projectsOrder = [
