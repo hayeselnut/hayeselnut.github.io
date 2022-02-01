@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled';
 
 import NavBar from './components/nav-bar';
+import SideBar from './components/side-bar';
 import DeveloperCard from './components/developer-card';
 import PokedexSelector from './components/pokedex-selector';
 import PokedexSquare from './components/pokedex-square';
@@ -49,6 +50,7 @@ const App = () => {
             ))}
           </PokedexSelector>
         </MainContainer>
+        <SideBar />
       </main>
     </>
   );

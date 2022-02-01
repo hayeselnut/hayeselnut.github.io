@@ -38,7 +38,7 @@ const familiarTechnologies: TechnologyName[] = [
 const Card: FC<{backgroundColor: string}> = styled.div(({ backgroundColor }) => ({
   width: '244rem',
   height: '180rem',
-  borderRadius: '4rem',
+  borderRadius: '2rem',
   border: '1rem solid var(--white)',
   outline: '3rem solid var(--grey)',
   background: backgroundColor,
