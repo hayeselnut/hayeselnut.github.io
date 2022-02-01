@@ -61,12 +61,12 @@ const Link = styled.a`
   align-items: center;
   justify-content: center;
   box-shadow:
-    1rem 0rem var(--white),
-    -1rem 0rem var(--white),
-    0rem 1rem var(--white),
-    0rem -1rem var(--white);
+    1rem 0rem rgba(255, 255, 255, 0.5),
+    -1rem 0rem rgba(255, 255, 255, 0.5),
+    0rem 1rem rgba(255, 255, 255, 0.5),
+    0rem -1rem rgba(255, 255, 255, 0.5);
 
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.5);
 
   color: var(--red);
   text-decoration: none;
@@ -74,6 +74,18 @@ const Link = styled.a`
   font-size: 12rem;
 
   height: 75%;
+
+  transition: 0.1s;
+
+  &:hover {
+    box-shadow:
+      1rem 0rem var(--white),
+      -1rem 0rem var(--white),
+      0rem 1rem var(--white),
+      0rem -1rem var(--white);
+
+    background: var(--white);
+  }
 `;
 
 const NavBar: FC = () => (
