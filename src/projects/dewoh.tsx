@@ -1,7 +1,7 @@
 import React from 'react';
 import { Project } from '../types/project';
-import DewohLogo from '../assets/projects/dewoh.svg';
-import DewohSprite from '../assets/projects/dewoh.png';
+import DewohLogo from '../assets/projects/dewoh/dewoh-logo.svg';
+import DewohSprite from '../assets/projects/dewoh/dewoh-sprite.png';
 
 export const Dewoh: Project = {
   id: 0,

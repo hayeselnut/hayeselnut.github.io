@@ -43,7 +43,7 @@ const PokedexSquare: FC<{project: Project, selected: boolean}> = ({ project, sel
   <Square selected={selected}>
     <Id>{String(project.id).padStart(3, '0')}</Id>
     <Sprite project={project}>
-      <img src={project.sprite} style={{ imageRendering: 'pixelated', height: '24rem' }} />
+      <img src={project.sprite} style={{ imageRendering: 'pixelated', height: '20rem' }} />
     </Sprite>
   </Square>
 );

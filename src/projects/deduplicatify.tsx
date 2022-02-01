@@ -1,7 +1,7 @@
 import React from 'react';
 import { Project } from '../types/project';
-import DeduplicatifyLogo from '../assets/projects/deduplicatify.svg';
-import DeduplicatifySprite from '../assets/projects/deduplicatify.png';
+import DeduplicatifyLogo from '../assets/projects/deduplicatify/deduplicatify-logo.svg';
+import DeduplicatifySprite from '../assets/projects/deduplicatify/deduplicatify-sprite.png';
 
 export const Deduplicatify: Project = {
   id: 0,

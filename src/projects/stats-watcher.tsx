@@ -1,7 +1,7 @@
 import React from 'react';
 import { Project } from '../types/project';
-import StatsWatcherLogo from '../assets/projects/nytsw.svg';
-import StatsWatcherSprite from '../assets/projects/nytsw.png';
+import StatsWatcherLogo from '../assets/projects/stats-watcher/stats-watcher-logo.svg';
+import StatsWatcherSprite from '../assets/projects/stats-watcher/stats-watcher-sprite.png';
 
 export const StatsWatcher: Project = {
   id: 0,

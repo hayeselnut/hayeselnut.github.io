@@ -1,7 +1,7 @@
 import React from 'react';
 import { Project } from '../types/project';
-import CirclesLogo from '../assets/projects/circles.svg';
-import CirclesSprite from '../assets/projects/circles.png';
+import CirclesLogo from '../assets/projects/circles/circles-logo.svg';
+import CirclesSprite from '../assets/projects/circles/circles-sprite.png';
 
 export const Circles: Project = {
   id: 0,

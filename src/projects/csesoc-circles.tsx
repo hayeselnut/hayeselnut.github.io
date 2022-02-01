@@ -1,7 +1,7 @@
 import React from 'react';
 import { Project } from '../types/project';
-import CSESocCirclesLogo from '../assets/projects/csesoc-circles.svg';
-import CSESocCirclesSprite from '../assets/projects/csesoc-circles.png';
+import CSESocCirclesLogo from '../assets/projects/csesoc-circles/csesoc-circles-logo.svg';
+import CSESocCirclesSprite from '../assets/projects/csesoc-circles/csesoc-circles-sprite.png';
 
 export const CSESocCircles: Project = {
   id: 0,
