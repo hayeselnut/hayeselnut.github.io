@@ -2,7 +2,6 @@ import React from 'react';
 import { Project } from '../types/project';
 import CirclesLogo from '../assets/projects/circles/circles-logo.svg';
 import CirclesSprite from '../assets/projects/circles/circles-sprite.png';
-import TypingEffect from '../components/typing-effect';
 
 export const Circles: Project = {
   id: 0,

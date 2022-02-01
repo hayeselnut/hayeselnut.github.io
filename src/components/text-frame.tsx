@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 import Arrow from './arrow';
 import TypingEffect from './typing-effect';
-import Typewriter from 'typewriter-effect';
 import { Project } from '../types/project';
 
 const Rectangle = styled.div`
