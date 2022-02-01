@@ -70,7 +70,7 @@ const ProjectDetails: FC<{project: Project}> = ({ project }) => (
     </StackContainer>
 
     <TextFrameContainer>
-      <TextFrame content={project.description} />
+      <TextFrame project={project} />
     </TextFrameContainer>
   </Grid>
 );

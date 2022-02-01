@@ -14,13 +14,13 @@ export const CSESocCircles: Project = {
   sprite: CSESocCirclesSprite,
   link: 'https://github.com/csesoc/Circles',
   description: [
-    <>
+    <span key={0}>
       The following year, our mini project was adopted by CSESoc officially
       and evolved into the Circles it{'\''}s known for today.
-    </>,
-    <>
+    </span>,
+    <span key={1}>
       I didn{'\''}t actually work on it{'\''}s evolution, but just wanted to
       complete the evolution chain xd.
-    </>,
+    </span>,
   ],
 };

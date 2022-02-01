@@ -14,8 +14,8 @@ export const SocAnnouncer: Project = {
   sprite: SocAnnouncerSprite,
   link: 'https://github.com/csesoc/soc-announcer',
   description: [
-    <>
+    <span key={0}>
       Email Generator
-    </>,
+    </span>,
   ],
 };

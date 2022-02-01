@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Experience } from '../types/experience';
-import { keyframes } from '@emotion/react';
 
 const Square: FC<{selected: boolean}> = styled.div(({ selected }) => ({
   width: '14rem',

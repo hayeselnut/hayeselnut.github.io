@@ -14,8 +14,8 @@ export const Chaos: Project = {
   sprite: ChaosSprite,
   link: 'https://github.com/csesoc/chaos',
   description: [
-    <>
+    <span key={0}>
       Subcommittee Application Reviwer
-    </>,
+    </span>,
   ],
 };

@@ -2,6 +2,9 @@ import React, { FC, useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 import Arrow from './arrow';
+import TypingEffect from './typing-effect';
+import Typewriter from 'typewriter-effect';
+import { Project } from '../types/project';
 
 const Rectangle = styled.div`
   display: flex;
@@ -60,27 +63,32 @@ const Floating = styled.div`
   animation: ${floating} 1.5s ease-in-out infinite;
 `;
 
-const TextFrame: FC<{content: JSX.Element[]}> = ({ content }) => {
+const TextFrame: FC<{project: Project}> = ({ project }) => {
   const [idx, setIdx] = useState<number>(0);
+  const [visibleArrow, setVisibleArrow] = useState<boolean>(false);
 
   useEffect(() => {
     setIdx(0);
-  }, [content]);
+    setVisibleArrow(false);
+  }, [project]);
 
   const handleClick = () => {
-    if (idx >= content.length - 1) return;
+    if (idx >= project.description.length - 1) return;
     setIdx(idx + 1);
+    setVisibleArrow(false);
   };
 
   return (
     <Rectangle>
       <LeftSide />
       <Middle>
-        {content[idx]}
+        <TypingEffect onTypingDone={() => setVisibleArrow(true)} typistKey={`${project.name}-${idx}`}>
+          {project.description[idx]}
+        </TypingEffect>
       </Middle>
       <RightSide>
-        {idx < content.length - 1 && (
-          <div onClick={handleClick}>
+        {idx < project.description.length - 1 && (
+          <div onClick={handleClick} style={{ visibility: visibleArrow ? 'visible' : 'hidden' }}>
             <Floating>
               <Arrow />
             </Floating>

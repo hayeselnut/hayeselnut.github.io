@@ -14,9 +14,9 @@ export const Dewoh: Project = {
   sprite: DewohSprite,
   link: 'https://hayeselnut.github.io/dewoh/',
   description: [
-    <>
+    <span key={0}>
       An analysis tool to measure the synergy between two players in League
       of Legends.
-    </>,
+    </span>,
   ],
 };
