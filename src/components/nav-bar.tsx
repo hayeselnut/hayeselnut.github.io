@@ -34,6 +34,7 @@ const Middle = styled.div`
 
 const Title = styled.span`
   flex-grow: 1;
+  cursor: pointer;
 
   color: var(--white);
   font-family: pokemondppt, san-serif;
@@ -88,14 +89,14 @@ const Link = styled.a`
   }
 `;
 
-const NavBar: FC = () => (
+const NavBar: FC<{onClick: React.MouseEventHandler<HTMLElement>}> = ({ onClick }) => (
   <Bar>
     <Side />
-    <div style={{ position: 'absolute', top: '4rem', left: '2rem' }}>
+    <div onClick={onClick} style={{ position: 'absolute', top: '4rem', left: '2rem', cursor: 'pointer' }}>
       <Arrow />
     </div>
     <Middle>
-      <Title>HAYES CHOY</Title>
+      <Title onClick={onClick}>HAYES CHOY</Title>
 
       <LinkContainer>
         <Link href='https://github.com/hayeselnut/' target='_blank' rel="noreferrer">

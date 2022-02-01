@@ -28,7 +28,7 @@ const App = () => {
   return (
     <>
       <header>
-        <NavBar />
+        <NavBar onClick={() => setSelectedProject('')} />
       </header>
       <main>
         <MainContainer>
