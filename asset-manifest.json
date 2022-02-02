@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e7a51d93.chunk.css",
+    "main.js": "/static/js/main.c96cdcd6.chunk.js",
+    "main.js.map": "/static/js/main.c96cdcd6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.4fb722e0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.4fb722e0.js.map",
+    "static/js/2.1edf0857.chunk.js": "/static/js/2.1edf0857.chunk.js",
+    "static/js/2.1edf0857.chunk.js.map": "/static/js/2.1edf0857.chunk.js.map",
+    "static/js/3.a6fa4850.chunk.js": "/static/js/3.a6fa4850.chunk.js",
+    "static/js/3.a6fa4850.chunk.js.map": "/static/js/3.a6fa4850.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.e7a51d93.chunk.css.map": "/static/css/main.e7a51d93.chunk.css.map",
+    "static/js/2.1edf0857.chunk.js.LICENSE.txt": "/static/js/2.1edf0857.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/pokemondppt.d900fa5a.ttf",
+    "static/media/atlassian.ce36d3aa.svg": "/static/media/atlassian.ce36d3aa.svg",
+    "static/media/circles-logo.8e489861.svg": "/static/media/circles-logo.8e489861.svg",
+    "static/media/cselectives-logo.0f7c2b7b.svg": "/static/media/cselectives-logo.0f7c2b7b.svg",
+    "static/media/csesoc-circles-logo.f8a81aec.svg": "/static/media/csesoc-circles-logo.f8a81aec.svg",
+    "static/media/csesoc.5c10449b.svg": "/static/media/csesoc.5c10449b.svg",
+    "static/media/deduplicatify-logo.b836e4f8.svg": "/static/media/deduplicatify-logo.b836e4f8.svg",
+    "static/media/dewoh-logo.896d1f12.svg": "/static/media/dewoh-logo.896d1f12.svg",
+    "static/media/guess-the-song-logo.11e8c69e.svg": "/static/media/guess-the-song-logo.11e8c69e.svg",
+    "static/media/stats-watcher-logo.06751d8f.svg": "/static/media/stats-watcher-logo.06751d8f.svg",
+    "static/media/wisetech.996faf21.svg": "/static/media/wisetech.996faf21.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4fb722e0.js",
+    "static/js/2.1edf0857.chunk.js",
+    "static/css/main.e7a51d93.chunk.css",
+    "static/js/main.c96cdcd6.chunk.js"
+  ]
+}
