@@ -42,13 +42,17 @@ html {
   font-size: 0.185vw;
 }
 
+@media screen and (max-aspect-ratio: 1/1) {
+  html {
+    font-size: 0.5vw;
+  }
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /* transition: 0.3s; */
 
   background: var(--white);
   background-size: 40rem 40rem;
