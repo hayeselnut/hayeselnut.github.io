@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import { useMediaQuery } from 'react-responsive';
 
+import LandscapeContext from './contexts/landscape-context';
 import NavBar from './components/nav-bar';
 import SideBar from './components/side-bar';
 import DeveloperCard from './components/developer-card';
@@ -26,7 +28,7 @@ const App = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectName | ''>('');
 
   return (
-    <>
+    <LandscapeContext.Provider value={useMediaQuery({ minAspectRatio: '1/1' })}>
       <header>
         <NavBar onClick={() => setSelectedProject('')} />
       </header>
@@ -52,7 +54,7 @@ const App = () => {
         </MainContainer>
         <SideBar />
       </main>
-    </>
+    </LandscapeContext.Provider>
   );
 };
 

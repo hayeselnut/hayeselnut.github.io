@@ -1,6 +1,7 @@
-import React, { FC } from 'react';
+import React, { useContext, FC } from 'react';
 import styled from '@emotion/styled';
 import Arrow from './arrow';
+import LandscapeContext from '../contexts/landscape-context';
 
 const Bar = styled.div`
   height: 16rem;
@@ -89,30 +90,34 @@ const Link = styled.a`
   }
 `;
 
-const NavBar: FC<{onClick: React.MouseEventHandler<HTMLElement>}> = ({ onClick }) => (
-  <Bar>
-    <Side />
-    <div onClick={onClick} style={{ position: 'absolute', top: '4rem', left: '2rem', cursor: 'pointer' }}>
-      <Arrow />
-    </div>
-    <Middle>
-      <Title onClick={onClick}>HAYES CHOY</Title>
+const NavBar: FC<{onClick: React.MouseEventHandler<HTMLElement>}> = ({ onClick }) => {
+  const landscape = useContext(LandscapeContext);
 
-      <LinkContainer>
-        <Link href='https://github.com/hayeselnut/' target='_blank' rel="noreferrer">
-          GitHub
-        </Link>
-      </LinkContainer>
+  return (
+    <Bar>
+      <Side />
+      <div onClick={onClick} style={{ position: 'absolute', top: '4rem', left: '2rem', cursor: 'pointer' }}>
+        <Arrow />
+      </div>
+      <Middle>
+        <Title onClick={onClick}>HAYES CHOY</Title>
 
-      <LinkContainer>
-        <Link href='https://www.linkedin.com/in/hayes-choy-293954153/' target='_blank' rel="noreferrer">
-          LinkedIn
-        </Link>
-      </LinkContainer>
-    </Middle>
-    <Side />
+        <LinkContainer>
+          <Link href='https://github.com/hayeselnut/' target='_blank' rel="noreferrer">
+            {landscape ? 'GitHub' : 'GH'}
+          </Link>
+        </LinkContainer>
 
-  </Bar>
-);
+        <LinkContainer>
+          <Link href='https://www.linkedin.com/in/hayes-choy-293954153/' target='_blank' rel="noreferrer">
+            {landscape ? 'LinkedIn' : 'LI'}
+          </Link>
+        </LinkContainer>
+      </Middle>
+      <Side />
+
+    </Bar>
+  );
+};
 
 export default NavBar;
