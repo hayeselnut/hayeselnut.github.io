@@ -44,7 +44,7 @@ html {
 
 @media screen and (max-aspect-ratio: 1/1) {
   html {
-    font-size: 0.5vw;
+    font-size: 0.4vw;
   }
 }
 

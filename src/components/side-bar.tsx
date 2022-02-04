@@ -18,7 +18,6 @@ const Bar = styled.div`
   align-items: center;
 `;
 
-
 const Top = styled.div`
   height: 50rem;
   width: 4rem;

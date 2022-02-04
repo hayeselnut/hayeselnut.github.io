@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import styled from '@emotion/styled';
 import { useMediaQuery } from 'react-responsive';
 
@@ -13,30 +13,32 @@ import ProjectDetails from './components/project-details';
 import { projects } from './projects';
 import { ProjectName } from './types/project';
 
-const MainContainer = styled.div`
-  position: absolute;
-  left: 72rem;
-  top: 42rem;
-
-  width: calc(10 * 40rem + 20rem);
-
-  display: grid;
-  grid-template-columns: 1fr 20rem 120rem;
-`;
+const MainContainer: FC<{ landscape: boolean }> = styled.div(({ landscape }) => ({
+  position: 'absolute',
+  left: landscape ? '72rem' : '12rem',
+  top: landscape ? '42rem' : '42rem',
+  width: landscape ? 'calc(10 * 40rem + 20rem)' : 'calc(1 * 40rem + 20rem)', // TODO
+  display: 'grid',
+  gridTemplateColumns: landscape ? '1fr 20rem 120rem' : 'calc(5 * 40rem + 20rem)',
+  gridTemplateRows: landscape ? '1fr' : '160rem 0rem auto',
+}));
 
 const App = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectName | ''>('');
+  const landscape = useMediaQuery({ minAspectRatio: '1/1' });
 
   return (
-    <LandscapeContext.Provider value={useMediaQuery({ minAspectRatio: '1/1' })}>
+    <LandscapeContext.Provider value={landscape}>
       <header>
         <NavBar onClick={() => setSelectedProject('')} />
       </header>
       <main>
-        <MainContainer>
-          {selectedProject !== ''
-            ? <ProjectDetails project={projects[selectedProject]} />
-            : <DeveloperCard />}
+        <MainContainer landscape={landscape}>
+          <div style={{ transform: `scale(${landscape ? 1 : 0.7})`, transformOrigin: 'top left' }}>
+            {selectedProject !== ''
+              ? <ProjectDetails project={projects[selectedProject]} />
+              : <DeveloperCard />}
+          </div>
           <div />
           <PokedexSelector>
             {Object.values(projects).map((project) => (
