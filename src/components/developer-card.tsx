@@ -44,7 +44,7 @@ const Card: FC<{backgroundColor: string}> = styled.div(({ backgroundColor }) => 
   background: backgroundColor,
   position: 'relative',
   overflow: 'hidden',
-  transition: '0.3s',
+  // transition: '0.3s',
   display: 'flex',
   flexDirection: 'column',
 }));
@@ -56,16 +56,16 @@ const ContentLayout = styled.div`
 `;
 
 const Title = styled.div`
-    font-family: pokemondppt;
-    color: var(--white);
-    font-weight: bold;
-    font-size: 16rem;
-    text-transform: uppercase;
-    letter-spacing: 0.3rem;
+  font-family: pokemondppt;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 16rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
 
-    margin: 4rem 4rem;
+  margin: 4rem 4rem;
 
-    text-shadow: 1rem 1rem rgb(0, 0, 0, 0.4);
+  text-shadow: 1rem 1rem rgb(0, 0, 0, 0.4);
 `;
 
 const Watermark: FC<{experience: Experience}> = styled.div(({ experience }) => ({
@@ -82,24 +82,24 @@ const Watermark: FC<{experience: Experience}> = styled.div(({ experience }) => (
 }));
 
 const Avatar = styled.div`
-    position: absolute;
-    top: 10rem;
-    right: 10rem;
+  position: absolute;
+  top: 10rem;
+  right: 10rem;
 
-    width: 80rem;
-    height: 80rem;
-    border-radius: 2rem;
-    border-left: 1rem solid rgb(0, 0, 0, 0.2);
-    border-top: 1rem solid rgb(0, 0, 0, 0.2);
-    border-right: 1rem solid rgb(255, 255, 255, 0.2);
-    border-bottom: 1rem solid rgb(255, 255, 255, 0.2);
+  width: 80rem;
+  height: 80rem;
+  border-radius: 2rem;
+  border-left: 1rem solid rgb(0, 0, 0, 0.2);
+  border-top: 1rem solid rgb(0, 0, 0, 0.2);
+  border-right: 1rem solid rgb(255, 255, 255, 0.2);
+  border-bottom: 1rem solid rgb(255, 255, 255, 0.2);
 
 
-    background-color: rgb(255, 255, 255, 0.1);
-    background-image: url(${LucasSprite});
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: center;
+  background-color: rgb(255, 255, 255, 0.1);
+  background-image: url(${LucasSprite});
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
 `;
 
 const RowGroup = styled.div`
@@ -114,10 +114,10 @@ const Description = styled.div`
   min-height: 10rem;
 
   box-shadow:
-      1rem 0rem rgb(255, 255, 255, 0.3),
-      -1rem 0rem rgb(255, 255, 255, 0.3),
-      0rem 1rem rgb(255, 255, 255, 0.3),
-      0rem -1rem rgb(255, 255, 255, 0.3);
+    1rem 0rem rgb(255, 255, 255, 0.3),
+    -1rem 0rem rgb(255, 255, 255, 0.3),
+    0rem 1rem rgb(255, 255, 255, 0.3),
+    0rem -1rem rgb(255, 255, 255, 0.3);
 
   padding: 0 3rem;
   color: var(--white);
@@ -139,14 +139,14 @@ const Row = styled(Description)`
 `;
 
 const BadgeRow = styled.div`
-    width: 100%;
-    background: rgb(0, 0, 0, 0.5);
+  width: 100%;
+  background: rgb(0, 0, 0, 0.5);
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    margin-bottom: 4rem;
+  margin-bottom: 4rem;
 `;
 
 const BadgesHeading = styled.span`

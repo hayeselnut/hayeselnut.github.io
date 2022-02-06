@@ -12,6 +12,7 @@ const Bar = styled.div`
 
   background-color: var(--red);
   border-left: 2rem solid var(--black);
+  border-top: 2rem solid var(--black);
 
   display: flex;
   justify-content: center;
@@ -19,7 +20,7 @@ const Bar = styled.div`
 `;
 
 const Top = styled.div`
-  height: 50rem;
+  height: 52rem;
   width: 4rem;
   position: absolute;
   right: 18rem;
@@ -39,6 +40,7 @@ const TopShadow = styled.div`
 
   background-color: rgba(0, 0, 0, 0.2);
   border-left: 2rem solid var(--black);
+  border-top: 2rem solid var(--black);
 `;
 
 const Diagonal = styled.div`
@@ -46,7 +48,7 @@ const Diagonal = styled.div`
   height: 0;
   position: absolute;
   right: 18rem;
-  top: 50rem;
+  top: 52rem;
   border-top: 7rem solid var(--red);
   border-left: 4rem solid transparent;
 `;
@@ -56,7 +58,7 @@ const DiagonalShadow = styled.div`
   height: 0;
   position: absolute;
   right: 18rem;
-  top: 50rem;
+  top: 52rem;
   border-top: 7rem solid rgba(0, 0, 0, 0.2);
   border-left: 4rem solid transparent;
 `;
@@ -66,7 +68,7 @@ const DiagonalBorder = styled.div`
   height: 0;
   position: absolute;
   right: 18rem;
-  top: 50rem;
+  top: 52rem;
   z-index: -1;
   border-top: 10rem solid var(--black);
   border-left: 6rem solid transparent;

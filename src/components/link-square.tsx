@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 import ExternalLinkIcon from './external-link-icon';
 
 const Grid = styled.div`
-  width: 34rem;
-  height: 34rem;
+  width: 32rem;
+  height: 32rem;
   cursor: pointer;
 
   display: grid;
