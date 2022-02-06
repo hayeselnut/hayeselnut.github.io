@@ -16,7 +16,7 @@ const LandscapeContainer = styled.div`
 `;
 
 const PortraitContainer = styled.div`
-  width: 280rem;
+  width: 120rem;
 `;
 
 const ProjectImgContainer = styled.div`
@@ -97,7 +97,7 @@ const ProjectDetails: FC<{project: Project}> = ({ project }) => {
         <TitleCard id={project.id} name={project.name} category={project.category} />
       </CombinedTitleLinkContainer>
 
-      <div style={{ height: '90rem', margin: '10rem', display: 'flex', justifyContent: 'center' }}>
+      <div style={{ height: '75rem', margin: '15rem', display: 'flex', justifyContent: 'center' }}>
         <ProjectImg src={project.img} />
       </div>
 

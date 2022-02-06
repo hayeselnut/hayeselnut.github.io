@@ -54,7 +54,7 @@ const Title = styled.span`
 
 const LinkContainer = styled.div`
   height: 75%;
-  margin-left: 10rem;
+  margin-left: 4rem;
   align-self: flex-end;
 `;
 

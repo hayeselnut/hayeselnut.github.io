@@ -16,11 +16,11 @@ import { ProjectName } from './types/project';
 const MainContainer: FC<{ landscape: boolean }> = styled.div(({ landscape }) => ({
   position: 'absolute',
   left: landscape ? '72rem' : '12rem',
-  top: landscape ? '42rem' : '42rem',
+  top: landscape ? '42rem' : '47rem',
   width: landscape ? 'calc(10 * 40rem + 20rem)' : 'calc(1 * 40rem + 20rem)', // TODO
   display: 'grid',
-  gridTemplateColumns: landscape ? '1fr 20rem 120rem' : 'calc(5 * 40rem + 20rem)',
-  gridTemplateRows: landscape ? '1fr' : '200rem 0rem 120rem',
+  gridTemplateColumns: landscape ? '1fr 20rem 120rem' : 'calc(3 * 40rem + 20rem)',
+  gridTemplateRows: landscape ? '1fr' : '160rem 35rem 120rem',
 }));
 
 const App = () => {
@@ -34,12 +34,24 @@ const App = () => {
       </header>
       <main>
         <MainContainer landscape={landscape}>
-          <div style={{ transform: `scale(${landscape ? 1 : 0.8})`, transformOrigin: 'top left' }}>
-            {selectedProject !== ''
-              ? <ProjectDetails project={projects[selectedProject]} />
-              : <DeveloperCard />}
-          </div>
+          {selectedProject !== '' ? (
+            <div style={{
+              transform: `scale(${landscape ? 1 : 1})`,
+              transformOrigin: 'top left' }}
+            >
+              <ProjectDetails project={projects[selectedProject]} />
+            </div>
+          ) : (
+            <div style={{
+              transform: `scale(${landscape ? 1 : 0.5})`,
+              transformOrigin: 'top left' }}
+            >
+              <DeveloperCard />
+            </div>
+          )}
+
           <div />
+
           <PokedexSelector>
             {Object.values(projects).map((project) => (
               <div

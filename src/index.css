@@ -42,12 +42,6 @@ html {
   font-size: 0.185vw;
 }
 
-@media screen and (max-aspect-ratio: 1/1) {
-  html {
-    font-size: 0.4vw;
-  }
-}
-
 body {
   margin: 0;
   font-family: sans-serif;
@@ -60,6 +54,16 @@ body {
   background-image:
     linear-gradient(to right, var(--light-grey) 1rem, transparent 1rem),
     linear-gradient(to bottom, var(--light-grey) 1rem, transparent 1rem);
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+  html {
+    font-size: 0.7vw;
+  }
+
+  body {
+    background-position: 10rem 0rem;
+  }
 }
 
 main {
