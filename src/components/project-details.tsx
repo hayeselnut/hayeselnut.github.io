@@ -101,7 +101,7 @@ const ProjectDetails: FC<{project: Project}> = ({ project }) => {
         <ProjectImg src={project.img} />
       </div>
 
-      <Stack style={{ marginBottom: '10rem' }}>
+      <Stack style={{ height: '35rem' }}>
         {project.stack.map((technology) => <TechnologyType key={technology} name={technology} />)}
       </Stack>
 
