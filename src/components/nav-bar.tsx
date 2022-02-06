@@ -63,12 +63,12 @@ const Link = styled.a`
   align-items: center;
   justify-content: center;
   box-shadow:
-    1rem 0rem rgba(255, 255, 255, 0.5),
-    -1rem 0rem rgba(255, 255, 255, 0.5),
-    0rem 1rem rgba(255, 255, 255, 0.5),
-    0rem -1rem rgba(255, 255, 255, 0.5);
+    1rem 0rem rgba(255, 255, 255, 0.7),
+    -1rem 0rem rgba(255, 255, 255, 0.7),
+    0rem 1rem rgba(255, 255, 255, 0.7),
+    0rem -1rem rgba(255, 255, 255, 0.7);
 
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.7);
 
   color: var(--red);
   text-decoration: none;

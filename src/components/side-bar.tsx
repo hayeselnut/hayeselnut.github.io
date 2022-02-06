@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
-import BlackArrow from './black-arrow';
+// import BlackArrow from './black-arrow';
 
 const Bar = styled.div`
   height: 100%;
@@ -106,33 +106,33 @@ const Text = styled.span`
   font-family: "Super Smash TV";
 `;
 
-const SmallText = styled(Text)`
-  font-size: 11rem;
-`;
+// const SmallText = styled(Text)`
+//   font-size: 11rem;
+// `;
 
 const RotatedText = styled(Text)`
   transform: rotate(90deg);
 `;
 
-const ArrowContainer = styled.div`
-  position: absolute;
-  top: 20rem;
-  left: -4rem;
+// const ArrowContainer = styled.div`
+//   position: absolute;
+//   top: 20rem;
+//   left: -4rem;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// `;
 
 const SideBar: FC = () => (
   <Bar>
-    <ArrowContainer>
+    {/* <ArrowContainer>
       <div style={{ transform: 'rotateY(180deg)', marginBottom: '4rem', marginTop: '4rem' }}>
         <BlackArrow />
       </div>
       <SmallText>Info</SmallText>
-    </ArrowContainer>
+    </ArrowContainer> */}
 
     <Top />
     <DiagonalBorder />
