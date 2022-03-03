@@ -23,6 +23,9 @@ const ProjectImgContainer = styled.div`
   grid-row: 1 / 3;
   grid-column: 1 / 2;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20rem;
 `;
 

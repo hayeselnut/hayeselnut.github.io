@@ -17,9 +17,9 @@ const MainContainer: FC<{ landscape: boolean }> = styled.div(({ landscape }) => 
   position: 'absolute',
   left: landscape ? '72rem' : '12rem',
   top: landscape ? '42rem' : '47rem',
-  width: landscape ? 'calc(10 * 40rem + 20rem)' : 'calc(1 * 40rem + 20rem)', // TODO
+  width: landscape ? 'calc(10 * 40rem + 20rem)' : 'auto',
   display: 'grid',
-  gridTemplateColumns: landscape ? '1fr 20rem 120rem' : 'calc(3 * 40rem + 20rem)',
+  gridTemplateColumns: landscape ? '1fr 20rem 120rem' : '1fr',
   gridTemplateRows: landscape ? '1fr' : '200rem 35rem 120rem',
 }));
 
@@ -35,12 +35,7 @@ const App = () => {
       <main>
         <MainContainer landscape={landscape}>
           {selectedProject !== '' ? (
-            <div style={{
-              transform: `scale(${landscape ? 1 : 1})`,
-              transformOrigin: 'top left' }}
-            >
-              <ProjectDetails project={projects[selectedProject]} />
-            </div>
+            <ProjectDetails project={projects[selectedProject]} />
           ) : (
             <div style={{
               transform: `scale(${landscape ? 1 : 0.5})`,
