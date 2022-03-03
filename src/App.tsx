@@ -37,12 +37,7 @@ const App = () => {
           {selectedProject !== '' ? (
             <ProjectDetails project={projects[selectedProject]} />
           ) : (
-            <div style={{
-              transform: `scale(${landscape ? 1 : 0.5})`,
-              transformOrigin: 'top left' }}
-            >
-              <DeveloperCard />
-            </div>
+            <DeveloperCard />
           )}
 
           <div />
