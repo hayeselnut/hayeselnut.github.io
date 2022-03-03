@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 
-const Card = styled.div`
+const Card: FC<{small: boolean}> = styled.div(({ small }) => `
   display: grid;
   grid-template-rows: 15rem 2rem 15rem;
 
-  width: 144rem;
+  max-width: 144rem;
   height: 32rem;
 
   outline: 1rem solid var(--dark-grey);
@@ -13,7 +13,7 @@ const Card = styled.div`
 
   overflow: hidden;
 
-  box-shadow: 4rem 4rem rgb(0, 0, 0, 0.2);
+  box-shadow: ${small ? '' : '4rem 4rem rgb(0, 0, 0, 0.2)'};
 
   color: var(--lighter-grey);
   font-family: pokemondppt, san-serif;
@@ -28,34 +28,35 @@ const Card = styled.div`
     -1rem 1rem var(--dark-grey),
     -1rem -1rem var(--dark-grey),
     1rem -1rem var(--dark-grey);
-`;
+`);
 
-const Name = styled.div`
-  background: var(--red);
-  text-transform: uppercase;
-  font-size: 16rem;
-  display: flex;
-  align-items: center;
-  padding-left: 3rem;
-`;
+const Name: FC<{small: boolean}> = styled.div(({ small }) => ({
+  background: 'var(--red)',
+  textTransform: 'uppercase',
+  display: 'flex',
+  alignItems: 'center',
+  paddingLeft: '3rem',
+  fontSize: small ? '15rem' : '16rem',
+}));
 
 const Divider = styled.div`
   background: var(--light-red);
 `;
 
-const Category = styled.div`
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 4rem;
-  padding-bottom: 2rem;
-  font-size: 16rem;
-`;
+const Category: FC<{small: boolean}> = styled.div(({ small }) => ({
+  background: 'white',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'right',
+  paddingRight: '4rem',
+  paddingBottom: '2rem',
+  fontSize: small ? '15rem' : '16rem',
+}));
 
-const TitleCard: FC<{id: number, name: string, category: string}> = ({ id, name, category }) => (
-  <Card>
-    <Name>
+const TitleCard: FC<{id: number, name: string, category: string, small?: boolean}>
+= ({ id, name, category, small = false }) => (
+  <Card small>
+    <Name small={small}>
       <span style={{ marginRight: '10rem' }}>
         {String(id).padStart(3, '0')}
       </span>
@@ -64,7 +65,7 @@ const TitleCard: FC<{id: number, name: string, category: string}> = ({ id, name,
       </span>
     </Name>
     <Divider />
-    <Category>
+    <Category small={small}>
       {category}
     </Category>
   </Card>

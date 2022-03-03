@@ -20,7 +20,7 @@ const MainContainer: FC<{ landscape: boolean }> = styled.div(({ landscape }) => 
   width: landscape ? 'calc(10 * 40rem + 20rem)' : 'calc(1 * 40rem + 20rem)', // TODO
   display: 'grid',
   gridTemplateColumns: landscape ? '1fr 20rem 120rem' : 'calc(3 * 40rem + 20rem)',
-  gridTemplateRows: landscape ? '1fr' : '160rem 35rem 120rem',
+  gridTemplateRows: landscape ? '1fr' : '200rem 35rem 120rem',
 }));
 
 const App = () => {
@@ -67,7 +67,6 @@ const App = () => {
           </PokedexSelector>
         </MainContainer>
         {landscape && <SideBar />}
-        {/* <SideBar /> */}
       </main>
     </LandscapeContext.Provider>
   );

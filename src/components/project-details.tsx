@@ -28,7 +28,6 @@ const ProjectImgContainer = styled.div`
 
 const ProjectImg = styled.img`
   height: 100%;
-  // width: 100%;
   image-rendering: pixelated;
 `;
 
@@ -58,11 +57,19 @@ const TextFrameContainer = styled.div`
   grid-column: 1 / 4;
 `;
 
-const CombinedTitleLinkContainer = styled.div`
+const CombinedLinkStackContainer = styled.div`
   display: flex;
   justify-content: flex-end;
-  column-gap: 10rem;
+  column-gap: 6rem;
   margin-bottom: 5rem;
+  margin-top: 10rem;
+`;
+
+const ProjectImgContainerPortrait = styled.div`
+  height: 50rem;
+  margin: 15rem;
+  display: flex;
+  justify-content: center;
 `;
 
 const ProjectDetails: FC<{project: Project}> = ({ project }) => {
@@ -79,7 +86,7 @@ const ProjectDetails: FC<{project: Project}> = ({ project }) => {
       </TitleCardContainer>
 
       <ExternalLinkContainer>
-        <LinkSquare href={project.link} />
+        <LinkSquare href={project.link} shadow />
       </ExternalLinkContainer>
 
       <StackContainer>
@@ -91,21 +98,22 @@ const ProjectDetails: FC<{project: Project}> = ({ project }) => {
       </TextFrameContainer>
     </LandscapeContainer>
   ) : (
-    <PortraitContainer>
-      <CombinedTitleLinkContainer>
+    <PortraitContainer style={{ marginLeft: '-6rem', marginTop: '-4rem', width: '128rem' }}>
+      <TitleCard id={project.id} name={project.name} category={project.category} small />
+
+      <CombinedLinkStackContainer>
         <LinkSquare href={project.link} />
-        <TitleCard id={project.id} name={project.name} category={project.category} />
-      </CombinedTitleLinkContainer>
 
-      <div style={{ height: '75rem', margin: '15rem', display: 'flex', justifyContent: 'center' }}>
+        <Stack style={{ height: '35rem' }}>
+          {project.stack.map((technology) => <TechnologyType key={technology} name={technology} small />)}
+        </Stack>
+      </CombinedLinkStackContainer>
+
+      <ProjectImgContainerPortrait>
         <ProjectImg src={project.img} />
-      </div>
+      </ProjectImgContainerPortrait>
 
-      <Stack style={{ height: '35rem' }}>
-        {project.stack.map((technology) => <TechnologyType key={technology} name={technology} />)}
-      </Stack>
-
-      <TextFrame project={project} />
+      <TextFrame project={project} small />
     </PortraitContainer>
   );
 };

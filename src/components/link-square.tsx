@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import ExternalLinkIcon from './external-link-icon';
 
-const Grid = styled.div`
+const Grid: FC<{shadow: boolean}> = styled.div(({ shadow }) => `
   width: 32rem;
   height: 32rem;
   cursor: pointer;
@@ -12,8 +12,8 @@ const Grid = styled.div`
 
   outline: 1rem solid var(--dark-grey);
   border-radius: 2rem;
-  box-shadow: 4rem 4rem rgb(0, 0, 0, 0.2);
-`;
+  box-shadow: ${shadow ? '' : '4rem 4rem rgb(0, 0, 0, 0.2)'};
+`);
 
 const White = styled.div`
   display: flex;
@@ -22,9 +22,9 @@ const White = styled.div`
   background-color: var(--white);
 `;
 
-const LinkSquare: FC<{href: string}> = ({ href }) => (
+const LinkSquare: FC<{href: string, shadow?: boolean }> = ({ href, shadow = false }) => (
   <a href={href} target="_blank" rel="noreferrer">
-    <Grid>
+    <Grid shadow>
       <div style={{ backgroundColor: 'var(--red)' }} />
       <div style={{ backgroundColor: 'var(--light-red)' }} />
       <White>

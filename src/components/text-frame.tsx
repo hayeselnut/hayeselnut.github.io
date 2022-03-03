@@ -5,9 +5,10 @@ import Arrow from './arrow';
 import TypingEffect from './typing-effect';
 import { Project } from '../types/project';
 
-const Rectangle = styled.div`
+const Rectangle: FC<{small: boolean}> = styled.div(({ small }) => `
   display: flex;
-  border: 2rem solid var(--dark-grey);
+  box-sizing: border-box;
+  outline: 2rem solid var(--dark-grey);
   border-radius: 2rem;
 
   color: var(--dark-grey);
@@ -16,11 +17,10 @@ const Rectangle = styled.div`
     1rem 0rem var(--lighter-grey),
     1rem 1rem var(--lighter-grey);
   font-family: pokemondppt, sans-serif;
-  font-size: 12rem;
+  font-size: ${small ? '9rem' : '12rem'};
 
-  box-shadow: 4rem 4rem rgb(0, 0, 0, 0.2);
-
-`;
+  box-shadow: ${small ? '' : '4rem 4rem rgb(0, 0, 0, 0.2)'};
+`);
 
 const LeftSide = styled.div`
   min-width: 4rem;
@@ -40,16 +40,16 @@ const RightSide = styled.div`
   padding-bottom: 8rem;
 `;
 
-const Middle = styled.div`
+const Middle: FC<{small: boolean}> = styled.div(({ small }) => `
   border: 1rem solid var(--light-red);
   background: var(--white);
 
   flex-grow: 1;
   padding: 2rem 7rem;
-  min-height: 46rem;
-  max-height: 46rem;
+  min-height: ${small ? '64rem' : '46rem'};
+  max-height: ${small ? '64rem' : '46rem'};
   overflow: hidden;
-`;
+`);
 
 const floating = keyframes`
     0% { transform: translate(0, 0); }
@@ -62,7 +62,7 @@ const Floating = styled.div`
   animation: ${floating} 1.5s ease-in-out infinite;
 `;
 
-const TextFrame: FC<{project: Project}> = ({ project }) => {
+const TextFrame: FC<{project: Project, small?: boolean}> = ({ project, small = false }) => {
   const [idx, setIdx] = useState<number>(0);
   const [visibleArrow, setVisibleArrow] = useState<boolean>(false);
 
@@ -78,9 +78,9 @@ const TextFrame: FC<{project: Project}> = ({ project }) => {
   };
 
   return (
-    <Rectangle>
+    <Rectangle small={small}>
       <LeftSide />
-      <Middle>
+      <Middle small={small}>
         <TypingEffect onTypingDone={() => setVisibleArrow(true)} typistKey={`${project.name}-${idx}`}>
           {project.description[idx]}
         </TypingEffect>
