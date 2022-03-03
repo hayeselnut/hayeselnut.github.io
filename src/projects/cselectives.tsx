@@ -6,7 +6,7 @@ import CSElectivesSprite from '../assets/projects/cselectives/cselectives-sprite
 export const CSElectives: Project = {
   id: 0,
   name: 'CSElectives',
-  category: 'UNSW Elective Reviews',
+  category: 'Elective Reviews',
   participation: true,
   stack: ['html', 'css', 'javascript', 'react', 'firebase', 'docker'],
   color: '#000',

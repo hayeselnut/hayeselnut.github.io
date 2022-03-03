@@ -12,7 +12,7 @@ const Grid: FC<{shadow: boolean}> = styled.div(({ shadow }) => `
 
   outline: 1rem solid var(--dark-grey);
   border-radius: 2rem;
-  box-shadow: ${shadow ? '' : '4rem 4rem rgb(0, 0, 0, 0.2)'};
+  box-shadow: ${shadow ? '4rem 4rem rgb(0, 0, 0, 0.2)' : ''};
 `);
 
 const White = styled.div`
@@ -24,7 +24,7 @@ const White = styled.div`
 
 const LinkSquare: FC<{href: string, shadow?: boolean }> = ({ href, shadow = false }) => (
   <a href={href} target="_blank" rel="noreferrer">
-    <Grid shadow>
+    <Grid shadow={shadow}>
       <div style={{ backgroundColor: 'var(--red)' }} />
       <div style={{ backgroundColor: 'var(--light-red)' }} />
       <White>

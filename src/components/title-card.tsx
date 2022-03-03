@@ -30,33 +30,33 @@ const Card: FC<{small: boolean}> = styled.div(({ small }) => `
     1rem -1rem var(--dark-grey);
 `);
 
-const Name: FC<{small: boolean}> = styled.div(({ small }) => ({
+const Name = styled.div(() => ({
   background: 'var(--red)',
   textTransform: 'uppercase',
   display: 'flex',
   alignItems: 'center',
   paddingLeft: '3rem',
-  fontSize: small ? '15rem' : '16rem',
+  fontSize: '16rem',
 }));
 
 const Divider = styled.div`
   background: var(--light-red);
 `;
 
-const Category: FC<{small: boolean}> = styled.div(({ small }) => ({
+const Category = styled.div(() => ({
   background: 'white',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'right',
   paddingRight: '4rem',
   paddingBottom: '2rem',
-  fontSize: small ? '15rem' : '16rem',
+  fontSize: '16rem',
 }));
 
 const TitleCard: FC<{id: number, name: string, category: string, small?: boolean}>
 = ({ id, name, category, small = false }) => (
-  <Card small>
-    <Name small={small}>
+  <Card small={small}>
+    <Name>
       <span style={{ marginRight: '10rem' }}>
         {String(id).padStart(3, '0')}
       </span>
@@ -65,7 +65,7 @@ const TitleCard: FC<{id: number, name: string, category: string, small?: boolean
       </span>
     </Name>
     <Divider />
-    <Category small={small}>
+    <Category>
       {category}
     </Category>
   </Card>
