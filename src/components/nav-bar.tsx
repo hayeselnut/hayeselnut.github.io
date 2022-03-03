@@ -96,7 +96,10 @@ const NavBar: FC<{onClick: React.MouseEventHandler<HTMLElement>}> = ({ onClick }
   return (
     <Bar>
       <Side />
-      <div onClick={onClick} style={{ position: 'absolute', top: '4rem', left: '2rem', cursor: 'pointer' }}>
+      <div
+        onClick={onClick}
+        style={{ position: 'absolute', top: '4rem', left: '2rem', cursor: 'pointer', visibility: 'hidden' }}
+      >
         <Arrow />
       </div>
       <Middle>
