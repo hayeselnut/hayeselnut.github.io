@@ -103,7 +103,7 @@ const NavBar: FC<{onClick: React.MouseEventHandler<HTMLElement>}> = ({ onClick }
         <Arrow />
       </div>
       <Middle>
-        <Title onClick={onClick}>HAYES CHOY</Title>
+        <Title onClick={onClick}>HAYESELNUT</Title>
 
         <LinkContainer>
           <Link href='https://github.com/hayeselnut/' target='_blank' rel="noreferrer">
