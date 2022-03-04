@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import styled from '@emotion/styled';
 import LucasSprite from '../../assets/avatar/lucas.png';
 import { Experience } from '../../types/experience';
@@ -6,7 +6,7 @@ import { Experience } from '../../types/experience';
 export const Card: FC<{backgroundColor: string, landscape?: boolean}>
 = styled.div(({ backgroundColor, landscape = false }) => ({
   width: landscape ? '244rem' : '120rem',
-  height: landscape ? '180rem' : 'auto',
+  height: landscape ? '180rem' : '220rem',
   borderRadius: '2rem',
   border: '1rem solid var(--white)',
   outline: '3rem solid var(--grey)',
@@ -24,18 +24,18 @@ export const ContentLayout = styled.div`
   height: 100%;
 `;
 
-export const Title = styled.div`
+export const Title: FC<{small?: boolean}> = styled.div(({ small = false }) => `
   font-family: pokemondppt;
   color: var(--white);
   font-weight: bold;
-  font-size: 16rem;
+  font-size: ${small ? '12rem' : '16rem'};
   text-transform: uppercase;
   letter-spacing: 0.3rem;
 
   margin: 4rem 4rem;
 
   text-shadow: 1rem 1rem rgb(0, 0, 0, 0.4);
-`;
+`);
 
 export const Watermark: FC<{experience: Experience}> = styled.div(({ experience }) => ({
   position: 'absolute',
@@ -71,9 +71,9 @@ export const Avatar = styled.div`
   background-position: center;
 `;
 
-export const Description = styled.div`
-  width: 130rem;
-  min-height: 10rem;
+export const Description: FC<{small?: boolean}> = styled.div(({ small = false }) => `
+  max-width: 130rem;
+  min-height: ${small ? '8rem' : '10rem'};
 
   box-shadow:
     1rem 0rem rgb(255, 255, 255, 0.3),
@@ -81,22 +81,23 @@ export const Description = styled.div`
     0rem 1rem rgb(255, 255, 255, 0.3),
     0rem -1rem rgb(255, 255, 255, 0.3);
 
-  padding: 0 3rem;
+  padding: 0 ${small ? '2rem' : '3rem'};
   color: var(--white);
 
   z-index: 1;
 
   font-family: pokemondppt;
-  font-size: 8rem;
+  font-size: ${small ? '6rem' : '8rem'};
 
   background: rgb(255, 255, 255, 0.3);
-`;
+`);
 
 export const RowGroup = styled.div`
   display: grid;
   row-gap: 4rem;
   margin-bottom: 9rem;
   margin-left: 4rem;
+  margin-right: 4rem;
 `;
 
 export const Row = styled(Description)`
@@ -111,9 +112,9 @@ export const BadgeRow = styled.div`
   width: 100%;
   background: rgb(0, 0, 0, 0.5);
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
 
   margin-bottom: 4rem;
 `;
@@ -125,10 +126,12 @@ export const BadgesHeading = styled.span`
   color: var(--white);
 
   padding: 1rem 15rem;
-  margin-bottom: 1rem;
 `;
 
 export const Badges = styled.div`
+  margin-top: 4rem;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 2rem;
 `;
