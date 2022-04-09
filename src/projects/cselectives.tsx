@@ -25,7 +25,7 @@ export const CSElectives: Project = {
     </span>,
     <span key={2}>
       For each of the 4 sub-teams I oversaw their development by attending their
-      pair programming sessions, providing constructive feedback on their
+      pair programming sessions and providing constructive feedback on their
       pull requests.
     </span>,
     <span key={3}>
