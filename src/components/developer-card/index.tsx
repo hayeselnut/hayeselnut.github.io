@@ -94,7 +94,7 @@ const DeveloperCard = () => {
             )
             : (
               <>
-                <Title><span style={{ fontSize: '12rem' }}>🤓</span>Developer Card</Title>
+                <Title>Developer Card</Title>
                 <DeveloperInfo />
                 <div style={{ display: 'flex', flexWrap: 'wrap', paddingLeft: '4rem' }}>
                   {familiarTechnologies.map((technology) => (
