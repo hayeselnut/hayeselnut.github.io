@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
-import LucasSprite from '../../assets/avatar/lucas.png';
+import HayesSprite from '../../assets/avatar/hayes.png';
 import { Experience } from '../../types/experience';
 
 export const Card: FC<{backgroundColor: string, landscape?: boolean}>
@@ -63,12 +63,12 @@ export const Avatar = styled.div`
   border-right: 1rem solid rgb(255, 255, 255, 0.2);
   border-bottom: 1rem solid rgb(255, 255, 255, 0.2);
 
-
   background-color: rgb(255, 255, 255, 0.1);
-  background-image: url(${LucasSprite});
+  background-image: url(${HayesSprite});
   background-repeat: no-repeat;
-  background-size: 50%;
+  background-size: 100%;
   background-position: center;
+  image-rendering: pixelated;
 `;
 
 export const Description: FC<{small?: boolean}> = styled.div(({ small = false }) => `
