@@ -158,10 +158,7 @@ const DeveloperCard = () => {
             )
             : (
               <>
-                <Title small>
-                  <span style={{ fontSize: '8rem', marginRight: '2rem' }}>🤓</span>
-                  Developer Card
-                </Title>
+                <Title small>Developer Card</Title>
                 <DeveloperInfo />
                 <div style={{ display: 'flex',
                   flexWrap: 'wrap',
