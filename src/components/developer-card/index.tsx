@@ -34,6 +34,7 @@ const familiarTechnologies: TechnologyName[] = [
   'javascript',
   'typescript',
   'react',
+  'vue',
   'apps script',
   'sql',
   'bash',

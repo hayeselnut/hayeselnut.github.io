@@ -9,7 +9,7 @@ export const CSESoc: Experience = {
   name: 'CSE Society UNSW',
   position: 'Student Experience Director & Secretary',
   startDate: new Date('2020-11-17'),
-  endDate: null,
+  endDate: new Date('2022-12-07'),
   stack: ['html', 'css', 'javascript', 'react', 'python', 'docker', 'kubernetes', 'apps script'],
   color: '#3A76F8',
   logo: CSESocLogo,
