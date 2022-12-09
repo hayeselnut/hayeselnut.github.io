@@ -30,6 +30,8 @@ export type TechnologyName = 'c'
                             | 'perl'
 
                             | 'haskell'
+                            | 'ocaml'
+
                             | 'rust'
                             | 'go'
 

@@ -98,6 +98,11 @@ const technologies: {[key in TechnologyName as key]: Technology} = {
     colors: ['#5e5086', '#5e5086', '#453a62', '#453a62'],
     link: 'https://www.haskell.org/',
   },
+  'ocaml': {
+    name: 'ocaml',
+    colors: ['#F19000', '#F19000', '#EC670E', '#EC670E'],
+    link: 'https://ocaml.org/',
+  },
   'rust': {
     name: 'rust',
     colors: ['#f74c00', '#f74c00', '#f74c00', '#f74c00'],
