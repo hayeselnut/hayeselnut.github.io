@@ -25,7 +25,6 @@ export type TechnologyName = 'c'
                             | 'vue'
                             | 'apps script'
 
-                            | 'sql'
                             | 'bash'
                             | 'perl'
 
@@ -44,6 +43,9 @@ export type TechnologyName = 'c'
                             | 'kubernetes'
                             | 'heroku'
 
+                            | 'sql'
                             | 'firebase'
                             | 'mongodb'
                             | 'druid';
+
+// TODO: jira, confluence, git, office

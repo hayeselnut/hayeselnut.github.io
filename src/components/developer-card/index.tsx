@@ -24,11 +24,9 @@ import {
 const familiarTechnologies: TechnologyName[] = [
   'c',
   'c++',
-  'c#',
   'python',
   'java',
   'kotlin',
-  'spring boot',
   'html',
   'css',
   'javascript',
@@ -38,14 +36,9 @@ const familiarTechnologies: TechnologyName[] = [
   'apps script',
   'sql',
   'bash',
-  'perl',
   'haskell',
-  'aws',
-  'docker',
-  'kubernetes',
-  'heroku',
-  'firebase',
-  'druid',
+  'ocaml',
+  'rust',
 ];
 
 const DeveloperCard = () => {
