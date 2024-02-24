@@ -62,7 +62,7 @@ const DeveloperCard = () => {
                   <RowGroup>
                     <Row>
                       <span>Role</span>
-                      <span>{experiences[selectedBadge].position}</span>
+                      <span>{experiences[selectedBadge].role}</span>
                     </Row>
                     <Row>
                       <span>Time</span>
@@ -107,7 +107,7 @@ const DeveloperCard = () => {
               {Object.values(experiences).map((experience, index) => (
                 <div
                   key={experience.name}
-                  onClick={() => setSelectedBadge(selectedBadge === experience.name ? '' : experience.name)}
+                  onClick={() => setSelectedBadge(selectedBadge === experience.id ? '' : experience.id)}
                 >
                   <Badge id={index + 1} experience={experience} selected={selectedBadge === experience.name} />
                 </div>
@@ -129,7 +129,7 @@ const DeveloperCard = () => {
                 <RowGroup>
                   <Row small>
                     <span>Role</span>
-                    <span>{experiences[selectedBadge].position}</span>
+                    <span>{experiences[selectedBadge].role}</span>
                   </Row>
                   <Row small>
                     <span>Time</span>
@@ -179,7 +179,7 @@ const DeveloperCard = () => {
                 {Object.values(experiences).map((experience, index) => (
                   <div
                     key={experience.name}
-                    onClick={() => setSelectedBadge(selectedBadge === experience.name ? '' : experience.name)}
+                    onClick={() => setSelectedBadge(selectedBadge === experience.id ? '' : experience.id)}
                   >
                     <Badge id={index + 1} experience={experience} selected={selectedBadge === experience.name} />
                   </div>

@@ -4,9 +4,9 @@ import WiseTechGlobalBadge from '../assets/experiences/wisetech-badge.png';
 import { Experience } from '../types/experience';
 
 export const WiseTechGlobal: Experience = {
-  id: 0,
+  id: 'wisetech',
   name: 'WiseTech Global',
-  position: 'Software Engineer',
+  role: 'Software Engineer',
   startDate: new Date('2022-01-11'),
   endDate: new Date('2022-08-05'),
   stack: ['c#', 'html', 'css', 'javascript', 'typescript', 'react', 'vue'],

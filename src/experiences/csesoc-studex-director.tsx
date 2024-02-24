@@ -4,12 +4,12 @@ import CSESocLogo from '../assets/experiences/csesoc.svg';
 import CSESocBadge from '../assets/experiences/csesoc-badge.png';
 import { Experience } from '../types/experience';
 
-export const CSESoc: Experience = {
-  id: 0,
+export const CSESocStudexDirector: Experience = {
+  id: 'csesoc-studex-director',
   name: 'CSE Society UNSW',
-  position: 'Student Experience Director & Secretary',
+  role: 'Student Experience Director',
   startDate: new Date('2020-11-17'),
-  endDate: new Date('2022-12-07'),
+  endDate: new Date('2021-12-31'),
   stack: ['html', 'css', 'javascript', 'react', 'python', 'docker', 'kubernetes', 'apps script'],
   color: '#3A76F8',
   logo: CSESocLogo,

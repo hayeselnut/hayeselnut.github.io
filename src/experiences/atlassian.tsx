@@ -4,9 +4,9 @@ import AtlassianBadge from '../assets/experiences/atlassian-badge.png';
 import { Experience } from '../types/experience';
 
 export const Atlassian: Experience = {
-  id: 0,
+  id: 'atlassian',
   name: 'Atlassian',
-  position: 'Student Developer',
+  role: 'Student Developer',
   startDate: new Date('2020-09-07'),
   endDate: new Date('2021-07-01'),
   stack: ['kotlin', 'spring boot', 'druid', 'docker', 'kubernetes', 'aws', 'terraform', 'python'],
